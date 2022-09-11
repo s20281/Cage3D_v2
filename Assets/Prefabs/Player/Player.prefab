@@ -2513,7 +2513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 400
   animator: {fileID: 1463976231271157303}
-  rotationSpeed: 2
+  rotationSpeed: 6
 --- !u!54 &1527094391956108192
 Rigidbody:
   m_ObjectHideFlags: 0
