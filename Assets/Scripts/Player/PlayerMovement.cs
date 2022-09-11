@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 6;
     private float sprintRotationSpeed = 9;
 
+    public Collider headCollider;
+
 
     public Transform cameraTripod;
     public Vector3 target;
@@ -40,10 +42,12 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalInput != 0 || verticalInput != 0)
         {
             var lookRotation = Quaternion.LookRotation(target);
+            headCollider.enabled = true;
 
             if (Input.GetButton("Fire3"))
             {
                 animator.Play("Sprint");
+                
                 transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * sprintRotationSpeed);
             }
 
@@ -55,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            headCollider.enabled = false;
             animator.Play("Idle");
         }
     }

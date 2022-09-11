@@ -2455,6 +2455,9 @@ GameObject:
   - component: {fileID: 2116797054168338743}
   - component: {fileID: 1527094391956108192}
   - component: {fileID: 4208763209774316061}
+  - component: {fileID: 6957927762224745481}
+  - component: {fileID: 6957927762224745486}
+  - component: {fileID: 6957927762224745488}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2514,6 +2517,9 @@ MonoBehaviour:
   movementSpeed: 400
   animator: {fileID: 1463976231271157303}
   rotationSpeed: 6
+  headCollider: {fileID: 6957927762224745488}
+  cameraTripod: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
 --- !u!54 &1527094391956108192
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2539,10 +2545,49 @@ BoxCollider:
   m_GameObject: {fileID: 3742028269830503912}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.4889958, y: 1.9109206, z: 0.4889958}
   m_Center: {x: 0, y: 0.95535564, z: 0}
+--- !u!114 &6957927762224745481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742028269830503912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b7ab1292be9e54ba5ef04ab3c53752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &6957927762224745486
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742028269830503912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.26486403
+  m_Height: 1.938257
+  m_Direction: 1
+  m_Center: {x: 0.004339993, y: 1.0040127, z: -0.008454323}
+--- !u!135 &6957927762224745488
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742028269830503912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.28172553
+  m_Center: {x: 0, y: 1.7129477, z: 0.4461094}
 --- !u!1 &3843205979553266664
 GameObject:
   m_ObjectHideFlags: 0
