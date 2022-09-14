@@ -9,7 +9,12 @@ public class GameManager : MonoBehaviour
 
     public static PlayerManager PlayerManager;
     public PlayerManager playerManager;
-   //playerManager -> playerManager
+
+    public static TeamManager TeamManager;
+    public TeamManager teamManager;
+
+    public UIManager UIManager;
+
 
     private void Awake()
     {
