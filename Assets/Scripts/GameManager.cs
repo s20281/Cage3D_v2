@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
+
+    public static CameraManager CameraManager => Instance.cameraManager;
     public CameraManager cameraManager;
 
-    public static PlayerManager PlayerManager;
+    public static PlayerManager PlayerManager => Instance.playerManager;
     public PlayerManager playerManager;
 
-    public static TeamManager TeamManager;
+    public static TeamManager TeamManager => Instance.teamManager;
     public TeamManager teamManager;
 
-    public UIManager UIManager;
+    
+    public static UIManager UIManager => Instance.uIManager;
+    public UIManager uIManager;
+
 
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
 }

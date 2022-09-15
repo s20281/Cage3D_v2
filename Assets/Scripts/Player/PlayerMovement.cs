@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Collider headCollider;
 
+    public bool canMove;
 
     public Transform cameraTripod;
     public Vector3 target;
@@ -22,10 +23,18 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
+        canMove = true;
     }
 
     void FixedUpdate()
     {
+        if(!canMove)
+        {
+            animator.Play("Idle");
+            playerRigidbody.velocity = Vector3.zero;
+            return;
+        }
+
         if (Input.GetButton("Fire3"))
             movementSpeed = sprintSpeed;
         else
@@ -34,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         Vector3 target = new Vector3(horizontalInput, 0, verticalInput);
-        target = GameManager.instance.cameraManager.followPlayer.transormDirection(target);
+        target = GameManager.CameraManager.followPlayer.transormDirection(target);
 
         playerRigidbody.velocity = target * movementSpeed * Time.deltaTime;
 
@@ -62,5 +71,10 @@ public class PlayerMovement : MonoBehaviour
             headCollider.enabled = false;
             animator.Play("Idle");
         }
+    }
+
+    public void SwitchFreeze(bool freeze)
+    {
+        this.canMove = !freeze;
     }
 }

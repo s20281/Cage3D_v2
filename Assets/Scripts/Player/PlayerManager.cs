@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public PlayerMovement playerMovement;
+
     public Vector3 GetPlayerPosition()
     {
         return transform.position;

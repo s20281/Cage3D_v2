@@ -6,11 +6,16 @@ public class PickUp : Interactable
 {
     public override void Interact()
     {
-        bool pickedUp = GameManager.instance.teamManager.tryAddItem(GetComponent<Item>());
+        bool pickedUp = GameManager.TeamManager.tryAddItem(GetComponent<Item>());
         if(pickedUp)
         {
             Debug.Log(gameObject.name + " added to inventory");
             Destroy(gameObject);
+
+            if(GameManager.UIManager.inventoryUI.inventoryPanel.activeSelf)
+            {
+                GameManager.UIManager.inventoryUI.RefreshInventory();
+            }
         }
     }
 }

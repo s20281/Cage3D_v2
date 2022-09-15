@@ -23,6 +23,9 @@ public class FollowPlayer : MonoBehaviour
     {
         transform.position = Vector3.Slerp(transform.position, player.transform.position + new Vector3(0,height,0), followSpeed * Time.deltaTime);
 
+        if (!GameManager.PlayerManager.playerMovement.canMove)
+            return;
+
         if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(Vector3.up, -1 * rotateSpeed * Time.deltaTime);

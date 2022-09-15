@@ -7,7 +7,6 @@ public class InventoryUI : MonoBehaviour
 {
     public GameObject inventoryPanel;
     public List<GameObject> inventorySlotsUI = new List<GameObject>();
-
     public int ActiveInventory;
 
     // Start is called before the first frame update
@@ -21,6 +20,9 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
             ToggleInventory();
+
+        if (Input.GetKeyDown(KeyCode.Escape) && inventoryPanel.activeSelf)
+            ToggleInventory();
     }
 
     private void ToggleInventory()
@@ -28,12 +30,19 @@ public class InventoryUI : MonoBehaviour
         inventoryPanel.SetActive(!inventoryPanel.activeSelf);
 
         if (inventoryPanel.activeSelf)
+        {
             RefreshInventory();
+            GameManager.PlayerManager.playerMovement.SwitchFreeze(true);
+        }
+        else
+        {
+            GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
+        }
     }
 
     public void RefreshInventory()
     {
-        var inv = GameManager.instance.teamManager.heroes[ActiveInventory].GetComponent<Inventory>();
+        var inv = GameManager.TeamManager.heroes[ActiveInventory].GetComponent<Inventory>();
 
         for(int i = 0; i < inv.maxItemsCount; i++)
         {
@@ -41,8 +50,12 @@ public class InventoryUI : MonoBehaviour
 
             if(!inv.slots[i].isEmpty)
             {
-                Debug.Log(inv.slots[i].id + " " + inv.slots[i].itemData.id);
-                inventorySlotsUI[i].transform.GetChild(0).gameObject.GetComponent<Image>().sprite = inv.slots[i].itemData.icon;
+                inventorySlotsUI[i].transform.GetChild(1).gameObject.SetActive(true);
+                inventorySlotsUI[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = inv.slots[i].itemData.icon;
+            }
+            else
+            {
+                inventorySlotsUI[i].transform.GetChild(1).gameObject.SetActive(false);
             }
         }
     }

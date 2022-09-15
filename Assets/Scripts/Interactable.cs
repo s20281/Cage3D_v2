@@ -17,7 +17,7 @@ public abstract class Interactable : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (GameManager.instance.playerManager.DistanceFromPlayer(transform.position) < interactionRange)
+        if (GameManager.PlayerManager.DistanceFromPlayer(transform.position) < interactionRange)
         {
             canInteract = true;
             foreach (Outline outline in outlines)
