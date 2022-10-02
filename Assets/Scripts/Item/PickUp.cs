@@ -11,11 +11,6 @@ public class PickUp : Interactable
         {
             Debug.Log(gameObject.name + " added to inventory");
             Destroy(gameObject);
-
-            if(GameManager.UIManager.inventoryUI.inventoryPanel.activeSelf)
-            {
-                GameManager.UIManager.inventoryUI.RefreshInventory();
-            }
         }
     }
 }

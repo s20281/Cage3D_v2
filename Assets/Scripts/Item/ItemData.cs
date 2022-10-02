@@ -27,4 +27,5 @@ public enum ItemCategory
     Key,
     Readable,
     Consumable,
+    None
 }

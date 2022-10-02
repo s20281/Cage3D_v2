@@ -5,4 +5,9 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public ItemData itemData;
+
+    public void SetData(ItemData itemData)
+    {
+        this.itemData = itemData;
+    }
 }

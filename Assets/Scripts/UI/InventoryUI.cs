@@ -9,10 +9,16 @@ public class InventoryUI : MonoBehaviour
     public List<GameObject> inventorySlotsUI = new List<GameObject>();
     public int ActiveInventory;
 
+    public GameObject heldItemIcon;
+    public bool holdingItem = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        for(int i = 0; i<inventorySlotsUI.Count; i++)
+        {
+            inventorySlotsUI[i].GetComponent<InventorySlotUI>().ID = i;
+        }
     }
 
     // Update is called once per frame
@@ -23,6 +29,11 @@ public class InventoryUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && inventoryPanel.activeSelf)
             ToggleInventory();
+
+        if(holdingItem)
+        {
+            FollowMouse();
+        }
     }
 
     private void ToggleInventory()
@@ -46,17 +57,22 @@ public class InventoryUI : MonoBehaviour
 
         for(int i = 0; i < inv.maxItemsCount; i++)
         {
-            //Debug.Log(inv.slots[i].isEmpty);
-
-            if(!inv.slots[i].isEmpty)
+            var slot = inventorySlotsUI[i].GetComponent<InventorySlotUI>();
+            if (!inv.slots[i].isEmpty)
             {
-                inventorySlotsUI[i].transform.GetChild(1).gameObject.SetActive(true);
-                inventorySlotsUI[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = inv.slots[i].itemData.icon;
+                slot.icon.GetComponent<Image>().sprite = inv.slots[i].itemData.icon;
+                slot.icon.SetActive(true);
             }
             else
             {
-                inventorySlotsUI[i].transform.GetChild(1).gameObject.SetActive(false);
+                slot.icon.SetActive(false);
             }
         }
+    }
+
+    public void FollowMouse()
+    {
+        heldItemIcon.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
+        //Cursor.visible = false;
     }
 }
