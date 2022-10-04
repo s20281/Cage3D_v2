@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Hej! Mi\u0142o ci\u0119 pozna\u0107."
+  responses:
+  - responseText: "Cze\u015B\u0107"
+    dialogueObject: {fileID: 11400000, guid: 96c38ba3f5454144ba25e2bc1b356bc8, type: 2}
+    objectToDrop: {fileID: 0}
+  - responseText: "O nie, spadam st\u0105d."
+    dialogueObject: {fileID: 11400000, guid: 04ff304d12305b148afe0c04f02a6589, type: 2}
+    objectToDrop: {fileID: 0}
+  - responseText: "Hej, mi r\xF3wnie\u017C jest bardzo mi\u0142o"
+    dialogueObject: {fileID: 11400000, guid: 3d86fe2576a55704383e5530040c88d2, type: 2}
+    objectToDrop: {fileID: 0}
