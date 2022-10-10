@@ -27,7 +27,7 @@ public class InventorySlotUI : MonoBehaviour
             if (activeInv.slots[ID].isEmpty)
             {
                 var held = invUI.heldItemIcon.GetComponent<HeldItem>().GetHeldItem();
-                activeInv.AddItem(held);
+                activeInv.AddItem(held, ID);
             }
         }
     }
