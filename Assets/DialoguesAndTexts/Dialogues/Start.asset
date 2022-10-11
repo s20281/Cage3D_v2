@@ -17,10 +17,13 @@ MonoBehaviour:
   responses:
   - responseText: "Cze\u015B\u0107"
     dialogueObject: {fileID: 11400000, guid: 96c38ba3f5454144ba25e2bc1b356bc8, type: 2}
-    objectToDrop: {fileID: 0}
+    objectToGet: {fileID: 0}
+    doorToOpen: {fileID: 0}
   - responseText: "O nie, spadam st\u0105d."
     dialogueObject: {fileID: 11400000, guid: 04ff304d12305b148afe0c04f02a6589, type: 2}
-    objectToDrop: {fileID: 0}
+    objectToGet: {fileID: 0}
+    doorToOpen: {fileID: 0}
   - responseText: "Hej, mi r\xF3wnie\u017C jest bardzo mi\u0142o"
     dialogueObject: {fileID: 11400000, guid: 3d86fe2576a55704383e5530040c88d2, type: 2}
-    objectToDrop: {fileID: 0}
+    objectToGet: {fileID: 9096038554736866933, guid: 54f0c46be1bfd6f4d97ba5390d87ee42, type: 3}
+    doorToOpen: {fileID: 0}
