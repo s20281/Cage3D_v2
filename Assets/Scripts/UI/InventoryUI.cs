@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour
 {
     public GameObject inventoryPanel;
     public List<GameObject> inventorySlotsUI = new List<GameObject>();
+    public List<GameObject> equipmentSlotsUI = new List<GameObject>();
     public int ActiveInventory;
 
     public GameObject heldItemIcon;
@@ -68,6 +69,49 @@ public class InventoryUI : MonoBehaviour
                 slot.icon.SetActive(false);
             }
         }
+
+        //for (int i = 0; i < equipmentSlotsUI.Count; i++)
+        //{
+        //    var slot = equipmentSlotsUI[i].GetComponent<EquipmentSlot>();
+        //    if (!inv.slots[i].isEmpty)
+        //    {
+        //        slot.icon.GetComponent<Image>().sprite = inv.slots[i].itemData.icon;
+        //        slot.icon.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        slot.icon.SetActive(false);
+        //    }
+        //}
+
+    }
+
+    public GameObject GetEquipmentSlot(EquipmentSlot eqSlot)
+    {
+        var index = -1;
+        switch(eqSlot.type)
+        {
+            case EquipmentSlotType.Armor1:
+                index = 0;
+                break;
+            case EquipmentSlotType.Armor2:
+                index = 1;
+                break;
+            case EquipmentSlotType.PrimaryWeapon:
+                index = 2;
+                break;
+            case EquipmentSlotType.Armor3:
+                index = 3;
+                break;
+            case EquipmentSlotType.Armor4:
+                index = 4;
+                break;
+            case EquipmentSlotType.SecondaryWeapon:
+                index = 5;
+                break;
+
+        }
+        return equipmentSlotsUI[index];
     }
 
     public void FollowMouse()

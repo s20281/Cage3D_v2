@@ -27,5 +27,6 @@ public enum ItemCategory
     Key,
     Readable,
     Consumable,
-    None
+    None,
+    Armor
 }

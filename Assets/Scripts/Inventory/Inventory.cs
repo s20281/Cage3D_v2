@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public List<InventorySlot> slots;
+
+    public EquipmentSlot primaryWeapon;
+    public EquipmentSlot secondaryWeapon;
+    public EquipmentSlot armor1;
+    public EquipmentSlot armor2;
+    public EquipmentSlot armor3;
+    public EquipmentSlot armor4;
+    public HeldItem heldItem;
+
     public int maxItemsCount = 12;
 
     private void Start()
@@ -21,11 +31,19 @@ public class Inventory : MonoBehaviour
             slot.isEmpty = true;
             slots.Add(slot);
         }
+
+        primaryWeapon = new EquipmentSlot();
+        secondaryWeapon = new EquipmentSlot();
+        armor1 = new EquipmentSlot();
+        armor2 = new EquipmentSlot();
+        armor3 = new EquipmentSlot();
+        armor4 = new EquipmentSlot();
     }
 
-    public bool AddItem(Item item)
+    public bool AddItem(Item item, int index = -1)
     {
-        var index = FindFreeSlot();
+        if(index == -1)
+            index = FindFreeSlot();
 
         if(index == -1)
         {
@@ -47,31 +65,50 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
+    public ItemData RemoveEqItem(EquipmentSlot eqSlot)
+    {
+        if (eqSlot.isEmpty)
+        {
+            Debug.LogError("no item");
+            return null;
+        }
+
+        eqSlot.isEmpty = true;
+
+        return eqSlot.itemData;
+    }
+
+    public void SetEqItem(Item item, EquipmentSlot eqSlot)
+    {
+        eqSlot.itemData = item.itemData;
+        eqSlot.isEmpty = false;
+    }
+
     public ItemData RemoveItem(int ID)
     {
-        if (!slots[ID].isEmpty)
+        if (slots[ID].isEmpty)
         {
-            if(slots[ID].count > 1)
-            {
-                slots[ID].count--;
-            }
-            else
-            {
-                slots[ID].id = -1;
-                slots[ID].itemCategory = ItemCategory.None;
-                slots[ID].count = 0;
-                slots[ID].isEmpty = true;
-                GameManager.UIManager.inventoryUI.inventorySlotsUI[ID].GetComponent<InventorySlotUI>().icon.SetActive(false);
-            }
-            if (GameManager.UIManager.inventoryUI.inventoryPanel.activeSelf)
-            {
-                GameManager.UIManager.inventoryUI.RefreshInventory();
-            }
+            Debug.LogError("no item");
+            return null;
+        }
 
-            return slots[ID].itemData;
+        if (slots[ID].count > 1)
+        {
+            slots[ID].count--;
         }
         else
-            return null;
+        {
+            slots[ID].id = -1;
+            slots[ID].itemCategory = ItemCategory.None;
+            slots[ID].count = 0;
+            slots[ID].isEmpty = true;
+            GameManager.UIManager.inventoryUI.inventorySlotsUI[ID].GetComponent<InventorySlotUI>().icon.SetActive(false);
+        }
+        if (GameManager.UIManager.inventoryUI.inventoryPanel.activeSelf)
+        {
+            GameManager.UIManager.inventoryUI.RefreshInventory();
+        }
+        return slots[ID].itemData;
     }
 
     public int FindFreeSlot()
@@ -92,4 +129,11 @@ public class InventorySlot
     public int count;
     public bool isEmpty;
     public ItemData itemData;
+}
+
+public class EquipmentSlot
+{
+    public ItemData itemData;
+    public EquipmentSlotType type;
+    public bool isEmpty = true;
 }

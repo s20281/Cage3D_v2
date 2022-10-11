@@ -5,15 +5,13 @@ using UnityEngine.UI;
 
 public class HeldItem : MonoBehaviour
 {
-    Item item;
+    public Item item;
 
     public void SetHeldItem(ItemData itemData, GameObject icon)
     {
         gameObject.SetActive(true);
         item = new Item();
         item.SetData(itemData);
-
-        print(itemData.id);
 
         GetComponent<Image>().sprite = icon.GetComponent<Image>().sprite;
         GameManager.UIManager.inventoryUI.holdingItem = true;
