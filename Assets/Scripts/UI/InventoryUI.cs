@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject inventoryPanel;
     public List<GameObject> inventorySlotsUI = new List<GameObject>();
     public List<GameObject> equipmentSlotsUI = new List<GameObject>();
-    public int ActiveInventory;
+    public int activeInventory;
 
     public GameObject heldItemIcon;
     public bool holdingItem = true;
@@ -43,6 +43,7 @@ public class InventoryUI : MonoBehaviour
 
         if (inventoryPanel.activeSelf)
         {
+            heroName.text = GameManager.TeamManager.currentHeroGO.GetComponent<Hero>().heroData.name;
             RefreshInventory();
             GameManager.PlayerManager.playerMovement.SwitchFreeze(true);
         }
@@ -54,7 +55,7 @@ public class InventoryUI : MonoBehaviour
 
     public void RefreshInventory()
     {
-        var inv = GameManager.TeamManager.heroes[ActiveInventory].GetComponent<Inventory>();
+        var inv = GameManager.TeamManager.heroes[activeInventory].GetComponent<Inventory>();
 
         for(int i = 0; i < inv.maxItemsCount; i++)
         {
@@ -70,19 +71,21 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-        //for (int i = 0; i < equipmentSlotsUI.Count; i++)
-        //{
-        //    var slot = equipmentSlotsUI[i].GetComponent<EquipmentSlot>();
-        //    if (!inv.slots[i].isEmpty)
-        //    {
-        //        slot.icon.GetComponent<Image>().sprite = inv.slots[i].itemData.icon;
-        //        slot.icon.SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        slot.icon.SetActive(false);
-        //    }
-        //}
+        for (int i = 0; i < equipmentSlotsUI.Count; i++)
+        {
+            var slot = equipmentSlotsUI[i].GetComponent<EquipmentSlotUI>();
+            if (!slot.GetEquipmentSlot().isEmpty)
+            {
+                slot.icon.SetActive(false);
+                slot.image.SetActive(true);
+                slot.image.GetComponent<Image>().sprite = slot.GetEquipmentSlot().itemData.icon;
+            }
+            else
+            {
+                slot.icon.SetActive(true);
+                slot.image.SetActive(false);
+            }
+        }
 
     }
 
@@ -118,5 +121,34 @@ public class InventoryUI : MonoBehaviour
     {
         heldItemIcon.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
         //Cursor.visible = false;
+    }
+
+    [SerializeField] private Text heroName;
+    public void ChangeHeroLeft()
+    {
+        ChangeHero(-1);
+    }
+    public void ChangeHeroRight()
+    {
+        ChangeHero(1);
+    }
+
+    private void ChangeHero(int direction)
+    {
+        var nextHero = GameManager.TeamManager.GetCurrentHeroId() + direction;
+
+        if(nextHero >= GameManager.TeamManager.heroes.Count)
+        {
+            nextHero = 0;
+        }
+        else if(nextHero < 0)
+        {
+            nextHero = GameManager.TeamManager.heroes.Count - 1;
+        }
+
+        GameManager.TeamManager.SetCurrentHeroId(nextHero);
+        activeInventory = nextHero;
+        heroName.text = GameManager.TeamManager.heroes[nextHero].GetComponent<Hero>().heroData.name;
+        RefreshInventory();
     }
 }

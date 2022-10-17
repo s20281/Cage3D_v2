@@ -13,7 +13,7 @@ public class InventorySlotUI : MonoBehaviour
     public void OnPressed()
     {
         var invUI = GameManager.UIManager.inventoryUI;
-        var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.currentHero].GetComponent<Inventory>();
+        var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.GetCurrentHeroId()].GetComponent<Inventory>();
         
         if (!invUI.holdingItem)
         {

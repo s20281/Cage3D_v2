@@ -13,7 +13,7 @@ public class EquipmentSlotUI : MonoBehaviour
     public void OnPressed()
     {
         var invUI = GameManager.UIManager.inventoryUI;
-        var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.currentHero].GetComponent<Inventory>();
+        var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.GetCurrentHeroId()].GetComponent<Inventory>();
         var eqSlot = GetEquipmentSlot();
 
         if (!invUI.holdingItem)
@@ -59,9 +59,9 @@ public class EquipmentSlotUI : MonoBehaviour
         }
     }
 
-    private EquipmentSlot GetEquipmentSlot()
+    public EquipmentSlot GetEquipmentSlot()
     {
-        var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.currentHero].GetComponent<Inventory>();
+        var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.GetCurrentHeroId()].GetComponent<Inventory>();
 
         switch (slotType)
         {
