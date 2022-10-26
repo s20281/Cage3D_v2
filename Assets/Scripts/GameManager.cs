@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Layer
+{
+    Default,
+    TransparentFX,
+    IgnoreRaycast,
+    Player,
+    Water,
+    UI,
+    Interactable
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -15,10 +26,11 @@ public class GameManager : MonoBehaviour
     public static TeamManager TeamManager => Instance.teamManager;
     public TeamManager teamManager;
 
-    
     public static UIManager UIManager => Instance.uIManager;
     public UIManager uIManager;
 
+    public static CombatManager CombatManager => Instance.combatManager;
+    public CombatManager combatManager;
 
 
     private void Awake()
