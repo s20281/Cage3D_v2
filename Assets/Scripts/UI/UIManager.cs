@@ -7,4 +7,5 @@ public class UIManager : MonoBehaviour
     public InventoryUI inventoryUI;
     public DialogueUI dialogueUI;
     public ReadUI readUI;
+    public CombatUI combatUI;
 }

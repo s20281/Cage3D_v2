@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7140659057591736967}
   - component: {fileID: 2734918751459213891}
   m_Layer: 5
-  m_Name: StatValue
+  m_Name: DodgeValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 6679579999248878036}
   - component: {fileID: 7740134059456314681}
   m_Layer: 5
-  m_Name: Stat (2)
+  m_Name: Accuracy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 2453981275077647110}
   - component: {fileID: 4006790506378764627}
   m_Layer: 5
-  m_Name: Stat (4)
+  m_Name: Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 5881326415374498666}
   - component: {fileID: 5636760999585338297}
   - component: {fileID: 895260394938052505}
+  - component: {fileID: 5324352012757710733}
   m_Layer: 5
   m_Name: CombatInfo
   m_TagString: Untagged
@@ -464,6 +465,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5324352012757710733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067384174278581883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5994cab000b8a41be2ca4781307512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 2173624440591237830}
+  strength: {fileID: 579479208665619374}
+  accuracy: {fileID: 3245876452780517554}
+  dodge: {fileID: 2734918751459213891}
+  speed: {fileID: 4333087242244493051}
 --- !u!1 &2904017471844344414
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +494,7 @@ GameObject:
   - component: {fileID: 6489213777098966273}
   - component: {fileID: 579479208665619374}
   m_Layer: 5
-  m_Name: StatValue
+  m_Name: StrengthValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -555,7 +573,7 @@ GameObject:
   - component: {fileID: 2443950715028104004}
   - component: {fileID: 4333087242244493051}
   m_Layer: 5
-  m_Name: StatValue
+  m_Name: SpeedValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +652,7 @@ GameObject:
   - component: {fileID: 9143236054888913928}
   - component: {fileID: 736036648067500632}
   m_Layer: 5
-  m_Name: Stat (3)
+  m_Name: Dodge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,7 +729,7 @@ GameObject:
   - component: {fileID: 5087017389827799140}
   - component: {fileID: 3634975241998213592}
   m_Layer: 5
-  m_Name: StatImage
+  m_Name: HealthImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -786,7 +804,7 @@ GameObject:
   - component: {fileID: 1166608249392032317}
   - component: {fileID: 2173624440591237830}
   m_Layer: 5
-  m_Name: StatValue
+  m_Name: HealthValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -865,7 +883,7 @@ GameObject:
   - component: {fileID: 5021943385549058303}
   - component: {fileID: 6886458361869232719}
   m_Layer: 5
-  m_Name: StatImage
+  m_Name: SpeedImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,7 +958,7 @@ GameObject:
   - component: {fileID: 3706387928645113737}
   - component: {fileID: 3648018538579190443}
   m_Layer: 5
-  m_Name: StatImage
+  m_Name: StrengthImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,7 +1033,7 @@ GameObject:
   - component: {fileID: 1462467617686020279}
   - component: {fileID: 53526541687559244}
   m_Layer: 5
-  m_Name: StatImage
+  m_Name: AccuracyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,7 +1175,7 @@ GameObject:
   - component: {fileID: 18258165240913221}
   - component: {fileID: 4275051393094447557}
   m_Layer: 5
-  m_Name: StatImage
+  m_Name: DodgeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1232,7 +1250,7 @@ GameObject:
   - component: {fileID: 2653968780171849996}
   - component: {fileID: 3245876452780517554}
   m_Layer: 5
-  m_Name: StatValue
+  m_Name: AccuracyValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -94,22 +94,22 @@ public class InventoryUI : MonoBehaviour
         var index = -1;
         switch(eqSlot.type)
         {
-            case EquipmentSlotType.Armor1:
+            case EquipmentSlotType.Helmet:
                 index = 0;
                 break;
-            case EquipmentSlotType.Armor2:
+            case EquipmentSlotType.Armor:
                 index = 1;
                 break;
-            case EquipmentSlotType.PrimaryWeapon:
+            case EquipmentSlotType.MeleeWeapon:
                 index = 2;
                 break;
-            case EquipmentSlotType.Armor3:
+            case EquipmentSlotType.Consumables:
                 index = 3;
                 break;
-            case EquipmentSlotType.Armor4:
+            case EquipmentSlotType.Special:
                 index = 4;
                 break;
-            case EquipmentSlotType.SecondaryWeapon:
+            case EquipmentSlotType.RangeWeapon:
                 index = 5;
                 break;
 

@@ -9,6 +9,7 @@ public class EquipmentSlotUI : MonoBehaviour
     public GameObject icon;
     public GameObject image;
     public EquipmentSlotType slotType;
+    public ItemCategory slotItemType;
 
     public void OnPressed()
     {
@@ -44,15 +45,21 @@ public class EquipmentSlotUI : MonoBehaviour
     {
         var itemCategory = GameManager.UIManager.inventoryUI.heldItemIcon.GetComponent<HeldItem>().item.itemData.itemCategory;
 
+        return itemCategory == slotItemType;
+
         switch (slotType)
         {
-            case EquipmentSlotType.PrimaryWeapon:
-            case EquipmentSlotType.SecondaryWeapon:
-                return (itemCategory == ItemCategory.Weapon);
-            case EquipmentSlotType.Armor1:   
-            case EquipmentSlotType.Armor2:
-            case EquipmentSlotType.Armor3:
-            case EquipmentSlotType.Armor4:
+            case EquipmentSlotType.MeleeWeapon:
+                return (itemCategory == ItemCategory.MeleeWeapon);
+            case EquipmentSlotType.RangeWeapon:
+                return (itemCategory == ItemCategory.RangeWeapon);
+            case EquipmentSlotType.Helmet:
+                return (itemCategory == ItemCategory.Helmet);
+            case EquipmentSlotType.Armor:
+                return (itemCategory == ItemCategory.Armor);
+            case EquipmentSlotType.Consumables:
+                return (itemCategory == ItemCategory.Consumable);
+            case EquipmentSlotType.Special:
                 return (itemCategory == ItemCategory.Armor);
             default:
                 return false;
@@ -65,17 +72,17 @@ public class EquipmentSlotUI : MonoBehaviour
 
         switch (slotType)
         {
-            case EquipmentSlotType.PrimaryWeapon:
+            case EquipmentSlotType.MeleeWeapon:
                 return activeInv.primaryWeapon;
-            case EquipmentSlotType.SecondaryWeapon:
+            case EquipmentSlotType.RangeWeapon:
                 return activeInv.secondaryWeapon;
-            case EquipmentSlotType.Armor1:
+            case EquipmentSlotType.Helmet:
                 return activeInv.armor1;
-            case EquipmentSlotType.Armor2:
+            case EquipmentSlotType.Armor:
                 return activeInv.armor2;
-            case EquipmentSlotType.Armor3:
+            case EquipmentSlotType.Consumables:
                 return activeInv.armor3;
-            case EquipmentSlotType.Armor4:
+            case EquipmentSlotType.Special:
                 return activeInv.armor4;
             default:
                 Debug.LogError("nie ma takiego typu");
@@ -86,10 +93,10 @@ public class EquipmentSlotUI : MonoBehaviour
 
 public enum EquipmentSlotType
 {
-    PrimaryWeapon,
-    SecondaryWeapon,
-    Armor1,
-    Armor2,
-    Armor3,
-    Armor4
+    MeleeWeapon,
+    RangeWeapon,
+    Helmet,
+    Armor,
+    Consumables,
+    Special
 }

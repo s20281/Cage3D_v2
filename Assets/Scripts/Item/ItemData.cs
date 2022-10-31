@@ -23,10 +23,13 @@ public class WeaponData : ItemData
 
 public enum ItemCategory
 {
-    Weapon,
+    None,
     Key,
     Readable,
     Consumable,
-    None,
-    Armor
+    MeleeWeapon,
+    Armor,
+    Helmet,
+    RangeWeapon,
+    Special
 }
