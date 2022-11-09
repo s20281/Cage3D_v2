@@ -73,9 +73,9 @@ public class EquipmentSlotUI : MonoBehaviour
         switch (slotType)
         {
             case EquipmentSlotType.MeleeWeapon:
-                return activeInv.primaryWeapon;
+                return activeInv.meleeWeapon;
             case EquipmentSlotType.RangeWeapon:
-                return activeInv.secondaryWeapon;
+                return activeInv.rangeWeapon;
             case EquipmentSlotType.Helmet:
                 return activeInv.armor1;
             case EquipmentSlotType.Armor:

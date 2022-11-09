@@ -2716,7 +2716,6 @@ GameObject:
   - component: {fileID: 7237090964029200648}
   - component: {fileID: 1171634594}
   - component: {fileID: 1171634596}
-  - component: {fileID: 7364344818564151414}
   m_Layer: 0
   m_Name: CombatSkeleton
   m_TagString: Untagged
@@ -2732,7 +2731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2537096344037913985}
   m_LocalRotation: {x: -0, y: -0.9848078, z: 0, w: -0.17364807}
-  m_LocalPosition: {x: 3.68, y: 0.53, z: 2.800003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2537096344038140391}
@@ -2823,24 +2822,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &7364344818564151414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2537096344037913985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d70accff0143b304e8be47ce9dae9d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  health: 10
-  accuracy: 2
-  dodge: 1
-  strength: 1
-  speed: 1
 --- !u!1 &2537096344037913987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,8 +3907,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2537096344037914055}
-  m_LocalRotation: {x: 0.00000005215406, y: -0.000000037252903, z: 0.000000017218554, w: 1}
-  m_LocalPosition: {x: -0.001056504, y: 1.0307084, z: 0.03486962}
+  m_LocalRotation: {x: 0.000000052154057, y: -0.000000029802322, z: 0.00000001721855, w: 1}
+  m_LocalPosition: {x: -0.0010569142, y: 1.0307084, z: 0.034866214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2537096344038140373}

@@ -2522,7 +2522,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff3b9f6a07435ad42a5ca78e36114c62, type: 2}
+  - {fileID: 2100000, guid: 93f564463b5c7bb4b8c46597b0a55f8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3691,8 +3691,8 @@ Animator:
   m_LinearVelocityBlending: 0
   m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
     are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Hip_L'\n\tTransform 'Hip_L'\n\tFrom animation
-    clip 'Slash'"
+    by Humanoid clips.\n\tTransform 'Shoulder_R'\n\tTransform 'Hip_L'\n\tTransform
+    'Shoulder_R'\n\tTransform 'Hip_L'\n\tFrom animation clip 'Slash'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -5355,7 +5355,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff3b9f6a07435ad42a5ca78e36114c62, type: 2}
+  - {fileID: 2100000, guid: 93f564463b5c7bb4b8c46597b0a55f8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

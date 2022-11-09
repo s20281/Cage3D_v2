@@ -43,7 +43,7 @@ public class InventoryUI : MonoBehaviour
 
         if (inventoryPanel.activeSelf)
         {
-            heroName.text = GameManager.TeamManager.currentHeroGO.GetComponent<Hero>().heroData.name;
+            heroName.text = GameManager.TeamManager.currentHeroGO.GetComponent<Hero>().heroData.heroName;
             RefreshInventory();
             GameManager.PlayerManager.playerMovement.SwitchFreeze(true);
         }
@@ -148,7 +148,7 @@ public class InventoryUI : MonoBehaviour
 
         GameManager.TeamManager.SetCurrentHeroId(nextHero);
         activeInventory = nextHero;
-        heroName.text = GameManager.TeamManager.heroes[nextHero].GetComponent<Hero>().heroData.name;
+        heroName.text = GameManager.TeamManager.heroes[nextHero].GetComponent<Hero>().heroData.heroName;
         RefreshInventory();
     }
 }

@@ -38,6 +38,7 @@ public class TeamManager : MonoBehaviour
     public void AddHero(HeroData heroData)
     {
         var newHero = Instantiate(heroPrefab, transform);
+        newHero.name = heroData.heroName;
         newHero.GetComponent<Hero>().heroData = heroData;
         heroes.Add(newHero);
     }

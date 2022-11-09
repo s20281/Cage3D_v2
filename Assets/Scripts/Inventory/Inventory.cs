@@ -7,8 +7,8 @@ public class Inventory : MonoBehaviour
 {
     public List<InventorySlot> slots;
 
-    public EquipmentSlot primaryWeapon;
-    public EquipmentSlot secondaryWeapon;
+    public EquipmentSlot meleeWeapon;
+    public EquipmentSlot rangeWeapon;
     public EquipmentSlot armor1;
     public EquipmentSlot armor2;
     public EquipmentSlot armor3;
@@ -32,8 +32,8 @@ public class Inventory : MonoBehaviour
             slots.Add(slot);
         }
 
-        primaryWeapon = new EquipmentSlot();
-        secondaryWeapon = new EquipmentSlot();
+        meleeWeapon = new EquipmentSlot();
+        rangeWeapon = new EquipmentSlot();
         armor1 = new EquipmentSlot();
         armor2 = new EquipmentSlot();
         armor3 = new EquipmentSlot();

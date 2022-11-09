@@ -7,6 +7,8 @@ public class Door : Interactable
     public bool isOpened;
     private bool needsKey;
     private Animator animator;
+    private bool onCooldown = false;
+    private float cooldown = 1f;
 
     public FogOfWar fowInRoom;
 
@@ -17,10 +19,15 @@ public class Door : Interactable
 
     public override void Interact()
     {
+        if (onCooldown)
+            return;
+
         if (isOpened)
             Close();
         else
             Open();
+
+        StartCoroutine(Cooldown());
     }
 
     private void Open()
@@ -36,5 +43,12 @@ public class Door : Interactable
     {
         animator.Play("Close");
         isOpened = false;
+    }
+
+    private IEnumerator Cooldown()
+    {
+        onCooldown = true;
+        yield return new WaitForSeconds(cooldown);
+        onCooldown = false;
     }
 }

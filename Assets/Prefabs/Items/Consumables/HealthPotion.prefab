@@ -101,6 +101,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4404855480773453921}
     m_Modifications:
+    - target: {fileID: -6860895033569716450, guid: c6179e854b44e2541a9956947c806de0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c6179e854b44e2541a9956947c806de0, type: 3}
       propertyPath: m_Name
       value: Potion_Red
