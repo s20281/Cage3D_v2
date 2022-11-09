@@ -52,7 +52,9 @@ public class CombatStats : MonoBehaviour
 
     private void Die()
     {
-        GameManager.UIManager.combatUI.SwitchInfo(GetComponent<CombatCharacter>(), false);
+        var character = GetComponent<CombatCharacter>();
+        GameManager.UIManager.combatUI.SwitchInfo(character, false);
+        GameManager.CombatManager.Turn.OnDead(character);
         Destroy(gameObject);
     }
 }

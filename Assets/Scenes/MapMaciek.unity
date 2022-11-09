@@ -4529,6 +4529,7 @@ MonoBehaviour:
   maxSpeedRoll: 10
   aliveHeroes: []
   aliveEnemies: []
+  actionTaken: 0
 --- !u!114 &400936109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8510,6 +8511,7 @@ MonoBehaviour:
   - {fileID: 2095915207}
   - {fileID: 586065273}
   - {fileID: 1924853003}
+  skillUI: {fileID: 816212717}
 --- !u!1 &693222190
 GameObject:
   m_ObjectHideFlags: 0
@@ -17293,6 +17295,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1941116000, guid: 54f0c46be1bfd6f4d97ba5390d87ee42, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: a292da75ad1d9bd4a976914f2c629a80, type: 2}
     - target: {fileID: 1974471562009308270, guid: 54f0c46be1bfd6f4d97ba5390d87ee42, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -27412,10 +27418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2842781478989860131, guid: d8b24547ef1545d4f842b697d756efd8, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Shoulder_R'\n\tTransform 'Hip_L'\n\tTransform
-        'Shoulder_R'\n\tTransform 'Hip_L'\n\tFrom animation clip 'Slash'"
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8b24547ef1545d4f842b697d756efd8, type: 3}
@@ -27587,10 +27590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2904935775825686045, guid: 1d40fc26e6eb9744797c2fcd13b5431a, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Shoulder_R'\n\tTransform 'Hip_L'\n\tTransform
-        'Shoulder_R'\n\tTransform 'Hip_L'\n\tFrom animation clip 'Slash'"
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d40fc26e6eb9744797c2fcd13b5431a, type: 3}
@@ -28163,6 +28163,10 @@ PrefabInstance:
     - target: {fileID: 5724139698200973144, guid: 51d7bb832888abc4480168b0ac8a9e3d, type: 3}
       propertyPath: m_Name
       value: CombatAstronaut
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552385911166876807, guid: 51d7bb832888abc4480168b0ac8a9e3d, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d7bb832888abc4480168b0ac8a9e3d, type: 3}

@@ -6,6 +6,7 @@ public class CombatUI : MonoBehaviour
 {
     public List<CombatInfo> enemyInfos;
     public List<CombatInfo> heroInfos;
+    public SkillUI skillUI;
 
 
     public void SwitchInfo(CombatCharacter character, bool activate)

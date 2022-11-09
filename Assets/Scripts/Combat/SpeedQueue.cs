@@ -34,6 +34,11 @@ public class SpeedQueue
         }
     }
 
+    public void RemoveCharacter(CombatCharacter character)
+    {
+        characters.Remove(character);
+    }
+
     public CombatCharacter Dequeue()
     {
         int maxSpeed = int.MinValue;

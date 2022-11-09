@@ -4,21 +4,41 @@ using UnityEngine;
 
 public class UseSkill : MonoBehaviour
 {
-    public void Use(CombatCharacter target)
+    public bool Use(CombatCharacter target)
     {
         if (target.isHero)
-            return;
+            return false;
         var animator = GameManager.CombatManager.currentCharacter.GetComponent<Animator>();
         animator.CrossFade("SwordHit2", 0.3f);
         AnimatorStateInfo animState = animator.GetCurrentAnimatorStateInfo(0);
         float animTime = animState.normalizedTime % 1;
         StartCoroutine(Effect(animTime, target));
+        return true;
     }
 
     private IEnumerator Effect(float time, CombatCharacter target)
     {
         yield return new WaitForSeconds(time);
-        target.combatStats.ChangeHealth(-5);
+        MeleeAttack(target);
         GameManager.UIManager.combatUI.UpdateInfo(target);
     }
+
+
+    private void MeleeAttack(CombatCharacter target)
+    {
+        var character = GameManager.CombatManager.currentCharacter;
+        int damage = character.combatStats.strength;
+        if(character.isHero && !character.inventory.meleeWeapon.isEmpty)
+        {
+            damage += (character.inventory.meleeWeapon.itemData as WeaponData).baseDamage;
+        }
+
+        target.combatStats.ChangeHealth(-damage);
+    }
+
+    private void RangeAttack()
+    {
+
+    }
+
 }

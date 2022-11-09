@@ -9,6 +9,8 @@ public class CombatCharacter : MonoBehaviour
     private bool infoActive = false;
     private Outline outline;
     public CombatStats combatStats => GetComponent<CombatStats>();
+    public Inventory inventory;
+    public HeroData heroData;
 
     private void Start()
     {
@@ -24,14 +26,15 @@ public class CombatCharacter : MonoBehaviour
         GameManager.UIManager.combatUI.UpdateInfo(this);
         GameManager.UIManager.combatUI.SwitchInfo(this, true);
         outline.enabled = true;
-        //UpdateInfo();
     }
 
     private void OnMouseExit()
     {
         infoActive = false;
         GameManager.UIManager.combatUI.SwitchInfo(this, false);
-        outline.enabled = false;
+
+        if(GameManager.CombatManager.currentCharacter != this)
+            outline.enabled = false;
     }
 
     private void OnMouseDown()
@@ -41,7 +44,11 @@ public class CombatCharacter : MonoBehaviour
             return;
         }
 
-        GameManager.CombatManager.UseSkill.Use(this);
-        GameManager.CombatManager.DeselectSkills();
+        if(GameManager.CombatManager.UseSkill.Use(this))
+        {
+            GameManager.CombatManager.DeselectSkills();
+            GameManager.CombatManager.Turn.actionTaken = true;
+        }
+            
     }
 }

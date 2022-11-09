@@ -50,6 +50,8 @@ public class LoadCharacters : MonoBehaviour
                 heroCombatCharacter.position = i + 1;
                 hero.GetComponent<CombatStats>().SetupStats(heroData);
                 GetComponent<Turn>().aliveHeroes.Add(heroCombatCharacter);
+                heroCombatCharacter.heroData = heroData;
+                heroCombatCharacter.inventory = heroes[i].GetComponent<Inventory>();
 
                 if (i == 0)
                     GameManager.CombatManager.currentCharacter = heroCombatCharacter;

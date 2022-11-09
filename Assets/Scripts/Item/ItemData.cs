@@ -14,12 +14,6 @@ public class ItemData : ScriptableObject
     public GameObject prefab;
 }
 
-public class WeaponData : ItemData
-{
-    public float baseDamage;
-    //public Skill skill;
-}
-
 
 public enum ItemCategory
 {
