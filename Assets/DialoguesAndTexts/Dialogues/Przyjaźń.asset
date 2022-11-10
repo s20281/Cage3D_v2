@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "Nie zapomnij wej\u015Bc do tego pomieszczenia! Kryje si\u0119 tam co\u015B co
-    ci pomo\u017Ce w trudach twoich przyszlych przyg\xF3d. ajbdaiwjdauhdawdbajdbasdausdhasdashdashdjahsjdhajsdhajsdhajshdjashdjashdjah"
+    ci pomo\u017Ce w trudach twoich przyszlych przyg\xF3d. A przyokazji tu jest co\u015B
+    dla ciebie!"
   responses:
   - responseText: "Dzi\u0119kuj\u0119. Do zobaczenia!"
     dialogueObject: {fileID: 11400000, guid: 7ce7ca470bb665448babece6bcafb0b2, type: 2}
+    objectToGet: {fileID: 0}
     objectToGive: {fileID: 0}
+    doorToOpen: {fileID: 0}

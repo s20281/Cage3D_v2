@@ -18,12 +18,21 @@ MonoBehaviour:
   - responseText: "Cze\u015B\u0107"
     dialogueObject: {fileID: 11400000, guid: 96c38ba3f5454144ba25e2bc1b356bc8, type: 2}
     objectToGet: {fileID: 0}
+    objectToGive: {fileID: 7018536072461476001, guid: 0024b844582df1a47871fed667c39edb, type: 3}
     doorToOpen: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 12
   - responseText: "O nie, spadam st\u0105d."
     dialogueObject: {fileID: 11400000, guid: 04ff304d12305b148afe0c04f02a6589, type: 2}
     objectToGet: {fileID: 0}
-    doorToOpen: {fileID: 0}
+    objectToGive: {fileID: 0}
+    doorToOpen: {fileID: 7326208324989307129, guid: 6a388e3b843b8234b9354b6d15284a29, type: 3}
+    heroToAdd: {fileID: 11400000, guid: 786a49d0b5195d94e9072337c03ea23d, type: 2}
+    impactOnMind: -10
   - responseText: "Hej, mi r\xF3wnie\u017C jest bardzo mi\u0142o"
     dialogueObject: {fileID: 11400000, guid: 3d86fe2576a55704383e5530040c88d2, type: 2}
-    objectToGet: {fileID: 9096038554736866933, guid: 54f0c46be1bfd6f4d97ba5390d87ee42, type: 3}
+    objectToGet: {fileID: 1941116000, guid: 54f0c46be1bfd6f4d97ba5390d87ee42, type: 3}
+    objectToGive: {fileID: 0}
     doorToOpen: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 0

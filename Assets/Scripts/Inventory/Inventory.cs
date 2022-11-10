@@ -42,10 +42,10 @@ public class Inventory : MonoBehaviour
 
     public bool AddItem(Item item, int index = -1)
     {
-        if(index == -1)
+        if (index == -1)
             index = FindFreeSlot();
 
-        if(index == -1)
+        if (index == -1)
         {
             Debug.Log("Za ma³o miejsca w inventory");
             return false;
@@ -113,14 +113,44 @@ public class Inventory : MonoBehaviour
 
     public int FindFreeSlot()
     {
-        for(int i = 0; i < slots.Count; i++)
+        for (int i = 0; i < slots.Count; i++)
         {
             if (slots[i].isEmpty)
                 return i;
         }
         return -1;
     }
+
+    public bool RemoveItemFromInventory(Item item)
+    {
+        var countId = -1;
+
+        foreach (InventorySlot slot in slots)
+        {
+            countId++;
+
+            if (slot != null)
+            {
+
+                if (slot.itemData == item.itemData)
+                {
+                    if (RemoveItem(countId) != null)
+                    {
+                        return true;
+                    }
+                }
+
+                //  Debug.Log(slot.itemData.name);
+                //  Debug.Log(item.itemData.name);
+            }
+        }
+
+        return false;
+
+
+    }
 }
+
 
 public class InventorySlot
 {

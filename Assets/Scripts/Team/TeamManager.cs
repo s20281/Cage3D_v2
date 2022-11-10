@@ -17,7 +17,7 @@ public class TeamManager : MonoBehaviour
     {
         heroes = new List<GameObject>();
 
-        foreach(Transform child in gameObject.transform)
+        foreach (Transform child in gameObject.transform)
         {
             heroes.Add(child.gameObject);
         }
@@ -27,9 +27,19 @@ public class TeamManager : MonoBehaviour
 
     public bool tryAddItem(Item item)
     {
-        for(int i = 0; i < heroes.Count; i++)
+        for (int i = 0; i < heroes.Count; i++)
         {
             if (heroes[i].GetComponent<Inventory>().AddItem(item))
+                return true;
+        }
+        return false;
+    }
+
+    public bool tryRemoveItem(Item item)
+    {
+        for (int i = 0; i < heroes.Count; i++)
+        {
+            if (heroes[i].GetComponent<Inventory>().RemoveItemFromInventory(item))
                 return true;
         }
         return false;

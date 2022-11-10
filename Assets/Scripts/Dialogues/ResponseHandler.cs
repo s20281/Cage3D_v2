@@ -18,11 +18,11 @@ public class ResponseHandler : MonoBehaviour
         responseBox.gameObject.SetActive(false);
         dialogueUI = GetComponent<DialogueUI>();
     }
-   public void ShowResponses(Response[] responses)
+    public void ShowResponses(Response[] responses)
     {
         float responseBoxHeight = 0;
 
-        foreach(Response response in responses)
+        foreach (Response response in responses)
         {
             GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
             responseButton.gameObject.SetActive(true);
@@ -31,7 +31,7 @@ public class ResponseHandler : MonoBehaviour
 
             tempResponseButtons.Add(responseButton);
 
-            responseBoxHeight += responseButtonTemplate.sizeDelta.y+2;
+            responseBoxHeight += responseButtonTemplate.sizeDelta.y + 2;
         }
 
         responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
@@ -46,13 +46,24 @@ public class ResponseHandler : MonoBehaviour
         foreach (GameObject button in tempResponseButtons)
         {
             Destroy(button);
-            
+
         }
 
         tempResponseButtons.Clear();
-        //przekazaæ tutaj czy ma przedmioty do dania lub dostania etc.
-        Debug.Log(response.GameObject);
-        dialogueUI.ShowDialogue(response.DialogueObject, response.GameObject, response.GameObject2);
+
+        if (response.ObjectToGive != null)
+        {
+            GameManager.TeamManager.tryRemoveItem(response.ObjectToGive);
+        }
+
+        if (response.ImpactOnMind != 0)
+        {
+            GameManager.PlayerManager.ChangeMindPoints(response.ImpactOnMind);
+        }
+
+
+
+        dialogueUI.ShowDialogue(response.DialogueObject, response.ObjectToGet, null, response.HeroToAdd);
 
 
     }

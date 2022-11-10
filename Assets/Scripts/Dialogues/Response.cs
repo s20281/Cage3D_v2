@@ -7,15 +7,17 @@ public class Response
 {
     [SerializeField] public string responseText;
     [SerializeField] private DialogueObject dialogueObject;
-    [SerializeField] private GameObject objectToGet;
-    [SerializeField] private GameObject doorToOpen;
-   // [SerializeField] private enum AddToTeam { Yes, No, NoNeed};
+    [SerializeField] private Item objectToGet;
+    [SerializeField] private Item objectToGive;
+    [SerializeField] private HeroData heroToAdd;
+    [SerializeField] private int impactOnMind;
 
 
     public string ResponseText => responseText;
 
     public DialogueObject DialogueObject => dialogueObject;
-    public GameObject GameObject => objectToGet;
-    public GameObject GameObject2 => doorToOpen;
-   // public AddToTeam AddToTeam1 => addToTeam;
+    public Item ObjectToGet => objectToGet;
+    public Item ObjectToGive => objectToGive;
+    public HeroData HeroToAdd => heroToAdd;
+    public int ImpactOnMind => impactOnMind;
 }

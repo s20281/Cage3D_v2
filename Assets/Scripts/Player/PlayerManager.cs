@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public PlayerMovement playerMovement;
+    public int mindPoints = 0;
 
     public Vector3 GetPlayerPosition()
     {
@@ -14,5 +15,10 @@ public class PlayerManager : MonoBehaviour
     public float DistanceFromPlayer(Vector3 position)
     {
         return Vector3.Distance(position, transform.position);
+    }
+
+    public int ChangeMindPoints(int pointToAdd)
+    {
+        return mindPoints += pointToAdd;
     }
 }

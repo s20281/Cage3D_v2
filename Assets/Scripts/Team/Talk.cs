@@ -2,22 +2,98 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum ImportanceType
+    {
+        Nic,
+        Psychika,
+        Si³a,
+        Unik,
+        Samotnik,
+        DuszaTowarzystwa
+    }
+
 public class Talk : Interactable
 {
     [SerializeField] private DialogueObject dialogue1;
-    [SerializeField] private DialogueObject dialogue2;
+    [SerializeField] private DialogueObject dialogue2; 
 
-    [SerializeField] private GameObject objectToGive;
-    [SerializeField] private bool canBeRecruited;
+    [SerializeField] private ImportanceType type;
+
+    [SerializeField] private GameObject doorToOpen;
+    [SerializeField] private GameObject prefabToFindStats;
+    [SerializeField] private GameObject prefabToCompareStats;
+    [SerializeField] private int prefferedMindPoints;
+
+   
+
 
     public override void Interact()
     {
-        starTalking();
+        startTalking();
 
     }
 
-    public void starTalking()
+    public void startTalking()
     {
-        GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, null);
+    
+       switch (type)
+        {
+
+            case ImportanceType.Nic:
+                GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                break;
+            case ImportanceType.Psychika:
+
+                if (GameManager.PlayerManager.mindPoints>=prefferedMindPoints)
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                }
+                else
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                }
+                break;
+            case ImportanceType.Si³a:
+                if (prefabToFindStats.GetComponent<CombatStats>().strength >= prefabToCompareStats.GetComponent<CombatStats>().strength)
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                }
+                else
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                }
+                break;
+            case ImportanceType.Unik:
+                if (prefabToFindStats.GetComponent<CombatStats>().dodge >= prefabToCompareStats.GetComponent<CombatStats>().dodge)
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                }
+                else
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                }
+                break;
+            case ImportanceType.Samotnik:
+                if (GameManager.TeamManager.heroes.Count < 4)
+                {                 
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                }
+                else
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                }
+                break;
+            case ImportanceType.DuszaTowarzystwa:
+                if (GameManager.TeamManager.heroes.Count >= 4)
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                }
+                else
+                {
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                }
+                break;
+            
+        }
     }
 }
