@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : Interactable
 {
     public bool isOpened;
-    public bool isUnlocked;
+    public bool isLocked;
     public Item keyToUnlock;
     private Animator animator;
     private bool onCooldown = false;
@@ -20,7 +20,7 @@ public class Door : Interactable
 
     public override void Interact()
     {
-        if (isUnlocked)
+        if (!isLocked)
         {
             Debug.Log("www");
             if (onCooldown)
@@ -34,12 +34,11 @@ public class Door : Interactable
             StartCoroutine(Cooldown());
         }
 
-        if (!isUnlocked && keyToUnlock != null)
+        if (isLocked && keyToUnlock != null)
         {
             Debug.Log("wejscie smoka");
             if (GameManager.TeamManager.tryRemoveItem(keyToUnlock))
             {
-                Debug.Log("tutaj");
                 Unlock();
                 Open();
             }
@@ -49,7 +48,7 @@ public class Door : Interactable
 
     public void Unlock()
     {
-        isUnlocked = true;
+        isLocked = false;
 
     }
 
