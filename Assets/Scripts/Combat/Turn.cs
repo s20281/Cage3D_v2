@@ -72,7 +72,8 @@ public class Turn : MonoBehaviour
             GameManager.CombatManager.currentCharacter = currentCharacter;
             currentCharacter.GetComponent<Outline>().enabled = true;
 
-            GameManager.UIManager.combatUI.skillUI.gameObject.SetActive(currentCharacter.isHero);
+            GameManager.UIManager.combatUI.skills.SetActive(currentCharacter.isHero);
+            
 
             if (!currentCharacter.isHero)
             {
@@ -82,6 +83,7 @@ public class Turn : MonoBehaviour
                 
             else
             {
+                GameManager.UIManager.combatUI.FillSkills(currentCharacter);
                 actionTaken = false;
                 while (!actionTaken)
                     yield return new WaitForSeconds(0.1f);

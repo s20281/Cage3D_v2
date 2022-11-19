@@ -15,7 +15,7 @@ MonoBehaviour:
   itemCategory: 4
   id: 0
   name: Sword
-  icon: {fileID: 21300000, guid: 24979c27cf362ac4fbdfd99d6ad2f4a4, type: 3}
+  icon: {fileID: 21300000, guid: 8d5c67c7c651640468d34d00204241ff, type: 3}
   singleUse: 0
-  prefab: {fileID: 9096038554736866933, guid: 54f0c46be1bfd6f4d97ba5390d87ee42, type: 3}
+  prefab: {fileID: 5998218053339950434, guid: ddfaea58c4b305b4795b77d7e1bd1a9e, type: 3}
   baseDamage: 3

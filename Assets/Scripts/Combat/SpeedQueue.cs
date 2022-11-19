@@ -51,6 +51,13 @@ public class SpeedQueue
                 maxSpeed = character.Value;
                 fastestCharacter = character.Key;
             }
+
+            else if (character.Value == maxSpeed && Random.Range(0f, 1f) > 0.5f)
+            {
+                maxSpeed = character.Value;
+                fastestCharacter = character.Key;
+            }
+
         }
 
         characters.Remove(fastestCharacter);

@@ -21,7 +21,11 @@ public class SkillUI : MonoBehaviour
     public void Select()
     {
         if (selected)
+        {
+            Deselect();
+            GameManager.CombatManager.skillSelected = false;
             return;
+        }
         selected = true;
         GameManager.CombatManager.skillSelected = true;
         outline.color = active;
@@ -38,10 +42,9 @@ public class SkillUI : MonoBehaviour
     IEnumerator Pulsing()
     {
         float time = 1f;
-        float timer = 0;
         while(selected)
         {
-            timer = 0;
+            float timer = 0;
             while (timer < time)
             {
                 outline.color = Color32.Lerp(active, activeFaded, timer / time);

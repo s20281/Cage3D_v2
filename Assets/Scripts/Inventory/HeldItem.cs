@@ -10,7 +10,7 @@ public class HeldItem : MonoBehaviour
     public void SetHeldItem(ItemData itemData, GameObject icon)
     {
         gameObject.SetActive(true);
-        //item = new Item();
+        item = new Item();
         item.SetData(itemData);
 
         GetComponent<Image>().sprite = icon.GetComponent<Image>().sprite;
