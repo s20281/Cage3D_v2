@@ -6,6 +6,7 @@ public class UseSkill : MonoBehaviour
 {
     private Animator heroAnimator;
     private Animator targetAnimator;
+    private float animationTime = 0;
     public bool Use(CombatCharacter target)
     {
         if (target.isHero)
@@ -24,25 +25,32 @@ public class UseSkill : MonoBehaviour
 
     private void MeleeAttack(CombatCharacter target)
     {
-        if(GameManager.CombatManager.currentCharacter.position == 1)
+        if(GameManager.CombatManager.currentCharacter.inventory.meleeWeapon.isEmpty)
+        {
+            heroAnimator.CrossFade("Hook Punch", 0.3f);
+            animationTime = 1f; 
+        }
+        else if(GameManager.CombatManager.currentCharacter.position == 1)
         {
             heroAnimator.CrossFade("Slash4", 0.3f);
+            animationTime = 1.5f;
         }
         else
         {
             heroAnimator.CrossFade("Slash", 0.3f);
+            animationTime = 0.5f;
         }
 
-
-        
-        AnimatorStateInfo animState = heroAnimator.GetCurrentAnimatorStateInfo(0);
-        float animTime = animState.normalizedTime % 1;
-        StartCoroutine(Effect(animTime, target));
+        StartCoroutine(Effect(animationTime, target));
     }
 
     private IEnumerator Effect(float time, CombatCharacter target)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(animationTime);
+        var effect = Instantiate(GameManager.FXSpawner.HitWhite, target.transform);
+        effect.transform.localScale = Vector3.one * 1;
+        effect.transform.localPosition = new Vector3(0.25f, 1.5f, 0);
+        effect.transform.parent = null;
         MeleeAttackEffect(target);
         GameManager.UIManager.combatUI.UpdateInfo(target);
     }

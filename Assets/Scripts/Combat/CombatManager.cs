@@ -29,6 +29,7 @@ public class CombatManager : MonoBehaviour
         GameManager.CameraManager.SwitchCamera(true);
         GameManager.PlayerManager.playerMovement.SwitchFreeze(true);
         combatUI.SetActive(true);
+        GameManager.UIManager.minimapUI.ToggleMinimap();
     }
 
     public void EndCombat()
@@ -37,6 +38,7 @@ public class CombatManager : MonoBehaviour
         GameManager.CameraManager.SwitchCamera(false);
         GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
         combatUI.SetActive(false);
+        GameManager.UIManager.minimapUI.ToggleMinimap();
     }
 
     public void DeselectSkills()

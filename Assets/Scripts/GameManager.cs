@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     public static CombatManager CombatManager => Instance.combatManager;
     public CombatManager combatManager;
 
+    public static FXSpawner FXSpawner => Instance.FXspawner;
+    public FXSpawner FXspawner;
+
 
     private void Awake()
     {

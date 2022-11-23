@@ -5,11 +5,22 @@ using UnityEngine;
 public class SkeletonAI : EnemyAI
 {
     public Animator animator;
+    CombatCharacter target;
 
     public override void Attack(CombatCharacter target)
     {
-        target.combatStats.ChangeHealth(-1);
+        this.target = target;
         animator.CrossFade("Attack2", 0.1f);
+        Invoke(nameof(AttackEffect), 1.5f);
+    }
+
+    private void AttackEffect()
+    {
+        var effect = Instantiate(GameManager.FXSpawner.HitWhite, target.transform);
+        effect.transform.localScale = Vector3.one;
+        effect.transform.localPosition = new Vector3(0.25f, 1.5f, 0);
+        effect.transform.parent = null;
+        target.combatStats.ChangeHealth(-1);
     }
 
     public override void ChooseAction()

@@ -38,7 +38,8 @@ public class CombatUI : MonoBehaviour
 
     public void FillSkills(CombatCharacter hero)
     {
-        skillsUI[0].SetActive(!hero.inventory.meleeWeapon.isEmpty);
+        //skillsUI[0].SetActive(!hero.inventory.meleeWeapon.isEmpty);
+        skillsUI[0].SetActive(true);
         skillsUI[1].SetActive(!hero.inventory.rangeWeapon.isEmpty);
     }
 
