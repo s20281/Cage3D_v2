@@ -77,7 +77,8 @@ public class Turn : MonoBehaviour
 
             if (!currentCharacter.isHero)
             {
-                print("Skeleton is thinking");
+                currentCharacter.enemyAI.ChooseAction();
+                
                 yield return new WaitForSeconds(2);
             }
                 

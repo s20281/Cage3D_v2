@@ -11,6 +11,8 @@ public class CombatCharacter : MonoBehaviour
     public CombatStats combatStats => GetComponent<CombatStats>();
     public Inventory inventory;
     public HeroData heroData;
+    public WeaponHolder weaponHolder;
+    public EnemyAI enemyAI;
 
     private void Start()
     {

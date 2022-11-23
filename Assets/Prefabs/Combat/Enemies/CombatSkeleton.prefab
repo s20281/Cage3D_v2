@@ -2716,6 +2716,7 @@ GameObject:
   - component: {fileID: 7237090964029200648}
   - component: {fileID: 1171634594}
   - component: {fileID: 1171634596}
+  - component: {fileID: 8291361338957437682}
   m_Layer: 0
   m_Name: CombatSkeleton
   m_TagString: Untagged
@@ -2730,7 +2731,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2537096344037913985}
-  m_LocalRotation: {x: -0, y: -0.9848078, z: 0, w: -0.17364807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -2738,7 +2739,7 @@ Transform:
   - {fileID: 2537096344038140323}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -200, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2537096344045291011
 Animator:
   serializedVersion: 3
@@ -2784,6 +2785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70accff0143b304e8be47ce9dae9d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
   maxHealth: 10
   health: 10
   accuracy: 0
@@ -2804,6 +2806,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHero: 0
   position: 1
+  inventory: {fileID: 0}
+  heroData: {fileID: 0}
+  weaponHolder: {fileID: 0}
+  enemyAI: {fileID: 8291361338957437682}
 --- !u!114 &1171634596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2822,6 +2828,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &8291361338957437682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537096344037913985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04bb4e7edf0c2074daff30040d87c96b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2537096344045291011}
 --- !u!1 &2537096344037913987
 GameObject:
   m_ObjectHideFlags: 0

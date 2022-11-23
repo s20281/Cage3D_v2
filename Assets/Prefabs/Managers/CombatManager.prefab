@@ -51,6 +51,7 @@ MonoBehaviour:
   combatUI: {fileID: 0}
   skills: {fileID: 0}
   loadCharacters: {fileID: 7759878208046565272}
+  changePosition: {fileID: 0}
   turn: {fileID: 7759878208046565279}
   useSkill: {fileID: 7759878208046565278}
 --- !u!114 &7759878208046565272

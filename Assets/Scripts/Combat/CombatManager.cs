@@ -10,6 +10,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private GameObject combatUI;
     [SerializeField] private Transform skills;
     [SerializeField] private LoadCharacters loadCharacters;
+    public ChangePosition changePosition;
     public LoadCharacters LoadCharacters => loadCharacters;
     [SerializeField] private Turn turn;
     public Turn Turn => turn;

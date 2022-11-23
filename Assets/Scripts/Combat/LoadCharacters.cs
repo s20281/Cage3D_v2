@@ -14,7 +14,7 @@ public class LoadCharacters : MonoBehaviour
         GetComponent<Turn>().aliveEnemies.Clear();
         for (int i = 0; i < 4; i++)
         {
-            if(enemyPositions[i].childCount > 0)
+            if(GameManager.CombatManager.changePosition.enemyPositionOccupied[i])
             {
                 foreach (Transform child in enemyPositions[i])
                     Destroy(child.gameObject);
@@ -26,7 +26,10 @@ public class LoadCharacters : MonoBehaviour
                 enemyCombatCharacter.position = i+1;
                 enemy.GetComponent<CombatStats>().SetupStats(enemies[i]);
                 GetComponent<Turn>().aliveEnemies.Add(enemyCombatCharacter);
+                GameManager.CombatManager.changePosition.enemyPositionOccupied[i] = true;
             }
+            else
+                GameManager.CombatManager.changePosition.enemyPositionOccupied[i] = false;
         }
     }
 
@@ -52,6 +55,11 @@ public class LoadCharacters : MonoBehaviour
                 GetComponent<Turn>().aliveHeroes.Add(heroCombatCharacter);
                 heroCombatCharacter.heroData = heroData;
                 heroCombatCharacter.inventory = heroes[i].GetComponent<Inventory>();
+
+                if(!heroCombatCharacter.inventory.meleeWeapon.isEmpty)
+                {
+                    heroCombatCharacter.weaponHolder.SwitchWeapons(heroCombatCharacter.inventory.meleeWeapon.itemData.id);
+                }
 
                 if (i == 0)
                     GameManager.CombatManager.currentCharacter = heroCombatCharacter;

@@ -55,6 +55,11 @@ public class CombatStats : MonoBehaviour
         var character = GetComponent<CombatCharacter>();
         GameManager.UIManager.combatUI.SwitchInfo(character, false);
         GameManager.CombatManager.Turn.OnDead(character);
+
+        GameManager.CombatManager.changePosition.enemyPositionOccupied[character.position - 1] = false;
+
         Destroy(gameObject);
+        
+        GameManager.CombatManager.changePosition.OnEnemyDead();
     }
 }
