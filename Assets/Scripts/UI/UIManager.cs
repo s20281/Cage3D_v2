@@ -8,4 +8,5 @@ public class UIManager : MonoBehaviour
     public DialogueUI dialogueUI;
     public ReadUI readUI;
     public CombatUI combatUI;
+    public MinimapUI minimapUI;
 }
