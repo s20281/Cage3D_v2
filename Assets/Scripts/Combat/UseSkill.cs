@@ -7,7 +7,7 @@ public class UseSkill : MonoBehaviour
     private Animator heroAnimator;
     private Animator targetAnimator;
     private float animationTime = 0;
-    public bool Use(CombatCharacter target)
+    public bool Use(CombatCharacter user, CombatCharacter target)
     {
         if (target.isHero)
             return false;
@@ -17,55 +17,72 @@ public class UseSkill : MonoBehaviour
 
         //if(MeleeAttack)
 
-        MeleeAttack(target);
+        MeleeAttack(user, target);
 
 
         return true;
     }
 
-    private void MeleeAttack(CombatCharacter target)
+    private void MeleeAttack(CombatCharacter user, CombatCharacter target)
     {
-        if(GameManager.CombatManager.currentCharacter.inventory.meleeWeapon.isEmpty)
+        if (user.inventory.meleeWeapon.isEmpty)
         {
             heroAnimator.CrossFade("Hook Punch", 0.3f);
-            animationTime = 1f; 
+            animationTime = 1f;
+            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Whoosh, 0.75f);
+            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Punch, 1f);
         }
-        else if(GameManager.CombatManager.currentCharacter.position == 1)
+        else if(user.position == 1)
         {
             heroAnimator.CrossFade("Slash4", 0.3f);
             animationTime = 1.5f;
+            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Whoosh, 1.25f);
+            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Slash, 1.5f);
         }
         else
         {
             heroAnimator.CrossFade("Slash", 0.3f);
             animationTime = 0.5f;
+            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Whoosh, 0.25f);
+            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Slash, 0.5f);
         }
 
-        StartCoroutine(Effect(animationTime, target));
+        StartCoroutine(Effect(animationTime, user, target));
     }
 
-    private IEnumerator Effect(float time, CombatCharacter target)
+    private void RangeAttack(CombatCharacter user, CombatCharacter target)
+    {
+
+    }
+
+
+    private IEnumerator Effect(float time, CombatCharacter user, CombatCharacter target)
     {
         yield return new WaitForSeconds(animationTime);
         var effect = Instantiate(GameManager.FXSpawner.HitWhite, target.transform);
         effect.transform.localScale = Vector3.one * 1;
         effect.transform.localPosition = new Vector3(0.25f, 1.5f, 0);
         effect.transform.parent = null;
-        MeleeAttackEffect(target);
+        MeleeAttackEffect(user, target);
         GameManager.UIManager.combatUI.UpdateInfo(target);
     }
 
 
-    private void MeleeAttackEffect(CombatCharacter target)
+    private void MeleeAttackEffect(CombatCharacter user, CombatCharacter target)
     {
-        var character = GameManager.CombatManager.currentCharacter;
-        int damage = character.combatStats.strength;
-        if(character.isHero && !character.inventory.meleeWeapon.isEmpty)
+        int damage = user.combatStats.strength;
+
+        print("user: " + user.name + " / " + user.isHero + " - " + user.position);
+
+        print("strength: " + user.combatStats.strength);
+
+        if(user.isHero && !user.inventory.meleeWeapon.isEmpty)
         {
-            damage += (character.inventory.meleeWeapon.itemData as WeaponData).baseDamage;
+            damage += (user.inventory.meleeWeapon.itemData as WeaponData).baseDamage;
+            print("base: " + (user.inventory.meleeWeapon.itemData as WeaponData).baseDamage);
         }
 
-        int positionDiff = character.position - 1 + target.position - 1;
+        int positionDiff = user.position - 1 + target.position - 1;
         float penaltyFactor = positionDiff * 0.1f;
 
         print("Damage1: " + damage);
@@ -75,11 +92,26 @@ public class UseSkill : MonoBehaviour
         print("Damage2: " + damage);
 
         target.combatStats.ChangeHealth(-damage);
+        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
-    private void RangeAttack()
+    private void RangeAttackEffect(CombatCharacter user, CombatCharacter target)
     {
+        int damage = user.combatStats.accuracy;
 
+        if (user.isHero && !user.inventory.rangeWeapon.isEmpty)
+        {
+            damage += (user.inventory.rangeWeapon.itemData as WeaponData).baseDamage;
+        }
+
+        int positionDiff = user.position - 1 + target.position - 1;
+        int maxPositonDiff = 6;
+        float penaltyFactor = (positionDiff - maxPositonDiff) * 0.1f;
+
+        damage = (int)(damage * (1 - penaltyFactor));
+
+        target.combatStats.ChangeHealth(-damage);
+        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
 }

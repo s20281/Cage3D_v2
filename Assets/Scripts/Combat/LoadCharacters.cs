@@ -60,9 +60,6 @@ public class LoadCharacters : MonoBehaviour
                 {
                     heroCombatCharacter.weaponHolder.SwitchWeapons(heroCombatCharacter.inventory.meleeWeapon.itemData.id);
                 }
-
-                if (i == 0)
-                    GameManager.CombatManager.currentCharacter = heroCombatCharacter;
             }
         }
     }

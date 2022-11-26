@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
     public static FXSpawner FXSpawner => Instance.FXspawner;
     public FXSpawner FXspawner;
 
+    public static SoundManager SoundManager => Instance.soundManager;
+    public SoundManager soundManager;
+
 
     private void Awake()
     {

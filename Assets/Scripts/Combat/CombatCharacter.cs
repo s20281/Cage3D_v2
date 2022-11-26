@@ -46,10 +46,9 @@ public class CombatCharacter : MonoBehaviour
             return;
         }
 
-        if(GameManager.CombatManager.UseSkill.Use(this))
+        if(GameManager.CombatManager.UseSkill.Use(GameManager.CombatManager.currentCharacter, this))
         {
             GameManager.CombatManager.DeselectSkills();
-            GameManager.CombatManager.Turn.actionTaken = true;
         }
             
     }

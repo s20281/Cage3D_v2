@@ -9,7 +9,6 @@ public class Turn : MonoBehaviour
     private SpeedQueue charactersQueue;
     public List<CombatCharacter> aliveHeroes = new List<CombatCharacter>();
     public List<CombatCharacter> aliveEnemies = new List<CombatCharacter>();
-
     private bool fightOver;
     public bool actionTaken;
 
@@ -67,7 +66,6 @@ public class Turn : MonoBehaviour
             if (charactersQueue.Count == 0)
                 FillQueue();
 
-
             var currentCharacter = charactersQueue.Dequeue();
             GameManager.CombatManager.currentCharacter = currentCharacter;
             currentCharacter.GetComponent<Outline>().enabled = true;
@@ -86,8 +84,7 @@ public class Turn : MonoBehaviour
             {
                 GameManager.UIManager.combatUI.FillSkills(currentCharacter);
                 actionTaken = false;
-                while (!actionTaken)
-                    yield return new WaitForSeconds(0.1f);
+                yield return new WaitUntil(() => actionTaken);
                 yield return new WaitForSeconds(1);
             }
             currentCharacter.GetComponent<Outline>().enabled = false;
