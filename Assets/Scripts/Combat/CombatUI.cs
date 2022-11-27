@@ -10,6 +10,8 @@ public class CombatUI : MonoBehaviour
     public SkillUI skillUI;
     [SerializeField]
     private List<GameObject> skillsUI = new List<GameObject>();
+    public List<HealthBarUI> heroHealthBars;
+    public List<HealthBarUI> enemyHealthBars;
 
 
     public void SwitchInfo(CombatCharacter character, bool activate)

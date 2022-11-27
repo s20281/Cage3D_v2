@@ -12,6 +12,7 @@ public class CombatStats : MonoBehaviour
     public int dodge;
     public int strength;
     public int speed;
+    public int armor;
 
     public void SetupStats(HeroData heroData)
     {

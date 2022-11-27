@@ -27,9 +27,15 @@ public class LoadCharacters : MonoBehaviour
                 enemy.GetComponent<CombatStats>().SetupStats(enemies[i]);
                 GetComponent<Turn>().aliveEnemies.Add(enemyCombatCharacter);
                 GameManager.CombatManager.changePosition.enemyPositionOccupied[i] = true;
+                GameManager.UIManager.combatUI.enemyHealthBars[i].gameObject.SetActive(true);
+                GameManager.UIManager.combatUI.enemyHealthBars[i].OnEnterCombat(enemyCombatCharacter);
             }
             else
+            {
                 GameManager.CombatManager.changePosition.enemyPositionOccupied[i] = false;
+                GameManager.UIManager.combatUI.enemyHealthBars[i].gameObject.SetActive(false);
+            }
+                
         }
     }
 
@@ -60,6 +66,19 @@ public class LoadCharacters : MonoBehaviour
                 {
                     heroCombatCharacter.weaponHolder.SwitchWeapons(heroCombatCharacter.inventory.meleeWeapon.itemData.id);
                 }
+
+                if (!heroCombatCharacter.inventory.armor1.isEmpty)
+                {
+                    heroCombatCharacter.weaponHolder.SwitchWeapons(heroCombatCharacter.inventory.meleeWeapon.itemData.id);
+                }
+
+
+                GameManager.UIManager.combatUI.heroHealthBars[i].gameObject.SetActive(true);
+                GameManager.UIManager.combatUI.heroHealthBars[i].OnEnterCombat(heroCombatCharacter);
+            }
+            else
+            {
+                GameManager.UIManager.combatUI.heroHealthBars[i].gameObject.SetActive(false);
             }
         }
     }
