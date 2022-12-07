@@ -15,11 +15,16 @@ public class UseSkill : MonoBehaviour
         heroAnimator = GameManager.CombatManager.currentCharacter.GetComponent<Animator>();
         //targetAnimator = target.GetComponent<Animator>();
 
-        //if(MeleeAttack)
-
-        MeleeAttack(user, target);
-
-
+        switch(GameManager.CombatManager.selectedSkill)
+        {
+            case Skill.MeleeAttack:
+                MeleeAttack(user, target);
+                break;
+            case Skill.RangeAttack:
+                RangeAttack(user, target);
+                break;
+        }
+        StartCoroutine(Effect(animationTime, user, target));
         return true;
     }
 
@@ -29,30 +34,40 @@ public class UseSkill : MonoBehaviour
         {
             heroAnimator.CrossFade("Hook Punch", 0.3f);
             animationTime = 1f;
-            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Whoosh, 0.75f);
-            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Punch, 1f);
+            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayWhoosh), 0.75f);
+            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayPunch), 1f);
         }
         else if(user.position == 1)
         {
             heroAnimator.CrossFade("Slash4", 0.3f);
             animationTime = 1.5f;
-            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Whoosh, 1.25f);
-            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Slash, 1.5f);
+            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayWhoosh), 1f);
+            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlaySlash), 1.5f);
         }
         else
         {
             heroAnimator.CrossFade("Slash", 0.3f);
             animationTime = 0.5f;
-            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Whoosh, 0.25f);
-            GameManager.SoundManager.PlayAfterTime(SoundManager.Sound.Slash, 0.5f);
+            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayWhoosh), 0.25f);
+            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlaySlash), 0.5f);
         }
-
-        StartCoroutine(Effect(animationTime, user, target));
     }
 
     private void RangeAttack(CombatCharacter user, CombatCharacter target)
     {
+        var weaponID = user.inventory.rangeWeapon.itemData.id;
+        if(weaponID == 1)
+        {
 
+        }
+        else if (weaponID == 6)
+        {
+            heroAnimator.CrossFade("Shooting", 0.3f);
+            animationTime = 0.85f;
+            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayLaserShot), 0.85f);
+            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayBulletImpact), 0.85f);
+
+        }
     }
 
 

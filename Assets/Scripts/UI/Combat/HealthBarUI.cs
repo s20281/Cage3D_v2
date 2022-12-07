@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    private List<Image> healthPoints = new List<Image>();
+    private List<BarPoint> healthPoints = new List<BarPoint>();
     private List<Image> armorPoints = new List<Image>();
     public GameObject healthPointPrefab;
     public GameObject armorPointPrefab;
@@ -27,7 +27,9 @@ public class HealthBarUI : MonoBehaviour
         for(int i = 0; i< healthCount; i++)
         {
             var hp = Instantiate(healthPointPrefab, healthBar.transform);
-            healthPoints.Add(hp.GetComponent<Image>());
+            var barPoint = hp.GetComponent<BarPoint>();
+            healthPoints.Add(barPoint);
+            barPoint.index = i;
         }
     }
 
@@ -45,6 +47,20 @@ public class HealthBarUI : MonoBehaviour
         {
             var ap = Instantiate(armorPointPrefab, armorBar.transform);
             armorPoints.Add(ap.GetComponent<Image>());
+        }
+    }
+
+    public void UpdateHealth(int currentHealth)
+    {
+        if(currentHealth <= 0)
+        {
+            return;
+        }
+
+        for(int i = 0; i< healthPoints.Count; i++)
+        {
+            if (currentHealth < i+1 && healthPoints[i].isActive || currentHealth >= i+1 && !healthPoints[i].isActive)
+                healthPoints[i].SwitchColor();
         }
     }
 

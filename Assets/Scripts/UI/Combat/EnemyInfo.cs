@@ -31,7 +31,7 @@ public class EnemyInfo : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!GameManager.CombatManager.skillSelected)
+        if (!GameManager.CombatManager.isSkillSelected)
             return;
 
         GameManager.CombatManager.DeselectSkills();

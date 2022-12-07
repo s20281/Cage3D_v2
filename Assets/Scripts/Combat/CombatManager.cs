@@ -5,7 +5,8 @@ using UnityEngine;
 public class CombatManager : MonoBehaviour
 {
     private bool combatActive = false;
-    public bool skillSelected = false;
+    public bool isSkillSelected = false;
+    public Skill selectedSkill;
     public CombatCharacter currentCharacter;
     [SerializeField] private GameObject combatUI;
     [SerializeField] private Transform skills;
@@ -47,6 +48,6 @@ public class CombatManager : MonoBehaviour
         {
             skill.gameObject.GetComponent<SkillUI>().Deselect();
         }
-        skillSelected = false;
+        isSkillSelected = false;
     }
 }

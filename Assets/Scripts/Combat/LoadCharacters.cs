@@ -27,13 +27,16 @@ public class LoadCharacters : MonoBehaviour
                 enemy.GetComponent<CombatStats>().SetupStats(enemies[i]);
                 GetComponent<Turn>().aliveEnemies.Add(enemyCombatCharacter);
                 GameManager.CombatManager.changePosition.enemyPositionOccupied[i] = true;
-                GameManager.UIManager.combatUI.enemyHealthBars[i].gameObject.SetActive(true);
-                GameManager.UIManager.combatUI.enemyHealthBars[i].OnEnterCombat(enemyCombatCharacter);
+
+                enemyCombatCharacter.healthBarUI.OnEnterCombat(enemyCombatCharacter);
+
+                //GameManager.UIManager.combatUI.enemyHealthBars[i].gameObject.SetActive(true);
+                //GameManager.UIManager.combatUI.enemyHealthBars[i].OnEnterCombat(enemyCombatCharacter);
             }
             else
             {
                 GameManager.CombatManager.changePosition.enemyPositionOccupied[i] = false;
-                GameManager.UIManager.combatUI.enemyHealthBars[i].gameObject.SetActive(false);
+                //GameManager.UIManager.combatUI.enemyHealthBars[i].gameObject.SetActive(false);
             }
                 
         }
@@ -66,19 +69,29 @@ public class LoadCharacters : MonoBehaviour
                 {
                     heroCombatCharacter.weaponHolder.SwitchWeapons(heroCombatCharacter.inventory.meleeWeapon.itemData.id);
                 }
-
-                if (!heroCombatCharacter.inventory.armor1.isEmpty)
+                else if (!heroCombatCharacter.inventory.rangeWeapon.isEmpty)
                 {
-                    heroCombatCharacter.weaponHolder.SwitchWeapons(heroCombatCharacter.inventory.meleeWeapon.itemData.id);
+                    heroCombatCharacter.weaponHolder.SwitchWeapons(heroCombatCharacter.inventory.rangeWeapon.itemData.id);
                 }
 
+                heroCombatCharacter.combatStats.armor = 0;
+                if(!heroCombatCharacter.inventory.armor.isEmpty)
+                {
+                    heroCombatCharacter.combatStats.armor += (heroCombatCharacter.inventory.armor.itemData as ArmorData).armor;
+                }
+                if (!heroCombatCharacter.inventory.helmet.isEmpty)
+                {
+                    heroCombatCharacter.combatStats.armor += (heroCombatCharacter.inventory.helmet.itemData as ArmorData).armor;
+                }
 
-                GameManager.UIManager.combatUI.heroHealthBars[i].gameObject.SetActive(true);
-                GameManager.UIManager.combatUI.heroHealthBars[i].OnEnterCombat(heroCombatCharacter);
+                heroCombatCharacter.healthBarUI.OnEnterCombat(heroCombatCharacter);
+
+                //GameManager.UIManager.combatUI.heroHealthBars[i].gameObject.SetActive(true);
+                //GameManager.UIManager.combatUI.heroHealthBars[i].OnEnterCombat(heroCombatCharacter);
             }
             else
             {
-                GameManager.UIManager.combatUI.heroHealthBars[i].gameObject.SetActive(false);
+                //GameManager.UIManager.combatUI.heroHealthBars[i].gameObject.SetActive(false);
             }
         }
     }

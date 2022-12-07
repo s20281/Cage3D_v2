@@ -6,10 +6,9 @@ public class CombatUI : MonoBehaviour
 {
     public List<CombatInfo> enemyInfos;
     public List<CombatInfo> heroInfos;
-    public GameObject skills;
+    public GameObject skillsPanel;
     public SkillUI skillUI;
-    [SerializeField]
-    private List<GameObject> skillsUI = new List<GameObject>();
+    public List<SkillUI> skillsUI = new List<SkillUI>();
     public List<HealthBarUI> heroHealthBars;
     public List<HealthBarUI> enemyHealthBars;
 
@@ -31,18 +30,20 @@ public class CombatUI : MonoBehaviour
         if (character.isHero)
         {
             heroInfos[character.position - 1].UpdateInfo(character.combatStats);
+            //heroHealthBars[character.position - 1].UpdateHealth(character.combatStats.health);
         }
         else
         {
             enemyInfos[character.position - 1].UpdateInfo(character.combatStats);
+            //enemyHealthBars[character.position - 1].UpdateHealth(character.combatStats.health);
         }
     }
 
     public void FillSkills(CombatCharacter hero)
     {
         //skillsUI[0].SetActive(!hero.inventory.meleeWeapon.isEmpty);
-        skillsUI[0].SetActive(true);
-        skillsUI[1].SetActive(!hero.inventory.rangeWeapon.isEmpty);
+        skillsUI[0].gameObject.SetActive(true);
+        skillsUI[1].gameObject.SetActive(!hero.inventory.rangeWeapon.isEmpty);
     }
 
 }

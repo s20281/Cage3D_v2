@@ -13,6 +13,7 @@ public class CombatCharacter : MonoBehaviour
     public HeroData heroData;
     public WeaponHolder weaponHolder;
     public EnemyAI enemyAI;
+    public HealthBarUI healthBarUI;
 
     private void Start()
     {
@@ -25,8 +26,8 @@ public class CombatCharacter : MonoBehaviour
             return;
         infoActive = true;
 
-        GameManager.UIManager.combatUI.UpdateInfo(this);
-        GameManager.UIManager.combatUI.SwitchInfo(this, true);
+        //GameManager.UIManager.combatUI.UpdateInfo(this);
+        //GameManager.UIManager.combatUI.SwitchInfo(this, true);
         outline.enabled = true;
     }
 
@@ -41,7 +42,7 @@ public class CombatCharacter : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!GameManager.CombatManager.skillSelected)
+        if (!GameManager.CombatManager.isSkillSelected)
         {
             return;
         }

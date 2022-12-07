@@ -70,7 +70,7 @@ public class Turn : MonoBehaviour
             GameManager.CombatManager.currentCharacter = currentCharacter;
             currentCharacter.GetComponent<Outline>().enabled = true;
 
-            GameManager.UIManager.combatUI.skills.SetActive(currentCharacter.isHero);
+            GameManager.UIManager.combatUI.skillsPanel.SetActive(currentCharacter.isHero);
             
 
             if (!currentCharacter.isHero)

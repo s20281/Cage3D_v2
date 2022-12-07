@@ -9,10 +9,10 @@ public class Inventory : MonoBehaviour
 
     public EquipmentSlot meleeWeapon;
     public EquipmentSlot rangeWeapon;
-    public EquipmentSlot armor1;
-    public EquipmentSlot armor2;
-    public EquipmentSlot armor3;
-    public EquipmentSlot armor4;
+    public EquipmentSlot helmet;
+    public EquipmentSlot armor;
+    public EquipmentSlot consumable;
+    public EquipmentSlot special;
     public HeldItem heldItem;
 
     public int maxItemsCount = 12;
@@ -34,10 +34,10 @@ public class Inventory : MonoBehaviour
 
         meleeWeapon = new EquipmentSlot();
         rangeWeapon = new EquipmentSlot();
-        armor1 = new EquipmentSlot();
-        armor2 = new EquipmentSlot();
-        armor3 = new EquipmentSlot();
-        armor4 = new EquipmentSlot();
+        helmet = new EquipmentSlot();
+        armor = new EquipmentSlot();
+        consumable = new EquipmentSlot();
+        special = new EquipmentSlot();
     }
 
     public bool AddItem(Item item, int index = -1)

@@ -56,6 +56,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3df9bbbc130ccb344af5f3fc793a630f, type: 3}
   laserShots:
   - {fileID: 8300000, guid: 5ff5bd936a30a904da907f35c8dd382e, type: 3}
+  - {fileID: 8300000, guid: 8154f5e18ea48164e9cb0132012cf432, type: 3}
+  - {fileID: 8300000, guid: de812cfb519929c4aad9d296f655c81d, type: 3}
+  - {fileID: 8300000, guid: e3298e35eed19c942b6f4d2d41cd21ba, type: 3}
   whoosh:
   - {fileID: 8300000, guid: 90fb91c5d9f18df4183363d36d921429, type: 3}
   - {fileID: 8300000, guid: 0e9bca6dd55d7e541a865752da6415f5, type: 3}
@@ -64,6 +67,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a65d792d6907f744490c9b15bb70edfe, type: 3}
   - {fileID: 8300000, guid: 482611fe6bc559142a00be6e726b4862, type: 3}
   - {fileID: 8300000, guid: 4d4ef7516a431934681038a3dc391e55, type: 3}
+  bulletImpacts:
+  - {fileID: 8300000, guid: 75adfe9a619833445a701305b983e548, type: 3}
+  - {fileID: 8300000, guid: e11a5a019377fbd4c81caa0adcb4c236, type: 3}
 --- !u!82 &1506465656
 AudioSource:
   m_ObjectHideFlags: 0

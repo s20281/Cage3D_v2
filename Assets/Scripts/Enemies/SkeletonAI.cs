@@ -20,7 +20,8 @@ public class SkeletonAI : EnemyAI
         effect.transform.localScale = Vector3.one;
         effect.transform.localPosition = new Vector3(0.25f, 1.5f, 0);
         effect.transform.parent = null;
-        target.combatStats.ChangeHealth(-1);
+        target.combatStats.ChangeHealth(-3);
+        GameManager.UIManager.combatUI.UpdateInfo(target);
     }
 
     public override void ChooseAction()

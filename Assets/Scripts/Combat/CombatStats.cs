@@ -38,6 +38,14 @@ public class CombatStats : MonoBehaviour
 
     public void ChangeHealth(int change)
     {
+        if(change < 0)
+        {
+            change += armor;
+            if (change > 0)
+                change = 0;
+        }
+
+
         health += change;
 
         if(health <= 0)
@@ -49,6 +57,8 @@ public class CombatStats : MonoBehaviour
         {
             health = maxHealth;
         }
+
+        GetComponent<CombatCharacter>().healthBarUI.UpdateHealth(health);
     }
 
     private void Die()
@@ -56,11 +66,11 @@ public class CombatStats : MonoBehaviour
         var character = GetComponent<CombatCharacter>();
         GameManager.UIManager.combatUI.SwitchInfo(character, false);
         GameManager.CombatManager.Turn.OnDead(character);
-
-        GameManager.CombatManager.changePosition.enemyPositionOccupied[character.position - 1] = false;
+        if(!character.isHero)
+            GameManager.CombatManager.changePosition.enemyPositionOccupied[character.position - 1] = false;
 
         Destroy(gameObject);
-        
-        GameManager.CombatManager.changePosition.OnEnemyDead();
+        if (!character.isHero)
+            GameManager.CombatManager.changePosition.OnEnemyDead();
     }
 }

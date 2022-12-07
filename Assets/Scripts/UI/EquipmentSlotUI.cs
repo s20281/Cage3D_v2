@@ -47,23 +47,23 @@ public class EquipmentSlotUI : MonoBehaviour
 
         return itemCategory == slotItemType;
 
-        switch (slotType)
-        {
-            case EquipmentSlotType.MeleeWeapon:
-                return (itemCategory == ItemCategory.MeleeWeapon);
-            case EquipmentSlotType.RangeWeapon:
-                return (itemCategory == ItemCategory.RangeWeapon);
-            case EquipmentSlotType.Helmet:
-                return (itemCategory == ItemCategory.Helmet);
-            case EquipmentSlotType.Armor:
-                return (itemCategory == ItemCategory.Armor);
-            case EquipmentSlotType.Consumables:
-                return (itemCategory == ItemCategory.Consumable);
-            case EquipmentSlotType.Special:
-                return (itemCategory == ItemCategory.Armor);
-            default:
-                return false;
-        }
+        //switch (slotType)
+        //{
+        //    case EquipmentSlotType.MeleeWeapon:
+        //        return (itemCategory == ItemCategory.MeleeWeapon);
+        //    case EquipmentSlotType.RangeWeapon:
+        //        return (itemCategory == ItemCategory.RangeWeapon);
+        //    case EquipmentSlotType.Helmet:
+        //        return (itemCategory == ItemCategory.Helmet);
+        //    case EquipmentSlotType.Armor:
+        //        return (itemCategory == ItemCategory.Armor);
+        //    case EquipmentSlotType.Consumables:
+        //        return (itemCategory == ItemCategory.Consumable);
+        //    case EquipmentSlotType.Special:
+        //        return (itemCategory == ItemCategory.Armor);
+        //    default:
+        //        return false;
+        //}
     }
 
     public EquipmentSlot GetEquipmentSlot()
@@ -77,13 +77,13 @@ public class EquipmentSlotUI : MonoBehaviour
             case EquipmentSlotType.RangeWeapon:
                 return activeInv.rangeWeapon;
             case EquipmentSlotType.Helmet:
-                return activeInv.armor1;
+                return activeInv.helmet;
             case EquipmentSlotType.Armor:
-                return activeInv.armor2;
+                return activeInv.armor;
             case EquipmentSlotType.Consumables:
-                return activeInv.armor3;
+                return activeInv.consumable;
             case EquipmentSlotType.Special:
-                return activeInv.armor4;
+                return activeInv.special;
             default:
                 Debug.LogError("nie ma takiego typu");
                 return null;
