@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10d489399f2d753489890e5e268f9335, type: 3}
+  m_Script: {fileID: 11500000, guid: fb574fa807c949a4990b0325bc179779, type: 3}
   m_Name: 0_HealthPotion
   m_EditorClassIdentifier: 
   itemCategory: 3
@@ -18,3 +18,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: b9f36626830c999439d9d97b575b89d6, type: 3}
   singleUse: 1
   prefab: {fileID: 2101295687634865225, guid: ddc3c8b2230961a42ba048361c7b6385, type: 3}
+  heal: 5

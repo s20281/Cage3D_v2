@@ -6,6 +6,7 @@ public class CombatManager : MonoBehaviour
 {
     private bool combatActive = false;
     public bool isSkillSelected = false;
+    public bool agressiveSkill;
     public Skill selectedSkill;
     public CombatCharacter currentCharacter;
     [SerializeField] private GameObject combatUI;

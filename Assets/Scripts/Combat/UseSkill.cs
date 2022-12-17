@@ -9,8 +9,10 @@ public class UseSkill : MonoBehaviour
     private float animationTime = 0;
     public bool Use(CombatCharacter user, CombatCharacter target)
     {
-        if (target.isHero)
+        if (GameManager.CombatManager.agressiveSkill && target.isHero || !GameManager.CombatManager.agressiveSkill && !target.isHero)
             return false;
+
+        GameManager.CombatManager.Turn.actionTaken = true;
 
         heroAnimator = GameManager.CombatManager.currentCharacter.GetComponent<Animator>();
         //targetAnimator = target.GetComponent<Animator>();
@@ -23,8 +25,14 @@ public class UseSkill : MonoBehaviour
             case Skill.RangeAttack:
                 RangeAttack(user, target);
                 break;
+            case Skill.Consumable:
+                Consumable(user, target);
+                break;
+            case Skill.Special:
+                SpecialSkill(user, target);
+                break;
         }
-        StartCoroutine(Effect(animationTime, user, target));
+        
         return true;
     }
 
@@ -51,6 +59,7 @@ public class UseSkill : MonoBehaviour
             GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayWhoosh), 0.25f);
             GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlaySlash), 0.5f);
         }
+        StartCoroutine(Effect(animationTime, user, target));
     }
 
     private void RangeAttack(CombatCharacter user, CombatCharacter target)
@@ -66,8 +75,8 @@ public class UseSkill : MonoBehaviour
             animationTime = 0.85f;
             GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayLaserShot), 0.85f);
             GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayBulletImpact), 0.85f);
-
         }
+        StartCoroutine(Effect(animationTime, user, target));
     }
 
 
@@ -78,7 +87,17 @@ public class UseSkill : MonoBehaviour
         effect.transform.localScale = Vector3.one * 1;
         effect.transform.localPosition = new Vector3(0.25f, 1.5f, 0);
         effect.transform.parent = null;
-        MeleeAttackEffect(user, target);
+
+        switch (GameManager.CombatManager.selectedSkill)
+        {
+            case Skill.MeleeAttack:
+                MeleeAttackEffect(user, target);
+                break;
+            case Skill.RangeAttack:
+                RangeAttackEffect(user, target);
+                break;
+        }
+        
         GameManager.UIManager.combatUI.UpdateInfo(target);
     }
 
@@ -107,7 +126,6 @@ public class UseSkill : MonoBehaviour
         print("Damage2: " + damage);
 
         target.combatStats.ChangeHealth(-damage);
-        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
     private void RangeAttackEffect(CombatCharacter user, CombatCharacter target)
@@ -126,7 +144,23 @@ public class UseSkill : MonoBehaviour
         damage = (int)(damage * (1 - penaltyFactor));
 
         target.combatStats.ChangeHealth(-damage);
-        GameManager.CombatManager.Turn.actionTaken = true;
+    }
+
+    private void Consumable(CombatCharacter user, CombatCharacter target)
+    {
+        var consData = user.inventory.consumable.itemData as ConsumableData;
+
+        if (consData.heal > 0)
+        {
+            target.combatStats.ChangeHealth(consData.heal);
+            // VFX
+            // SFX
+        }
+    }
+
+    private void SpecialSkill(CombatCharacter user, CombatCharacter target)
+    {
+
     }
 
 }

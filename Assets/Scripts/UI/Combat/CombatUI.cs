@@ -44,6 +44,8 @@ public class CombatUI : MonoBehaviour
         //skillsUI[0].SetActive(!hero.inventory.meleeWeapon.isEmpty);
         skillsUI[0].gameObject.SetActive(true);
         skillsUI[1].gameObject.SetActive(!hero.inventory.rangeWeapon.isEmpty);
+        skillsUI[2].gameObject.SetActive(!hero.inventory.consumable.isEmpty);
+        skillsUI[3].gameObject.SetActive(!hero.inventory.special.isEmpty);
     }
 
 }

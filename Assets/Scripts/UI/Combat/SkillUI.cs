@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public enum Skill
 {
     MeleeAttack,
-    RangeAttack
+    RangeAttack,
+    Consumable,
+    Special
 }
 
 public class SkillUI : MonoBehaviour
@@ -35,6 +37,11 @@ public class SkillUI : MonoBehaviour
         
         GameManager.CombatManager.isSkillSelected = true;
         GameManager.CombatManager.selectedSkill = skill;
+
+        if (skill == Skill.Consumable)
+            GameManager.CombatManager.agressiveSkill = false;
+        else
+            GameManager.CombatManager.agressiveSkill = true;
 
         GameManager.CombatManager.currentCharacter.weaponHolder.SwitchWeapons();
 
