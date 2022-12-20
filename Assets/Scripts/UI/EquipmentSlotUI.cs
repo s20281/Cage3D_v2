@@ -41,7 +41,22 @@ public class EquipmentSlotUI : MonoBehaviour
         }
     }
 
-    private bool CanEquip()
+    public void OnRightButtonClick()
+    {
+        var invUI = GameManager.UIManager.inventoryUI;
+        var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.GetCurrentHeroId()].GetComponent<Inventory>();
+        var eqSlot = GetEquipmentSlot();
+
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            GameManager.UIManager.inventoryOptionsUI.SetPosition(Input.mousePosition);
+            GameManager.UIManager.inventoryOptionsUI.SetEquipmentSlotsInfo(icon, image);
+            GameManager.UIManager.inventoryOptionsUI.ShowOptions(-1, gameObject, eqSlot);
+        }
+    }
+
+    public bool CanEquip()
     {
         var itemCategory = GameManager.UIManager.inventoryUI.heldItemIcon.GetComponent<HeldItem>().item.itemData.itemCategory;
 
@@ -88,6 +103,21 @@ public class EquipmentSlotUI : MonoBehaviour
                 Debug.LogError("nie ma takiego typu");
                 return null;
         }
+    }
+
+    public void SetImage(Sprite image)
+    {
+        this.image.GetComponent<Image>().sprite = image;
+    }
+
+    public GameObject GetImage()
+    {
+        return this.image;
+    }
+
+    public GameObject GetIcon()
+    {
+        return this.icon;
     }
 }
 

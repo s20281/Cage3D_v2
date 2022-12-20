@@ -30,10 +30,10 @@ public class MinimapUI: MonoBehaviour
 
     public void ToggleMinimap()
     {
-        if (!isMapTogglingBlocked)
+       /* if (!isMapTogglingBlocked)
         {
             minimap.SetActive(!minimap.activeSelf);
-        }
+        }*/
 
     }
 

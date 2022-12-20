@@ -13,6 +13,11 @@ public class Read : Interactable
         GameManager.UIManager.readUI.ReadStory(textToRead);
     }
 
+    public ReadObject getObject()
+    {
+        return textToRead;
+    }
+
 
 
 }

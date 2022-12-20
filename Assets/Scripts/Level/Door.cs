@@ -22,7 +22,6 @@ public class Door : Interactable
     {
         if (!isLocked)
         {
-            Debug.Log("www");
             if (onCooldown)
             return;
 
@@ -36,7 +35,6 @@ public class Door : Interactable
 
         if (isLocked && keyToUnlock != null)
         {
-            Debug.Log("wejscie smoka");
             if (GameManager.TeamManager.tryRemoveItem(keyToUnlock))
             {
                 Unlock();

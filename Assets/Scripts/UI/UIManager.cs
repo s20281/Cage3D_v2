@@ -9,10 +9,11 @@ public class UIManager : MonoBehaviour
     public ReadUI readUI;
     public CombatUI combatUI;
     public MinimapUI minimapUI;
+    public InventoryOptionsUI inventoryOptionsUI;
 
 
     private void Start()
     {
         combatUI.gameObject.SetActive(false);
     }
-}
+}   

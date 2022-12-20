@@ -12,16 +12,9 @@ public class DialogueUI : MonoBehaviour
 
     private ResponseHandler responseHandler;
     private TypeWriterEffect typeWriterEffect;
-    /*
-     private GameObject objectToAddToTeam;
-     private string goodAnswer;
-     private bool canBeRecruited;
-     private GameObject gm;*/
 
-    // private bool ifHaveImpactOnMind;
-    // private int pointsToImpactTheMind;
-    // private Villager villager;
-    // private Hero prefabToFindStats;
+    int counter = 0;
+
 
     void Start()
     {
@@ -30,11 +23,18 @@ public class DialogueUI : MonoBehaviour
         CloseDialogueBox();
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject, Item objectToGet, GameObject doorToOpen, HeroData heroToAdd) //to powinno mieæ wiêcej var by siê zmatchowa³o z responsami? za pierwszym razem by nulle przekazywa³o
+    public void ShowDialogue(DialogueObject dialogueObject, Item objectToGet, GameObject doorToOpen, HeroData heroToAdd) 
     {
         player.GetComponent<PlayerMovement>().canMove = false;
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject, objectToGet, doorToOpen, heroToAdd));
+
+        if (counter == 0)
+        {
+            GameManager.UIManager.minimapUI.ToggleMinimap();
+            GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+            counter++;
+        }
     }
 
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject, Item objectToGet, GameObject doorToOpen, HeroData heroToAdd)
@@ -83,6 +83,9 @@ public class DialogueUI : MonoBehaviour
             else
             {
                 CloseDialogueBox();
+                
+                GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+                GameManager.UIManager.minimapUI.ToggleMinimap();
             }
         }
     }
@@ -92,5 +95,7 @@ public class DialogueUI : MonoBehaviour
         dialogueBox.SetActive(false);
         player.GetComponent<PlayerMovement>().canMove = true;
         textLabel.text = string.Empty;
+
+        
     }
 }

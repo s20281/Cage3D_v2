@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da521484bd2a1744d8f977ae1f29143b, type: 3}
   m_Name: FirstText
   m_EditorClassIdentifier: 
-  readText: "Uuuu! Niemo\u017Cliwe!"
+  readText: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula
+    finibus felis nec suscipit.  vestibulum, dolor quam sagittis nunc, at condimentum
+    augue justo condimentum dolor. Aliquam tempus, urna quis sodales dictum, magna
+    tellus iaculis urna, id rutrum mauris tellus et massa.

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class InventorySlotUI : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class InventorySlotUI : MonoBehaviour
     {
         var invUI = GameManager.UIManager.inventoryUI;
         var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.GetCurrentHeroId()].GetComponent<Inventory>();
-        
+
         if (!invUI.holdingItem)
         {
             if (!activeInv.slots[ID].isEmpty)
@@ -30,5 +31,20 @@ public class InventorySlotUI : MonoBehaviour
                 activeInv.AddItem(held, ID);
             }
         }
+
+
     }
+
+    public void OnRightButtonClick()
+    {
+        Debug.Log(gameObject.GetComponent<InventorySlotUI>().ID);
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            GameManager.UIManager.inventoryOptionsUI.SetPosition(Input.mousePosition);
+            GameManager.UIManager.inventoryOptionsUI.SetInventorySlotInfo(icon);
+            GameManager.UIManager.inventoryOptionsUI.ShowOptions(ID, gameObject, null);
+        }
+    }
+
 }

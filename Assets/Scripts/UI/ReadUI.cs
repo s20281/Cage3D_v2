@@ -17,6 +17,23 @@ public class ReadUI : MonoBehaviour
             textLabel.text = textToRead.Read;
         }
 
+        GameManager.UIManager.minimapUI.ToggleMinimap();
+        //GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+
+    }
+
+    public void ReadStoryByString(string textToRead)
+    {
+        if (textLabel != null || textToRead != null)
+        {
+            gameObject.SetActive(true);
+
+            textLabel.text = textToRead;
+        }
+
+        GameManager.UIManager.minimapUI.ToggleMinimap();
+        //GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+
     }
 
 
@@ -25,8 +42,13 @@ public class ReadUI : MonoBehaviour
         if (gameObject.active && Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.SetActive(false);
+            
+           // GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+            GameManager.UIManager.minimapUI.ToggleMinimap();
+
 
         }
 
+        
     }
 }

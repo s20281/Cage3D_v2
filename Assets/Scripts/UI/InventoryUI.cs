@@ -16,7 +16,7 @@ public class InventoryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i<inventorySlotsUI.Count; i++)
+        for (int i = 0; i < inventorySlotsUI.Count; i++)
         {
             inventorySlotsUI[i].GetComponent<InventorySlotUI>().ID = i;
         }
@@ -31,7 +31,7 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && inventoryPanel.activeSelf)
             ToggleInventory();
 
-        if(holdingItem)
+        if (holdingItem)
         {
             FollowMouse();
         }
@@ -46,18 +46,24 @@ public class InventoryUI : MonoBehaviour
             heroName.text = GameManager.TeamManager.currentHeroGO.GetComponent<Hero>().heroData.heroName;
             RefreshInventory();
             GameManager.PlayerManager.playerMovement.SwitchFreeze(true);
+            GameManager.UIManager.minimapUI.ToggleMinimap();
+            GameManager.UIManager.minimapUI.blockUnblockMapToggling();
         }
         else
         {
             GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
+            GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+            GameManager.UIManager.minimapUI.ToggleMinimap();
         }
+
+
     }
 
     public void RefreshInventory()
     {
         var inv = GameManager.TeamManager.heroes[activeInventory].GetComponent<Inventory>();
 
-        for(int i = 0; i < inv.maxItemsCount; i++)
+        for (int i = 0; i < inv.maxItemsCount; i++)
         {
             var slot = inventorySlotsUI[i].GetComponent<InventorySlotUI>();
             if (!inv.slots[i].isEmpty)
@@ -92,7 +98,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject GetEquipmentSlot(EquipmentSlot eqSlot)
     {
         var index = -1;
-        switch(eqSlot.type)
+        switch (eqSlot.type)
         {
             case EquipmentSlotType.Helmet:
                 index = 0;
@@ -137,11 +143,11 @@ public class InventoryUI : MonoBehaviour
     {
         var nextHero = GameManager.TeamManager.GetCurrentHeroId() + direction;
 
-        if(nextHero >= GameManager.TeamManager.heroes.Count)
+        if (nextHero >= GameManager.TeamManager.heroes.Count)
         {
             nextHero = 0;
         }
-        else if(nextHero < 0)
+        else if (nextHero < 0)
         {
             nextHero = GameManager.TeamManager.heroes.Count - 1;
         }
