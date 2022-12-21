@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject inventoryPanel;
     public List<GameObject> inventorySlotsUI = new List<GameObject>();
     public List<GameObject> equipmentSlotsUI = new List<GameObject>();
-    public int activeInventory;
+    public int activeHero;
 
     public GameObject heldItemIcon;
     public bool holdingItem = true;
@@ -37,6 +38,30 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    [SerializeField] GameObject bagpackPanel;
+    [SerializeField] GameObject equipmentPanel;
+    [SerializeField] GameObject heroPanel;
+    [SerializeField] GameObject skillsPanel;
+
+    public void ToggleSkillInventory(bool inventory)
+    {
+        bagpackPanel.SetActive(inventory);
+        equipmentPanel.SetActive(inventory);
+        heroPanel.SetActive(!inventory);
+        skillsPanel.SetActive(!inventory);
+
+        if (!inventory)
+            RefreshSkills();
+    }
+
+    [SerializeField] List<GameObject> addButtons;
+
+    public void AddSkillPoint(int id)
+    {
+        GameManager.TeamManager.heroes[activeHero].GetComponent<Hero>();
+    }
+
+
     private void ToggleInventory()
     {
         inventoryPanel.SetActive(!inventoryPanel.activeSelf);
@@ -54,14 +79,45 @@ public class InventoryUI : MonoBehaviour
             GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
             GameManager.UIManager.minimapUI.blockUnblockMapToggling();
             GameManager.UIManager.minimapUI.ToggleMinimap();
+
+            RefreshSkills();
+
+        }
+    }
+
+    [SerializeField] private TextMeshProUGUI healthValue;
+    [SerializeField] private TextMeshProUGUI strengthValue;
+    [SerializeField] private TextMeshProUGUI accuracyValue;
+    [SerializeField] private TextMeshProUGUI dodgeValue;
+    [SerializeField] private TextMeshProUGUI speedValue;
+
+    [SerializeField] private Image portrait;
+    [SerializeField] private TextMeshProUGUI levelValue;
+    [SerializeField] private TextMeshProUGUI description;
+
+    public void RefreshSkills()
+    {
+        var hero = GameManager.TeamManager.heroes[activeHero].GetComponent<Hero>();
+
+        healthValue.text = hero.heroData.maxHealth.ToString();
+        strengthValue.text = hero.heroData.strength.ToString();
+        accuracyValue.text = hero.heroData.accuracy.ToString();
+        dodgeValue.text = hero.heroData.dodge.ToString();
+        speedValue.text = hero.heroData.speed.ToString();
+
+        foreach (var addButton in addButtons)
+        {
+            addButton.SetActive(hero.skillPoints > 0);
         }
 
-
+        levelValue.text = "Level: " + hero.level.ToString();
+        description.text = hero.name.ToString();
+        portrait.sprite = hero.heroData.portrait;
     }
 
     public void RefreshInventory()
     {
-        var inv = GameManager.TeamManager.heroes[activeInventory].GetComponent<Inventory>();
+        var inv = GameManager.TeamManager.heroes[activeHero].GetComponent<Inventory>();
 
         for (int i = 0; i < inv.maxItemsCount; i++)
         {
@@ -153,8 +209,9 @@ public class InventoryUI : MonoBehaviour
         }
 
         GameManager.TeamManager.SetCurrentHeroId(nextHero);
-        activeInventory = nextHero;
+        activeHero = nextHero;
         heroName.text = GameManager.TeamManager.heroes[nextHero].GetComponent<Hero>().heroData.heroName;
         RefreshInventory();
+        RefreshSkills();
     }
 }

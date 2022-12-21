@@ -12,4 +12,5 @@ public class HeroData : ScriptableObject
     public int dodge;
     public int speed;
     public GameObject combatPrefab;
+    public Sprite portrait;
 }

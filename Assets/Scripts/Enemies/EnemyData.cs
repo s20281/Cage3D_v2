@@ -13,6 +13,7 @@ public class EnemyData : ScriptableObject
     public int accuracy;
     public int dodge;
     public int speed;
+    public int expForKill;
 }
 
 public enum EnemyType

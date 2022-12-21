@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b3688e52d7c6c4bb7fb34f38710c77, type: 3}
+  m_Name: 0_Shuriken
+  m_EditorClassIdentifier: 
+  itemCategory: 8
+  id: 0
+  name: Shuriken
+  icon: {fileID: 21300000, guid: a621e14f80ef35c4e886c6a2e8878da4, type: 3}
+  singleUse: 0
+  prefab: {fileID: 3034513029620853530, guid: 6e466d2132cd1d54197b3a6390d141e3, type: 3}
+  agressiveSkill: 1
+  heal: 0
+  damage: 5
