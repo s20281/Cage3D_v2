@@ -11,6 +11,7 @@ public class HealthBarUI : MonoBehaviour
     public GameObject armorPointPrefab;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject armorBar;
+    [SerializeField] private HealthChangePopup damagePopup;
 
     public void OnEnterCombat(CombatCharacter character)
     {
@@ -62,6 +63,11 @@ public class HealthBarUI : MonoBehaviour
             if (currentHealth < i+1 && healthPoints[i].isActive || currentHealth >= i+1 && !healthPoints[i].isActive)
                 healthPoints[i].SwitchColor();
         }
+    }
+
+    public void ShowChange(float change)
+    {
+        damagePopup.ShowChange(change);
     }
 
 }

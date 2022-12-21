@@ -6,6 +6,12 @@ public class SkeletonAI : EnemyAI
 {
     public Animator animator;
     CombatCharacter target;
+    public CombatStats combatStats;
+
+    private void Start()
+    {
+        combatStats = GetComponent<CombatStats>();
+    }
 
     public override void Attack(CombatCharacter target)
     {
@@ -20,7 +26,7 @@ public class SkeletonAI : EnemyAI
         effect.transform.localScale = Vector3.one;
         effect.transform.localPosition = new Vector3(0.25f, 1.5f, 0);
         effect.transform.parent = null;
-        target.combatStats.ChangeHealth(-3);
+        target.combatStats.ChangeHealth(combatStats.strength);
         GameManager.UIManager.combatUI.UpdateInfo(target);
     }
 
@@ -48,16 +54,5 @@ public class SkeletonAI : EnemyAI
     public override void SupportSkill(CombatCharacter target)
     {
         throw new System.NotImplementedException();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

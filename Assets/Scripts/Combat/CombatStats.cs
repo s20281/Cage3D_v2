@@ -38,13 +38,16 @@ public class CombatStats : MonoBehaviour
 
     public void ChangeHealth(int change)
     {
-        if(change < 0)
+        var healthBar = GetComponent<CombatCharacter>().healthBarUI;
+
+        if (change < 0)
         {
             change += armor;
             if (change > 0)
                 change = 0;
         }
 
+        healthBar.ShowChange(change);
 
         health += change;
 
@@ -58,7 +61,7 @@ public class CombatStats : MonoBehaviour
             health = maxHealth;
         }
 
-        GetComponent<CombatCharacter>().healthBarUI.UpdateHealth(health);
+        healthBar.UpdateHealth(health);
     }
 
     private void Die()

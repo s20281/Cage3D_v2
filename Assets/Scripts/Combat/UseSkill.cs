@@ -12,8 +12,6 @@ public class UseSkill : MonoBehaviour
         if (GameManager.CombatManager.agressiveSkill && target.isHero || !GameManager.CombatManager.agressiveSkill && !target.isHero)
             return false;
 
-        GameManager.CombatManager.Turn.actionTaken = true;
-
         heroAnimator = GameManager.CombatManager.currentCharacter.GetComponent<Animator>();
         //targetAnimator = target.GetComponent<Animator>();
 
@@ -32,7 +30,8 @@ public class UseSkill : MonoBehaviour
                 SpecialSkill(user, target);
                 break;
         }
-        
+
+        GameManager.UIManager.combatUI.skillsPanel.SetActive(false);
         return true;
     }
 
@@ -99,6 +98,7 @@ public class UseSkill : MonoBehaviour
         }
         
         GameManager.UIManager.combatUI.UpdateInfo(target);
+        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
 
@@ -156,11 +156,13 @@ public class UseSkill : MonoBehaviour
             // VFX
             // SFX
         }
+        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
     private void SpecialSkill(CombatCharacter user, CombatCharacter target)
     {
 
+        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
 }

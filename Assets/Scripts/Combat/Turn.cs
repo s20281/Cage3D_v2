@@ -85,7 +85,6 @@ public class Turn : MonoBehaviour
                 GameManager.UIManager.combatUI.FillSkills(currentCharacter);
                 actionTaken = false;
                 yield return new WaitUntil(() => actionTaken);
-                GameManager.UIManager.combatUI.skillsPanel.SetActive(false);
                 yield return new WaitForSeconds(1);
             }
             currentCharacter.GetComponent<Outline>().enabled = false;
