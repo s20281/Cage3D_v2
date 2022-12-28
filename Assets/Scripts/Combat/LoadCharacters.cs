@@ -56,11 +56,12 @@ public class LoadCharacters : MonoBehaviour
             }
             if (i < heroes.Count)
             {
-                var heroData = heroes[i].GetComponent<Hero>().heroData;
-                var hero = Instantiate(heroData.combatPrefab, heroPositions[i]);
-                var heroCombatCharacter = hero.GetComponent<CombatCharacter>();
+                var hero = heroes[i].GetComponent<Hero>();
+                var heroData = hero.heroData;
+                var combatHero = Instantiate(heroData.combatPrefab, heroPositions[i]);
+                var heroCombatCharacter = combatHero.GetComponent<CombatCharacter>();
                 heroCombatCharacter.position = i + 1;
-                hero.GetComponent<CombatStats>().SetupStats(heroData);
+                combatHero.GetComponent<CombatStats>().SetupStats(hero);
                 GetComponent<Turn>().aliveHeroes.Add(heroCombatCharacter);
                 heroCombatCharacter.heroData = heroData;
                 heroCombatCharacter.inventory = heroes[i].GetComponent<Inventory>();

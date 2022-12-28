@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TeamManager : MonoBehaviour
 {
+    public List<HeroData> heroDatas;
     public List<GameObject> heroes = new List<GameObject>();
     private int currentHero;
 
@@ -17,10 +18,13 @@ public class TeamManager : MonoBehaviour
     {
         heroes = new List<GameObject>();
 
-        foreach (Transform child in gameObject.transform)
-        {
-            heroes.Add(child.gameObject);
-        }
+        //foreach (Transform child in gameObject.transform)
+        //{
+        //    heroes.Add(child.gameObject);
+        //}
+
+        AddHero(heroDatas[0]); // Dodanie G³ównego Bohatera
+        AddHero(heroDatas[1]); // Dodanie Ninjy
 
         currentHeroGO = heroes[0];
     }
@@ -49,7 +53,9 @@ public class TeamManager : MonoBehaviour
     {
         var newHero = Instantiate(heroPrefab, transform);
         newHero.name = heroData.heroName;
-        newHero.GetComponent<Hero>().heroData = heroData;
+        var hero = newHero.GetComponent<Hero>();
+        hero.heroData = heroData;
+        hero.LoadStats();
         heroes.Add(newHero);
     }
 

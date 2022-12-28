@@ -115,6 +115,33 @@ public class InventoryUI : MonoBehaviour
         portrait.sprite = hero.heroData.portrait;
     }
 
+    public void UseSkillPoint(int id)
+    {
+        var hero = GameManager.TeamManager.heroes[activeHero].GetComponent<Hero>();
+
+        switch (id)
+        {
+            case 0:
+                hero.heroData.maxHealth += 2;
+                break;
+            case 1:
+                hero.heroData.strength += 1;
+                break;
+            case 2:
+                hero.heroData.accuracy += 1;
+                break;
+            case 3:
+                hero.heroData.dodge += 1;
+                break;
+            case 4:
+                hero.heroData.speed += 1;
+                break;          
+        }
+        hero.skillPoints--;
+        RefreshSkills();
+    }
+
+
     public void RefreshInventory()
     {
         var inv = GameManager.TeamManager.heroes[activeHero].GetComponent<Inventory>();

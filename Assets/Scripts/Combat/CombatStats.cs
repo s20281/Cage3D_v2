@@ -3,6 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum Statistic
+{
+    maxHealth,
+    accuracy,
+    dodge,
+    strength,
+    speed
+}
 public class CombatStats : MonoBehaviour
 {
     public string characterName;
@@ -13,16 +22,29 @@ public class CombatStats : MonoBehaviour
     public int strength;
     public int speed;
     public int armor;
+    public int expForKill;
 
-    public void SetupStats(HeroData heroData)
+    //public void SetupStats(HeroData heroData)
+    //{
+    //    characterName = heroData.heroName;
+    //    maxHealth = heroData.maxHealth;
+    //    health = heroData.maxHealth;
+    //    accuracy = heroData.accuracy;
+    //    dodge = heroData.dodge;
+    //    strength = heroData.strength;
+    //    speed = heroData.speed;
+    //}
+
+    public void SetupStats(Hero hero)
     {
-        characterName = heroData.heroName;
-        maxHealth = heroData.maxHealth;
-        health = heroData.maxHealth;
-        accuracy = heroData.accuracy;
-        dodge = heroData.dodge;
-        strength = heroData.strength;
-        speed = heroData.speed;
+        GetComponent<CombatCharacter>().hero = hero;
+        characterName = hero.heroName;
+        maxHealth = hero.maxHealth;
+        health = hero.maxHealth;
+        accuracy = hero.accuracy;
+        dodge = hero.dodge;
+        strength = hero.strength;
+        speed = hero.speed;
     }
 
     public void SetupStats(EnemyData enemyData)
@@ -34,6 +56,7 @@ public class CombatStats : MonoBehaviour
         dodge = enemyData.dodge;
         strength = enemyData.strength;
         speed = enemyData.speed;
+        expForKill = enemyData.expForKill;
     }
 
     public void ChangeHealth(int change)
@@ -70,7 +93,10 @@ public class CombatStats : MonoBehaviour
         GameManager.UIManager.combatUI.SwitchInfo(character, false);
         GameManager.CombatManager.Turn.OnDead(character);
         if(!character.isHero)
+        {
             GameManager.CombatManager.changePosition.enemyPositionOccupied[character.position - 1] = false;
+            GameManager.CombatManager.currentCharacter.hero.AddExperience(expForKill);
+        } 
 
         Destroy(gameObject);
         if (!character.isHero)
