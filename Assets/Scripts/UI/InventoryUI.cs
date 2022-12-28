@@ -42,17 +42,34 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] GameObject equipmentPanel;
     [SerializeField] GameObject heroPanel;
     [SerializeField] GameObject skillsPanel;
+    [SerializeField] GameObject teamPanel;
 
-    public void ToggleSkillInventory(bool inventory)
+    public void InventoryView()
     {
-        bagpackPanel.SetActive(inventory);
-        equipmentPanel.SetActive(inventory);
-        heroPanel.SetActive(!inventory);
-        skillsPanel.SetActive(!inventory);
-
-        if (!inventory)
-            RefreshSkills();
+        bagpackPanel.SetActive(true);
+        equipmentPanel.SetActive(true);
+        heroPanel.SetActive(false);
+        skillsPanel.SetActive(false);
+        teamPanel.SetActive(false);
     }
+    public void HeroView()
+    {
+        bagpackPanel.SetActive(false);
+        equipmentPanel.SetActive(false);
+        heroPanel.SetActive(true);
+        skillsPanel.SetActive(true);
+        teamPanel.SetActive(false);
+        RefreshSkills();
+    }
+    public void TeamView()
+    {
+        bagpackPanel.SetActive(false);
+        equipmentPanel.SetActive(false);
+        heroPanel.SetActive(false);
+        skillsPanel.SetActive(false);
+        teamPanel.SetActive(true);
+    }
+
 
     [SerializeField] List<GameObject> addButtons;
 
