@@ -11,6 +11,8 @@ public class DragHeroes : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     public Hero hero;
     [SerializeField] private Image portraitImage;
 
+    public TeamSlot currentSlot;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -27,6 +29,11 @@ public class DragHeroes : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+
+        if (currentSlot != null)
+        {
+            currentSlot.dragHeroes = null;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)

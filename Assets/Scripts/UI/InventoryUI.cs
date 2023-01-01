@@ -42,7 +42,8 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] GameObject equipmentPanel;
     [SerializeField] GameObject heroPanel;
     [SerializeField] GameObject skillsPanel;
-    [SerializeField] GameObject teamPanel;
+    public GameObject teamPanel;
+    public TeamPlacing teamPlacing;
 
     public void InventoryView()
     {

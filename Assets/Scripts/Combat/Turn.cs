@@ -21,11 +21,11 @@ public class Turn : MonoBehaviour
 
     private void FillQueue()
     {
-        if(aliveHeroes.Count < 0)
+        if(aliveHeroes.Count == 0)
         {
             Debug.Log("Przegrana");
         }
-        if (aliveEnemies.Count < 0)
+        if (aliveEnemies.Count == 0)
         {
             Debug.Log("Wygrana");
         }
@@ -63,6 +63,13 @@ public class Turn : MonoBehaviour
     {
         while (!fightOver)
         {
+            if (aliveHeroes.Count == 0)
+            {
+                fightOver = true;
+                break;
+            }
+                
+
             if (charactersQueue.Count == 0)
                 FillQueue();
 

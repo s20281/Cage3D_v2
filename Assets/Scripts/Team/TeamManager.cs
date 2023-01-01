@@ -57,6 +57,7 @@ public class TeamManager : MonoBehaviour
         hero.heroData = heroData;
         hero.LoadStats();
         heroes.Add(newHero);
+        GameManager.UIManager.inventoryUI.teamPlacing.AddHeroPortrait(hero);
     }
 
     public int GetCurrentHeroId()

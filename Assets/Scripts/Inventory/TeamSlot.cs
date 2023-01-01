@@ -13,8 +13,9 @@ public class TeamSlot : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            print(eventData.pointerDrag.name);
-            eventData.pointerClick.GetComponent<DragHeroes>();
+            dragHeroes = eventData.pointerDrag.GetComponent<DragHeroes>();
+
+            dragHeroes.currentSlot = this;
         }
     }
 }

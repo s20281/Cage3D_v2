@@ -47,6 +47,8 @@ public class LoadCharacters : MonoBehaviour
         GetComponent<Turn>().aliveHeroes.Clear();
         var heroes = GameManager.TeamManager.heroes;
 
+        var teamPlacingSlots = GameManager.UIManager.inventoryUI.teamPanel.GetComponent<TeamPlacing>().teamSlots;
+
         for (int i = 0; i < 4; i++)
         {
             if (heroPositions[i].childCount > 0)
@@ -54,9 +56,11 @@ public class LoadCharacters : MonoBehaviour
                 foreach (Transform child in heroPositions[i])
                     Destroy(child.gameObject);
             }
-            if (i < heroes.Count)
+            if (teamPlacingSlots[i].dragHeroes != null)
             {
-                var hero = heroes[i].GetComponent<Hero>();
+                //var hero = heroes[i].GetComponent<Hero>();
+
+                var hero = teamPlacingSlots[i].dragHeroes.hero;
                 var heroData = hero.heroData;
                 var combatHero = Instantiate(heroData.combatPrefab, heroPositions[i]);
                 var heroCombatCharacter = combatHero.GetComponent<CombatCharacter>();
@@ -64,9 +68,10 @@ public class LoadCharacters : MonoBehaviour
                 combatHero.GetComponent<CombatStats>().SetupStats(hero);
                 GetComponent<Turn>().aliveHeroes.Add(heroCombatCharacter);
                 heroCombatCharacter.heroData = heroData;
-                heroCombatCharacter.inventory = heroes[i].GetComponent<Inventory>();
+                //heroCombatCharacter.inventory = heroes[i].GetComponent<Inventory>();
+                heroCombatCharacter.inventory = hero.gameObject.GetComponent<Inventory>();
 
-                if(!heroCombatCharacter.inventory.meleeWeapon.isEmpty)
+                if (!heroCombatCharacter.inventory.meleeWeapon.isEmpty)
                 {
                     heroCombatCharacter.weaponHolder.SwitchWeapons(heroCombatCharacter.inventory.meleeWeapon.itemData.id);
                 }
