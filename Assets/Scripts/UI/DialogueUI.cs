@@ -31,8 +31,7 @@ public class DialogueUI : MonoBehaviour
 
         if (counter == 0)
         {
-            GameManager.UIManager.minimapUI.ToggleMinimap();
-            GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+            GameManager.UIManager.minimapUI.turnOffMinimap();
             counter++;
         }
     }
@@ -83,9 +82,8 @@ public class DialogueUI : MonoBehaviour
             else
             {
                 CloseDialogueBox();
-                
-                GameManager.UIManager.minimapUI.blockUnblockMapToggling();
-                GameManager.UIManager.minimapUI.ToggleMinimap();
+
+                GameManager.UIManager.minimapUI.turnOnMinimap();
             }
         }
     }

@@ -15,6 +15,7 @@ public class InventoryOptionsUI : MonoBehaviour
     private int slotID;
     private GameObject icon;
     private GameObject image;
+    private EquipmentSlot eqSlot;
 
     private void Start()
     {
@@ -65,9 +66,9 @@ public class InventoryOptionsUI : MonoBehaviour
     {
         ToggleInventoryOptions();
         var invUI = GameManager.UIManager.inventoryUI;
-        var activeInv = GameManager.TeamManager.heroes[GameManager.TeamManager.GetCurrentHeroId()].GetComponent<Inventory>();
+        var activeHero = GameManager.TeamManager.heroes[GameManager.TeamManager.GetCurrentHeroId()];
+        var activeInv = activeHero.GetComponent<Inventory>();
         var eqSlots = GameManager.UIManager.inventoryUI.equipmentSlotsUI;
-
 
         switch (optionName)
         {
@@ -75,17 +76,17 @@ public class InventoryOptionsUI : MonoBehaviour
                 DeleteItem(activeInv);
                 break;
             case "Przeczytaj":
-                Debug.Log("TEKST PONI¯EJ DO UI:    " + activeInv.slots[slotID].itemData.prefab.GetComponent<Read>().getObject().Read);
                 GameManager.UIManager.readUI.ReadStoryByString(activeInv.slots[slotID].itemData.prefab.GetComponent<Read>().getObject().Read);
                 break;
             case "U¿yj":
-                Debug.Log("Teraz u¿yj:");
+                var consData = activeInv.slots[slotID].itemData as ConsumableData;
+                changeHealth(consData, activeHero);
                 break;
             case "Wyposa¿":
                 Equip(invUI, activeInv, eqSlots);
                 break;
             case "Od³ó¿":
-                Unequip(invUI, activeInv, eqSlots);
+                Unequip(invUI, activeInv);
                 break;
                 /* case "Statystyki":
                      Debug.Log("Teraz statystyki");
@@ -94,7 +95,13 @@ public class InventoryOptionsUI : MonoBehaviour
         }
     }
 
-
+    public void changeHealth(ConsumableData consData, GameObject activeHero)
+    {
+        var healthBefore = activeHero.GetComponent<Hero>().heroData.maxHealth;
+        var recentHealth = healthBefore + consData.heal;
+        activeHero.GetComponent<Hero>().heroData.maxHealth = recentHealth;
+        Debug.Log(recentHealth);
+    }
 
     public void SetEquipmentSlotsInfo(GameObject icon, GameObject image)
     {
@@ -122,6 +129,7 @@ public class InventoryOptionsUI : MonoBehaviour
         float optionBoxHeight = 0;
         string[] allOptions = System.Enum.GetNames(typeof(PossibleOptionEnum));
         ItemCategory category = ItemCategory.None;
+        this.eqSlot = eqSlot;
 
         if (ID >= 0)
         {
@@ -149,7 +157,7 @@ public class InventoryOptionsUI : MonoBehaviour
 
                         var slotTypeName = slotType.name;
 
-                        if ((slotTypeName.Equals("InventorySlot") && option.Equals("Od³ó¿")) || (slotTypeName.Equals("EquipmentSlot") && option.Equals("Wyposa¿")))
+                        if ((slotTypeName.Contains("InventorySlot") && option.Equals("Od³ó¿")) || (!slotTypeName.Contains("InventorySlot") && option.Equals("Wyposa¿")))
                         {
                             break;
                         }
@@ -176,13 +184,28 @@ public class InventoryOptionsUI : MonoBehaviour
 
     private void DeleteItem(Inventory activeInv)
     {
-        activeInv.RemoveItem(slotID);
-        SpawnItem(activeInv.slots[slotID].itemData.prefab);
+        if (eqSlot == null)
+        {
+            activeInv.RemoveItem(slotID);
+            SpawnItem(activeInv.slots[slotID].itemData.prefab);
+
+        }
+        else
+        {
+            var itemRemoved = activeInv.RemoveEqItem(eqSlot);
+            icon.SetActive(true);
+            image.SetActive(false);
+            SpawnItem(itemRemoved.prefab);
+
+        }
+        
 
     }
 
     private void SpawnItem(GameObject prefab)
     {
+
+        Debug.Log(prefab.name);
 
         if (prefab != null)
         {
@@ -200,7 +223,6 @@ public class InventoryOptionsUI : MonoBehaviour
     {
 
         invUI.heldItemIcon.GetComponent<HeldItem>().SetHeldItem(activeInv.RemoveItem(slotID), icon);
-
 
         foreach (GameObject slot in eqSlots)
         {
@@ -226,33 +248,31 @@ public class InventoryOptionsUI : MonoBehaviour
 
     }
 
-    private void Unequip(InventoryUI invUI, Inventory activeInv, List<GameObject> eqSlots)
+    private void Unequip(InventoryUI invUI, Inventory activeInv)
     {
-        foreach (GameObject slot in eqSlots)
+        if (!eqSlot.isEmpty)
         {
-
-            var eqSlot = slot.GetComponent<EquipmentSlotUI>().GetEquipmentSlot();
-            var eqSlotType = slot.GetComponent<EquipmentSlotUI>().slotType;
-
-            if (!eqSlot.isEmpty)
+            var ID = activeInv.FindFreeSlot();
+            if (ID > -1)
             {
+
+
                 invUI.heldItemIcon.GetComponent<HeldItem>().SetHeldItem(activeInv.RemoveEqItem(eqSlot), image);
                 icon.SetActive(true);
                 image.SetActive(false);
 
                 var held = invUI.heldItemIcon.GetComponent<HeldItem>().GetHeldItem();
-                var ID = activeInv.FindFreeSlot();
                 activeInv.AddItem(held, ID);
                 GameManager.UIManager.inventoryUI.RefreshInventory();
-
-
-
             }
         }
+
+
 
     }
 
 }
+
 
 public enum PossibleOptionEnum
 {

@@ -11,7 +11,7 @@ public class Door : Interactable
     private bool onCooldown = false;
     private float cooldown = 1f;
 
-    public FogOfWar fowInRoom;
+    //public FogOfWar fowInRoom;
 
     private void Start()
     {
@@ -55,8 +55,8 @@ public class Door : Interactable
         animator.Play("Open");
         isOpened = true;
 
-        if (fowInRoom.isEnabled)
-            fowInRoom.Switch(false);
+       /* if (fowInRoom.isEnabled)
+            fowInRoom.Switch(false);*/
     }
 
     private void Close()
