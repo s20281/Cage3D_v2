@@ -67,6 +67,7 @@ public class Inventory : MonoBehaviour
 
     public ItemData RemoveEqItem(EquipmentSlot eqSlot)
     {
+
         if (eqSlot.isEmpty)
         {
             Debug.LogError("no item");
@@ -140,8 +141,6 @@ public class Inventory : MonoBehaviour
                     }
                 }
 
-                //  Debug.Log(slot.itemData.name);
-                //  Debug.Log(item.itemData.name);
             }
         }
 

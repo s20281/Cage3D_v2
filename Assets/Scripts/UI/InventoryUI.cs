@@ -89,17 +89,13 @@ public class InventoryUI : MonoBehaviour
             heroName.text = GameManager.TeamManager.currentHeroGO.GetComponent<Hero>().heroData.heroName;
             RefreshInventory();
             GameManager.PlayerManager.playerMovement.SwitchFreeze(true);
-            GameManager.UIManager.minimapUI.ToggleMinimap();
-            GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+            GameManager.UIManager.minimapUI.turnOffMinimap();
         }
         else
         {
             GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
-            GameManager.UIManager.minimapUI.blockUnblockMapToggling();
-            GameManager.UIManager.minimapUI.ToggleMinimap();
-
+            GameManager.UIManager.minimapUI.turnOnMinimap();
             RefreshSkills();
-
         }
     }
 

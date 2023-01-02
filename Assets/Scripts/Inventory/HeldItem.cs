@@ -9,6 +9,8 @@ public class HeldItem : MonoBehaviour
 
     public void SetHeldItem(ItemData itemData, GameObject icon)
     {
+        Debug.Log(itemData.name);
+        Debug.Log(icon.name);
         gameObject.SetActive(true);
         item = new Item();
         item.SetData(itemData);

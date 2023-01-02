@@ -6,6 +6,7 @@ public class MinimapUI: MonoBehaviour
 {
     [SerializeField] private GameObject minimap;
     private bool isMapTogglingBlocked;
+    private bool wasActive;
 
     void Start()
     {
@@ -20,45 +21,30 @@ public class MinimapUI: MonoBehaviour
         {
             ToggleMinimap();
         }
-       /* if (miniMap.activeSelf && Input.GetKeyDown(KeyCode.Escape))
-        {
-            //zmniejsz
-        }*/
-
 
     }
+
+    public void turnOffMinimap()
+    {
+        wasActive = minimap.activeSelf;
+        minimap.SetActive(false);
+        isMapTogglingBlocked = true;
+    }
+
+    public void turnOnMinimap()
+    {
+        minimap.SetActive(wasActive);
+        isMapTogglingBlocked = false;
+    }
+
+
 
     public void ToggleMinimap()
     {
-       /* if (!isMapTogglingBlocked)
+        if (!isMapTogglingBlocked)
         {
             minimap.SetActive(!minimap.activeSelf);
-        }*/
-
-    }
-
-    public void blockUnblockMapToggling()
-    {
-        isMapTogglingBlocked = !isMapTogglingBlocked;
-
-    }
-
-  /*  //w przyszlosci mo¿e
-    void makeMapBigger()
-    {
-        if (!isHidden)
-        {
-            //zwiekszMape
-            //zatrzymajgre
         }
 
     }
-    void makeSmallerMap()
-    {
-        if (!isHidden)
-        {
-            //zmniejszMape
-            //puscgre
-        }
-    }*/
 }

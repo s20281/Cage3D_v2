@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-//Jako ui obrazek ksi¹zki i tam a'la wpisany tekst do przeczytania???
 public class ReadUI : MonoBehaviour
 {
     public TMP_Text textLabel;
@@ -18,7 +17,7 @@ public class ReadUI : MonoBehaviour
         }
 
         GameManager.UIManager.minimapUI.ToggleMinimap();
-        //GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+        GameManager.UIManager.minimapUI.turnOffMinimap();
 
     }
 
@@ -32,7 +31,7 @@ public class ReadUI : MonoBehaviour
         }
 
         GameManager.UIManager.minimapUI.ToggleMinimap();
-        //GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+        GameManager.UIManager.minimapUI.turnOffMinimap();
 
     }
 
@@ -42,8 +41,9 @@ public class ReadUI : MonoBehaviour
         if (gameObject.active && Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.SetActive(false);
-            
-           // GameManager.UIManager.minimapUI.blockUnblockMapToggling();
+
+            GameManager.UIManager.minimapUI.turnOnMinimap();
+            //jeszczer dodaæ sprawdzenie czy jest aktywny inny ui (g³ównie inv)
             GameManager.UIManager.minimapUI.ToggleMinimap();
 
 
