@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 5480dbe2bc2d8f148a8d11b778d79f22
-  - enabled: 1
     path: Assets/Scenes/MapMaciek.unity
     guid: 6940ac7151ea7cb4fb8eb808f1a19b4a
   m_configObjects: {}
