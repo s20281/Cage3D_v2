@@ -96,7 +96,16 @@ public class CombatStats : MonoBehaviour
         {
             GameManager.CombatManager.changePosition.enemyPositionOccupied[character.position - 1] = false;
             GameManager.CombatManager.currentCharacter.hero.AddExperience(expForKill);
+
+            GameManager.PlayerManager.ChangeMindPoints(MindPointsActions.EnemyDied);
         } 
+        else
+        {
+            if(characterName == "Player")
+                GameManager.PlayerManager.ChangeMindPoints(MindPointsActions.PlayerDied);
+            else
+                GameManager.PlayerManager.ChangeMindPoints(MindPointsActions.HeroDied);
+        }
 
         Destroy(gameObject);
         if (!character.isHero)

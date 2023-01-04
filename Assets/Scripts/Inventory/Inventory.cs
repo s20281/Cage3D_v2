@@ -65,6 +65,33 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
+    public ItemData RemoveEqItem(EquipmentSlotType type)
+    {
+        EquipmentSlot eqSlot = new EquipmentSlot();
+        switch(type)
+        {
+            case EquipmentSlotType.MeleeWeapon:
+                eqSlot = meleeWeapon;
+                break;
+            case EquipmentSlotType.RangeWeapon:
+                eqSlot = rangeWeapon;
+                break;
+            case EquipmentSlotType.Armor:
+                eqSlot = armor;
+                break;
+            case EquipmentSlotType.Helmet:
+                eqSlot = helmet;
+                break;
+            case EquipmentSlotType.Special:
+                eqSlot = special;
+                break;
+            case EquipmentSlotType.Consumables:
+                eqSlot = consumable;
+                break;
+        }
+        return RemoveEqItem(eqSlot);
+    }
+
     public ItemData RemoveEqItem(EquipmentSlot eqSlot)
     {
 

@@ -98,9 +98,17 @@ public class Turn : MonoBehaviour
             GameManager.CombatManager.currentCharacter = null;
         }
         if (aliveEnemies.Count == 0)
+        {
             print("VICTORY");
+            GameManager.PlayerManager.ChangeMindPoints(MindPointsActions.BattleWon);
+        }
+            
         else
-            print("DEFEAT");
+        {
+            Debug.Log("DEFEAT");
+            GameManager.PlayerManager.ChangeMindPoints(MindPointsActions.BattleLost);
+        }
+            
         yield return new WaitForSeconds(1);
         GameManager.CombatManager.EndCombat();
     }

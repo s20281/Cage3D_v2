@@ -3902,9 +3902,10 @@ GameObject:
   m_Component:
   - component: {fileID: 144978544310189591}
   - component: {fileID: 1602401612}
-  - component: {fileID: 1602401611}
   - component: {fileID: 1602401609}
   - component: {fileID: 1602401610}
+  - component: {fileID: 1876042539}
+  - component: {fileID: 8557708793872749844}
   m_Layer: 8
   m_Name: Villager
   m_TagString: Untagged
@@ -3947,20 +3948,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1602401611
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5784562198140162439}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1602401609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4001,6 +3988,39 @@ MonoBehaviour:
   prefabToFindStats: {fileID: 0}
   prefabToCompareStats: {fileID: 0}
   prefferedMindPoints: 0
+--- !u!95 &1876042539
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784562198140162439}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4c7fe8e1a3919c549a79a706afefd1ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &8557708793872749844
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784562198140162439}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 3.7719386
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.87737, z: -0}
 --- !u!1 &5792189980287884031
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ public class Talk : Interactable
                 break;
             case ImportanceType.Psychika:
 
-                if (GameManager.PlayerManager.mindPoints>=prefferedMindPoints)
+                if (GameManager.PlayerManager.GetMindPoints() >= prefferedMindPoints)
                 {
                     GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
                 }

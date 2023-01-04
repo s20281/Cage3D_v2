@@ -2,10 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum MindPointsActions
+{
+    BattleWon,
+    BattleLost,
+    HeroDied,
+    PlayerDied,
+    EnemyDied
+}
+
 public class PlayerManager : MonoBehaviour
 {
     public PlayerMovement playerMovement;
-    public int mindPoints = 0;
+    private int mindPoints = 0;
+
+    [SerializeField] private int battleWonPoints;
+    [SerializeField] private int battleLostPoints;
+    [SerializeField] private int heroDiedPoints;
+    [SerializeField] private int playerDiedPoints;
+    [SerializeField] private int enemyDiedPoints;
+
 
     public Vector3 GetPlayerPosition()
     {
@@ -20,5 +37,35 @@ public class PlayerManager : MonoBehaviour
     public int ChangeMindPoints(int pointToAdd)
     {
         return mindPoints += pointToAdd;
+    }
+    public void ChangeMindPoints(MindPointsActions action)
+    {
+        switch(action)
+        {
+            case MindPointsActions.BattleWon:
+                mindPoints += battleWonPoints;
+                return;
+
+            case MindPointsActions.BattleLost:
+                mindPoints += battleLostPoints;
+                return;
+
+            case MindPointsActions.HeroDied:
+                mindPoints += heroDiedPoints;
+                return;
+
+            case MindPointsActions.PlayerDied:
+                mindPoints += playerDiedPoints;
+                return;
+
+            case MindPointsActions.EnemyDied:
+                mindPoints += enemyDiedPoints;
+                return;
+        }
+    }
+
+    public int GetMindPoints()
+    {
+        return mindPoints;
     }
 }

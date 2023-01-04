@@ -157,6 +157,8 @@ public class UseSkill : MonoBehaviour
             // SFX
         }
         GameManager.CombatManager.Turn.actionTaken = true;
+
+        user.inventory.RemoveEqItem(EquipmentSlotType.Consumables);
     }
 
     private void SpecialSkill(CombatCharacter user, CombatCharacter target)
