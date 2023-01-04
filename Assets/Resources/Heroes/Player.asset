@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   heroName: Player
-  maxHealth: 10
+  maxHealth: 15
   strength: 5
   accuracy: 5
   dodge: 5
