@@ -23,6 +23,9 @@ public class LoadCharacters : MonoBehaviour
             {
                 var enemy = Instantiate(enemies[i].combatPrefab, enemyPositions[i]);
                 var enemyCombatCharacter = enemy.GetComponent<CombatCharacter>();
+
+                enemyCombatCharacter.combatStats.armor += enemies[i].armor;
+
                 enemyCombatCharacter.position = i+1;
                 enemy.GetComponent<CombatStats>().SetupStats(enemies[i]);
                 GetComponent<Turn>().aliveEnemies.Add(enemyCombatCharacter);

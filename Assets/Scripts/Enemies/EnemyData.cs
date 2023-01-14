@@ -14,10 +14,12 @@ public class EnemyData : ScriptableObject
     public int dodge;
     public int speed;
     public int expForKill;
+    public int armor;
 }
 
 public enum EnemyType
 {
     None,
-    Skeleton
+    Skeleton,
+    SkeletonBoss
 }

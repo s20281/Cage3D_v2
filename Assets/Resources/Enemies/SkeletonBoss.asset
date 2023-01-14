@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7df45c6d7965844943964ce135d2f7, type: 3}
+  m_Name: SkeletonBoss
+  m_EditorClassIdentifier: 
+  enemyName: Skeleton Boss
+  enemyType: 2
+  combatPrefab: {fileID: 2537096344037913985, guid: e523f4f22653bb24f91127fbf4480f79, type: 3}
+  maxHealth: 20
+  strength: 5
+  accuracy: 0
+  dodge: 3
+  speed: -5
+  expForKill: 20
+  armor: 2
