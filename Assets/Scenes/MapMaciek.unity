@@ -4242,7 +4242,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh50840
+  m_Name: pb_Mesh24634
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7958,7 +7958,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7759878208046565274, guid: de6ad133435f6704da25f64eeed83db1, type: 3}
   m_PrefabInstance: {fileID: 7759878207814028083}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408454937}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2d471e8986b8f1408ace315e17fe538, type: 3}
@@ -31353,24 +31353,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f71e980e020ab924ebed9a227a648ec8, type: 3}
---- !u!1 &1408454937 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7759878208046565275, guid: de6ad133435f6704da25f64eeed83db1, type: 3}
-  m_PrefabInstance: {fileID: 7759878207814028083}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1408454938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408454937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687d74e111cdda34f8c9387ed0d73679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootableItems: []
 --- !u!1001 &1414268929
 PrefabInstance:
   m_ObjectHideFlags: 0

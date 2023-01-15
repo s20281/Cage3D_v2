@@ -82,25 +82,60 @@ public class UseSkill : MonoBehaviour
     private IEnumerator Effect(float time, CombatCharacter user, CombatCharacter target)
     {
         yield return new WaitForSeconds(animationTime);
+
+        switch (GameManager.CombatManager.selectedSkill)
+        {
+            case Skill.MeleeAttack:
+                if (!HitOrMiss(user, target, true))
+                {
+                    GameManager.CombatManager.Turn.actionTaken = true;
+                    yield break;
+                }
+                MeleeAttackEffect(user, target);
+                break;
+            case Skill.RangeAttack:
+                if (!HitOrMiss(user, target, false))
+                {
+                    GameManager.CombatManager.Turn.actionTaken = true;
+                    yield break;
+                }
+                RangeAttackEffect(user, target);
+                break;
+        }
+
         var effect = Instantiate(GameManager.FXSpawner.HitWhite, target.transform);
         effect.transform.localScale = Vector3.one * 1;
         effect.transform.localPosition = new Vector3(0.25f, 1.5f, 0);
         effect.transform.parent = null;
 
-        switch (GameManager.CombatManager.selectedSkill)
-        {
-            case Skill.MeleeAttack:
-                MeleeAttackEffect(user, target);
-                break;
-            case Skill.RangeAttack:
-                RangeAttackEffect(user, target);
-                break;
-        }
-        
         GameManager.UIManager.combatUI.UpdateInfo(target);
         GameManager.CombatManager.Turn.actionTaken = true;
     }
+    [SerializeField] private readonly float baseHitChance = 0.75f;
+    private bool HitOrMiss(CombatCharacter user, CombatCharacter target, bool melee)
+    {
+        var acc = user.combatStats.accuracy;
+        var ddg = target.combatStats.dodge;
 
+        if (ddg < 0)
+            ddg = 0;
+
+        float skillFactor = (acc - ddg) * 0.05f;
+        float rangeFactor = (user.position - 1 + target.position - 1) * 0.05f;
+
+        float hitChance = 0;
+
+        if (melee)
+        {
+            hitChance = baseHitChance + skillFactor - rangeFactor;
+        }
+        else
+        {
+            hitChance = baseHitChance - 0.3f + skillFactor + rangeFactor;
+        }
+
+        return hitChance > Random.Range(0f, 1f);
+    }
 
     private void MeleeAttackEffect(CombatCharacter user, CombatCharacter target)
     {
@@ -163,8 +198,20 @@ public class UseSkill : MonoBehaviour
 
     private void SpecialSkill(CombatCharacter user, CombatCharacter target)
     {
-
+        switch(user.inventory.special.itemData.id)
+        {
+            case 0:
+                Shuriken(target);
+                break;
+        }
         GameManager.CombatManager.Turn.actionTaken = true;
+    }
+
+    private void Shuriken(CombatCharacter target)
+    {
+        target.combatStats.ChangeHealth(-5);
+        target.combatStats.speed -= 3;
+        target.combatStats.dodge -= 3;
     }
 
 }

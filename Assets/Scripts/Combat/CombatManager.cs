@@ -12,6 +12,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private GameObject combatUI;
     [SerializeField] private Transform skills;
     [SerializeField] private LoadCharacters loadCharacters;
+    [SerializeField] private LootManager LootManager;
     public ChangePosition changePosition;
     public LoadCharacters LoadCharacters => loadCharacters;
     [SerializeField] private Turn turn;
@@ -41,6 +42,7 @@ public class CombatManager : MonoBehaviour
         GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
         combatUI.SetActive(false);
         GameManager.UIManager.minimapUI.ToggleMinimap();
+        LootManager.RandomLoot();
     }
 
     public void DeselectSkills()
