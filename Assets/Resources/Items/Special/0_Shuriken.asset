@@ -18,6 +18,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a621e14f80ef35c4e886c6a2e8878da4, type: 3}
   singleUse: 0
   prefab: {fileID: 3034513029620853530, guid: 6e466d2132cd1d54197b3a6390d141e3, type: 3}
+  heroName: Ninja
   agressiveSkill: 1
   heal: 0
   damage: 5
