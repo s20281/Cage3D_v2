@@ -58,27 +58,16 @@ public class EquipmentSlotUI : MonoBehaviour
 
     public bool CanEquip()
     {
-        var itemCategory = GameManager.UIManager.inventoryUI.heldItemIcon.GetComponent<HeldItem>().item.itemData.itemCategory;
+        var itemData = GameManager.UIManager.inventoryUI.heldItemIcon.GetComponent<HeldItem>().item.itemData;
+        var itemCategory = itemData.itemCategory;
 
-        return itemCategory == slotItemType;
+        var result = itemCategory == slotItemType;
 
-        //switch (slotType)
-        //{
-        //    case EquipmentSlotType.MeleeWeapon:
-        //        return (itemCategory == ItemCategory.MeleeWeapon);
-        //    case EquipmentSlotType.RangeWeapon:
-        //        return (itemCategory == ItemCategory.RangeWeapon);
-        //    case EquipmentSlotType.Helmet:
-        //        return (itemCategory == ItemCategory.Helmet);
-        //    case EquipmentSlotType.Armor:
-        //        return (itemCategory == ItemCategory.Armor);
-        //    case EquipmentSlotType.Consumables:
-        //        return (itemCategory == ItemCategory.Consumable);
-        //    case EquipmentSlotType.Special:
-        //        return (itemCategory == ItemCategory.Armor);
-        //    default:
-        //        return false;
-        //}
+        if(itemCategory == ItemCategory.Special)
+        {
+            result &= GameManager.TeamManager.currentHeroGO.GetComponent<Hero>().heroData.name == (itemData as SpecialData).heroName;
+        }
+        return result;
     }
 
     public EquipmentSlot GetEquipmentSlot()
