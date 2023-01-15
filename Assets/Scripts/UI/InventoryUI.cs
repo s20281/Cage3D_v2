@@ -94,7 +94,10 @@ public class InventoryUI : MonoBehaviour
         else
         {
             GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
-            GameManager.UIManager.minimapUI.turnOnMinimap();
+            if (!GameManager.UIManager.readUI.gameObject.activeSelf)
+            {
+                GameManager.UIManager.minimapUI.turnOnMinimap();
+            }
             RefreshSkills();
         }
     }

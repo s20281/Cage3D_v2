@@ -15,7 +15,8 @@ enum ImportanceType
 public class Talk : Interactable
 {
     [SerializeField] private DialogueObject dialogue1;
-    [SerializeField] private DialogueObject dialogue2; 
+    [SerializeField] private DialogueObject dialogue2;
+    [SerializeField] private DialogueObject dialogueNoTalk;
 
     [SerializeField] private ImportanceType type;
 
@@ -24,7 +25,9 @@ public class Talk : Interactable
     [SerializeField] private GameObject prefabToCompareStats;
     [SerializeField] private int prefferedMindPoints;
 
-   
+    private bool ifCanTalk = true;
+
+
 
 
     public override void Interact()
@@ -40,57 +43,68 @@ public class Talk : Interactable
         {
 
             case ImportanceType.Nic:
-                GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                ifCanTalk = false;
                 break;
             case ImportanceType.Psychika:
 
                 if (GameManager.PlayerManager.GetMindPoints() >= prefferedMindPoints)
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 break;
             case ImportanceType.Si³a:
                 if (prefabToFindStats.GetComponent<CombatStats>().strength >= prefabToCompareStats.GetComponent<CombatStats>().strength)
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 break;
             case ImportanceType.Unik:
                 if (prefabToFindStats.GetComponent<CombatStats>().dodge >= prefabToCompareStats.GetComponent<CombatStats>().dodge)
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 break;
             case ImportanceType.Samotnik:
                 if (GameManager.TeamManager.heroes.Count < 4)
                 {                 
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 break;
             case ImportanceType.DuszaTowarzystwa:
                 if (GameManager.TeamManager.heroes.Count >= 4)
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    ifCanTalk = false;
                 }
                 break;
             

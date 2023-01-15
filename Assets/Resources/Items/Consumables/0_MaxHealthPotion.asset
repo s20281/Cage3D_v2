@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb574fa807c949a4990b0325bc179779, type: 3}
+  m_Name: 0_MaxHealthPotion
+  m_EditorClassIdentifier: 
+  itemCategory: 3
+  id: 0
+  name: Max Health Potion
+  icon: {fileID: 21300000, guid: b9f36626830c999439d9d97b575b89d6, type: 3}
+  singleUse: 1
+  prefab: {fileID: 2234018809895308644, guid: f0bd3615766446548a8e90a4d803dcd4, type: 3}
+  heal: 2

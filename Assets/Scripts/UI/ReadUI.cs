@@ -14,11 +14,9 @@ public class ReadUI : MonoBehaviour
             gameObject.SetActive(true);
 
             textLabel.text = textToRead.Read;
+            
+            GameManager.UIManager.minimapUI.turnOffMinimap();
         }
-
-        GameManager.UIManager.minimapUI.ToggleMinimap();
-        GameManager.UIManager.minimapUI.turnOffMinimap();
-
     }
 
     public void ReadStoryByString(string textToRead)
@@ -29,10 +27,7 @@ public class ReadUI : MonoBehaviour
 
             textLabel.text = textToRead;
         }
-
-        GameManager.UIManager.minimapUI.ToggleMinimap();
         GameManager.UIManager.minimapUI.turnOffMinimap();
-
     }
 
 
@@ -42,13 +37,10 @@ public class ReadUI : MonoBehaviour
         {
             gameObject.SetActive(false);
 
-            GameManager.UIManager.minimapUI.turnOnMinimap();
-            //jeszczer dodaæ sprawdzenie czy jest aktywny inny ui (g³ównie inv)
-            GameManager.UIManager.minimapUI.ToggleMinimap();
-
-
+            if (!GameManager.UIManager.inventoryUI.inventoryPanel.activeSelf)
+            {
+                GameManager.UIManager.minimapUI.turnOnMinimap();
+            }
         }
-
-        
     }
 }

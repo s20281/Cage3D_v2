@@ -5,14 +5,14 @@ using UnityEngine;
 public class MinimapUI: MonoBehaviour
 {
     [SerializeField] private GameObject minimap;
-    private bool isMapTogglingBlocked;
-    private bool wasActive;
+    private bool isMapTogglingBlocked = false;
+    private bool wasActive = true;
 
     void Start()
     {
         isMapTogglingBlocked = false;
+        
     }
-
 
     void Update()
     {
@@ -26,7 +26,14 @@ public class MinimapUI: MonoBehaviour
 
     public void turnOffMinimap()
     {
-        wasActive = minimap.activeSelf;
+        if (GameManager.UIManager.inventoryUI.inventoryPanel.activeSelf && GameManager.UIManager.readUI.gameObject.activeSelf)
+        {
+            Debug.Log("Dwa otwarte");
+        }
+        else
+        {
+           wasActive = minimap.activeSelf;
+        }
         minimap.SetActive(false);
         isMapTogglingBlocked = true;
     }

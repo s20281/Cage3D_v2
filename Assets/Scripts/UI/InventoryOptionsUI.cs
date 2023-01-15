@@ -73,14 +73,14 @@ public class InventoryOptionsUI : MonoBehaviour
         switch (optionName)
         {
             case "Usuñ":
-                DeleteItem(activeInv);
+                DeleteItem(activeInv, true);
                 break;
             case "Przeczytaj":
                 GameManager.UIManager.readUI.ReadStoryByString(activeInv.slots[slotID].itemData.prefab.GetComponent<Read>().getObject().Read);
                 break;
             case "U¿yj":
                 var consData = activeInv.slots[slotID].itemData as ConsumableData;
-                changeHealth(consData, activeHero);
+                changeHealth(consData, activeHero, activeInv);
                 break;
             case "Wyposa¿":
                 Equip(invUI, activeInv, eqSlots);
@@ -95,12 +95,14 @@ public class InventoryOptionsUI : MonoBehaviour
         }
     }
 
-    public void changeHealth(ConsumableData consData, GameObject activeHero)
+    public void changeHealth(ConsumableData consData, GameObject activeHero, Inventory activeInv)
     {
         var healthBefore = activeHero.GetComponent<Hero>().heroData.maxHealth;
         var recentHealth = healthBefore + consData.heal;
-        activeHero.GetComponent<Hero>().heroData.maxHealth = recentHealth;
+        activeHero.GetComponent<Hero>().health = recentHealth;
         Debug.Log(recentHealth);
+
+        DeleteItem(activeInv, false);
     }
 
     public void SetEquipmentSlotsInfo(GameObject icon, GameObject image)
@@ -182,12 +184,16 @@ public class InventoryOptionsUI : MonoBehaviour
     }
 
 
-    private void DeleteItem(Inventory activeInv)
+    private void DeleteItem(Inventory activeInv, bool ifSpawn)
     {
         if (eqSlot == null)
         {
             activeInv.RemoveItem(slotID);
-            SpawnItem(activeInv.slots[slotID].itemData.prefab);
+
+            if (ifSpawn)
+            {
+                SpawnItem(activeInv.slots[slotID].itemData.prefab);
+            }
 
         }
         else
@@ -195,7 +201,11 @@ public class InventoryOptionsUI : MonoBehaviour
             var itemRemoved = activeInv.RemoveEqItem(eqSlot);
             icon.SetActive(true);
             image.SetActive(false);
-            SpawnItem(itemRemoved.prefab);
+
+            if (ifSpawn)
+            {
+                SpawnItem(itemRemoved.prefab);
+            }
 
         }
         
