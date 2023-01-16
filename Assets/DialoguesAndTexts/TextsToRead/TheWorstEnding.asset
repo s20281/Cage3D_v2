@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da521484bd2a1744d8f977ae1f29143b, type: 3}
   m_Name: TheWorstEnding
   m_EditorClassIdentifier: 
-  readText: 
+  readText: "Bohater si\u0119 nie budzi.\n"

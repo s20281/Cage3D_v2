@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da521484bd2a1744d8f977ae1f29143b, type: 3}
   m_Name: GoodEnding
   m_EditorClassIdentifier: 
-  readText: 
+  readText: "Jest super, go\u015Bciu budzi si\u0119 ze snu. Wszystko pami\u0119ta,
+    etc."
