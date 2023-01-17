@@ -11,42 +11,47 @@ public class TheEnd : MonoBehaviour
     public ReadObject end2SoSo;
     public ReadObject end3TheWorst;
     public bool isStart;
+    public bool wasOpened = false;
 
     private void OnTriggerEnter(Collider collider)
     {
-        readStoryPanel.SetActive(true);
-
-        if (isStart)
+        if (!wasOpened)
         {
-            if (textLabel != null)
+            readStoryPanel.SetActive(true);
+
+            if (isStart)
             {
-                textLabel.text = end1GoodOrStart.Read;
-            }
-        }
-        else
-        {
-
-            GameManager.UIManager.minimapUI.turnOffMinimap();
-
-            if (textLabel != null)
-            {
-                gameObject.SetActive(true);
-
-                if (end1GoodOrStart != null && GameManager.PlayerManager.GetMindPoints() > 20)
+                if (textLabel != null)
                 {
                     textLabel.text = end1GoodOrStart.Read;
                 }
-                else
+                wasOpened = true;
+            }
+            else
+            {
+
+                GameManager.UIManager.minimapUI.turnOffMinimap();
+
+                if (textLabel != null)
                 {
-                    if (end3TheWorst != null && GameManager.PlayerManager.GetMindPoints() < -20)
+                    gameObject.SetActive(true);
+
+                    if (end1GoodOrStart != null && GameManager.PlayerManager.GetMindPoints() > 20)
                     {
-                        textLabel.text = end3TheWorst.Read;
+                        textLabel.text = end1GoodOrStart.Read;
                     }
                     else
                     {
-                        if (end2SoSo != null && GameManager.PlayerManager.GetMindPoints() > -20 && GameManager.PlayerManager.GetMindPoints() < 20)
+                        if (end3TheWorst != null && GameManager.PlayerManager.GetMindPoints() < -20)
                         {
-                            textLabel.text = end2SoSo.Read;
+                            textLabel.text = end3TheWorst.Read;
+                        }
+                        else
+                        {
+                            if (end2SoSo != null && GameManager.PlayerManager.GetMindPoints() > -20 && GameManager.PlayerManager.GetMindPoints() < 20)
+                            {
+                                textLabel.text = end2SoSo.Read;
+                            }
                         }
                     }
                 }
