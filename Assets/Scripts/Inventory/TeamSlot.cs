@@ -18,4 +18,12 @@ public class TeamSlot : MonoBehaviour, IDropHandler
             dragHeroes.currentSlot = this;
         }
     }
+
+    public void PutHero(DragHeroes dragHeroes)
+    {
+        this.dragHeroes = dragHeroes;
+        dragHeroes.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+        dragHeroes.currentSlot = this;
+    }
+
 }

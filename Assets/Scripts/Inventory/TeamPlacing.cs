@@ -15,9 +15,24 @@ public class TeamPlacing : MonoBehaviour
     public void AddHeroPortrait(Hero hero)
     {
         var newPortrait = Instantiate(heroPortraitPrefab, transform);
-        newPortrait.GetComponent<RectTransform>().anchoredPosition = new Vector3(Random.Range(-360, 360), Random.Range(-200, -100), 0);
-        newPortrait.GetComponent<DragHeroes>().SetupHero(hero);
+        var dragHeroes = newPortrait.GetComponent<DragHeroes>();
+        dragHeroes.SetupHero(hero);
         heroPortraits.Add(hero, newPortrait);
+
+        for(int i = 0; i < teamSlots.Count; i++)
+        {
+            if(teamSlots[i].dragHeroes == null)
+            {
+                teamSlots[i].PutHero(dragHeroes);
+                return;
+            }
+        }
+
+
+
+        newPortrait.GetComponent<RectTransform>().anchoredPosition = new Vector3(Random.Range(-360, 360), Random.Range(-200, -100), 0);
+        
+        
     }
 
     public void RemoveHeroPortrait(Hero hero)

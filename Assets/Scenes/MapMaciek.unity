@@ -3386,8 +3386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f133b8ed70fa0844d8c022b7e2584dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLabel: {fileID: 0}
-  readStoryPanel: {fileID: 0}
 --- !u!1001 &159671107
 PrefabInstance:
   m_ObjectHideFlags: 0
