@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da521484bd2a1744d8f977ae1f29143b, type: 3}
   m_Name: Item3
   m_EditorClassIdentifier: 
-  readText: 
+  readText: "To by\u0142 wspania\u0142y wiecz\xF3r. \u015Amiech, zabawa i taniec
+    do samego rana. Najlepsze urodziny jakie tylko m\xF3g\u0142 sobie wymarzy\u0107.
+    Chcia\u0142, \u017Ceby ten czas trwa\u0142 wiecznie.\r\n- Ale by\u0142o super!
+    \u2013 wykrzykn\u0119\u0142a jedna z dziewczyn wychodz\u0105c z imprezy. \u2013
+    Troch\u0119 szkoda, \u017Ce  Armin odwo\u0142a\u0142 swoj\u0105. Mogliby\u015Bmy
+    pobawi\u0107 si\u0119 razem..\r\n- Tak. Hehe.. \u2013 za\u015Bmia\u0142 si\u0119
+    ch\u0142opak. \u2013 Ciesz\u0119 si\u0119, \u017Ce mimo wszystko zdecydowa\u0142a\u015B
+    si\u0119 przyj\u015B\u0107. Wiem, \u017Ce wybiera\u0142a\u015B si\u0119 do niego.
+    \r\n- No c\xF3\u017C. Armin jest ca\u0142kiem bogaty, wi\u0119c jak rodzice zasponsoruj\u0105
+    mu wszystko, to tylko przyj\u015B\u0107 i si\u0119 bawi\u0107, ale ja ju\u017C
+    zauwa\u017Cyli\u015Bmy u ciebie te\u017C by\u0142o ekstra. Cze\u015B\u0107! \u2013
+    powiedzia\u0142a jeszcze zanim wesz\u0142a do samochodu rodzic\xF3w.\r\nTo by\u0142
+    dobry ruch z mojej strony - przemkn\u0119\u0142o mu przez my\u015Bl zanim zabra\u0142
+    si\u0119 do sprz\u0105tania.\r\n"

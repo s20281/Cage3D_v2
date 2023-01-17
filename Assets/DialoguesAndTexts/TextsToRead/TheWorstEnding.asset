@@ -12,4 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da521484bd2a1744d8f977ae1f29143b, type: 3}
   m_Name: TheWorstEnding
   m_EditorClassIdentifier: 
-  readText: "Bohater si\u0119 nie budzi.\n"
+  readText: "Walka by\u0142a ci\u0119\u017Cka i \u017Cmudna. Nic nie wskazywa\u0142o
+    na to, \u017Ce bohater wyjdzie z tego ca\u0142o, a jednak\u2026 Wchodzi w o\u015Blepiaj\u0105c\u0105
+    jasno\u015B\u0107, kt\xF3ra przygasa wraz z ka\u017Cdym jego krokiem. a jego
+    cz\u0142onkowie dru\u017Cyny rozmywaj\u0105 si\u0119 dotkni\u0119ci obj\u0119ci
+    mackami ciemno\u015B\u0107 wy\u0142aniaj\u0105cymi si\u0119 z czarnej dziury
+    na wprost niego. M\u0119\u017Cczyzna zaczyna naprzemiennie traci\u0107 i odzyskiwa\u0107
+    \u015Bwiadomo\u015B\u0107, a wok\xF3\u0142 niego zaczynaj\u0105 gromadzi\u0107
+    si\u0119 nieprzyjemnie wygl\u0105daj\u0105ce postacie. Atakuj\u0105 go, a on
+    nie mo\u017Ce si\u0119 broni\u0107. Czuje przera\u017Cenie, kt\xF3re go obezw\u0142adnia.
+    Wok\xF3\u0142 niego zacie\u015Bniaj\u0105 si\u0119 nagle zmaterializowane kraty. 
+    Ma wra\u017Cenie, \u017Ce trwa to wieczno\u015B\u0107. I ma cz\u0119\u015Bciowo
+    racj\u0119, bo 20 lat p\xF3\u017Aniej dalej znajduje si\u0119 zamkni\u0119ty
+    w wi\u0119\u017C\u0105cej go klatce, a wok\xF3\u0142 niego pojawiaj\u0105 si\u0119
+    i znikaj\u0105 torturuj\u0105ce go postacie. Nigdy nie budzi si\u0119 z tego
+    koszmaru."

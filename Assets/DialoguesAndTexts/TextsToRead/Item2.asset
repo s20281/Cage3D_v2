@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da521484bd2a1744d8f977ae1f29143b, type: 3}
   m_Name: Item2
   m_EditorClassIdentifier: 
-  readText: 
+  readText: "Ch\u0142opiec spojrza\u0142 si\u0119 na ni\u0105 w nieprzyjemny spos\xF3b.
+    \r\n- A co za to dostan\u0119? \r\n- Ja.. \u2013 zawaha\u0142a si\u0119 dziewczynka.
+    \u2013 czy musz\u0119 ci co\u015B za to dawa\u0107?\r\n- Ci\u0119\u017Cko zapracowa\u0142em
+    na te cukierki, wi\u0119c nie dam ich byle komu \u2013 odpar\u0142 ze z\u0142o\u015Bliwo\u015Bci\u0105.\r\nWida\u0107
+    by\u0142o, \u017Ce jego rozm\xF3wczyni mia\u0142a \u0142zy w oczach. Jak si\u0119
+    jej przyjrza\u0142, to by\u0142a r\xF3wnie\u017C bardzo brudna. Zmarszczy\u0142
+    nos z niesmakiem. On nigdy nie wychodzi\u0142 na podw\xF3rko brudny.\r\n- A powiesz
+    mi, gdzie mog\u0119 zapracowa\u0107 na takie s\u0142odko\u015Bci? \u2013 o\u017Cywi\u0142a
+    si\u0119 \u2013 moja mama je uwielbia i by\u0142aby na pewno szcz\u0119\u015Bliwa,
+    gdybym jej je da\u0142a. \r\n- Chcia\u0142aby\u015B. Moja babcia lubi czyste
+    osoby, kt\xF3re s\u0105 m\u0105dre i u\u0142o\u017Cone, a nie takie brudaski,
+    jak ty \u2013 wsta\u0142, wystawi\u0142 j\u0119zyk i odszed\u0142 ra\u017Anym
+    krokiem. Nie widzia\u0142 ani nie s\u0142ysza\u0142 ju\u017C, jak dziewczynka
+    zanosi\u0142a si\u0119 p\u0142aczem.\r"

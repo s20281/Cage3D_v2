@@ -12,5 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da521484bd2a1744d8f977ae1f29143b, type: 3}
   m_Name: GoodEnding
   m_EditorClassIdentifier: 
-  readText: "Jest super, go\u015Bciu budzi si\u0119 ze snu. Wszystko pami\u0119ta,
-    etc."
+  readText: "Walka by\u0142a ci\u0119\u017Cka i \u017Cmudna. Nic nie wskazywa\u0142o
+    na to, \u017Ce bohater wyjdzie z tego ca\u0142o, a jednak\u2026 Wchodzi w o\u015Blepiaj\u0105c\u0105
+    jasno\u015B\u0107, a jego cz\u0142onkowie dru\u017Cyny rozmywaj\u0105 si\u0119
+    dotkni\u0119ci promieniem \u015Bwiat\u0142o\u015Bci. Niekt\xF3rzy pr\xF3buj\u0105
+    mu jeszcze co\u015B powiedzie\u0107, ale m\u0119\u017Cczyzna ich nie s\u0142yszy.
+    Nagle blask tak go o\u015Blepia, \u017Ce zamyka powieki. Bardzo mu one ci\u0105\u017C\u0105
+    i przez d\u0142u\u017Csz\u0105 chwil\u0119 nie mo\u017Ce ich otworzy\u0107. Jednak,
+    gdy ju\u017C mu si\u0119 udaje, to widzi, \u017Ce \u015Bwiat\u0142o to tak naprawd\u0119
+    skupiony promie\u0144 lampy \u015Bwiec\u0105cej nad jego g\u0142ow\u0105. M\u0119\u017Cczyzna
+    stara si\u0119 rozejrze\u0107 dooko\u0142a, ale nie mo\u017Ce ruszy\u0107 g\u0142ow\u0105.
+    Porusza jedynie ga\u0142kami ocznymi, kt\xF3re wy\u0142apuj\u0105 z boku twarz
+    zaniepokojonej kobiety. Ohh\u2026 to jego \u017Cona. Czy ona co\u015B do niego
+    m\xF3wi? S\u0142yszy tylko szum. W jego polu widzenia pojawia si\u0119 m\u0119\u017Cczyzna,
+    kt\xF3ry wygl\u0105da jak lekarz. On r\xF3wnie\u017C porusza wargami. Kobieta
+    u\u015Bmiecha si\u0119 lekko, ale jej oczy b\u0142yszcz\u0105 w dzikiej rado\u015Bci.
+    \u201EJaka ona pi\u0119kna\u201D. My\u015Bli pacjent, po czym zamyka znowu ci\u0105\u017C\u0105ce
+    powieki.  \u201ETak dobrze by\u0107 w domu\u201D."
