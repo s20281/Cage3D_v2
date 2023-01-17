@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1923930168433484706}
   - component: {fileID: 1923930168433484704}
   - component: {fileID: 486699257256052251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,8 @@ MonoBehaviour:
   outlines:
   - {fileID: 1923930168433484705}
   isOpened: 0
-  fowInRoom: {fileID: 0}
+  isLocked: 0
+  keyToUnlock: {fileID: 0}
 --- !u!95 &1923930168433484704
 Animator:
   serializedVersion: 3

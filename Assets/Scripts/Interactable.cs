@@ -6,6 +6,7 @@ public abstract class Interactable : MonoBehaviour
 {
     public float interactionRange = 4f;
     private bool canInteract;
+    internal bool blockInteract = false;
 
     public List<Outline> outlines = new List<Outline>();
     void Start()
@@ -17,7 +18,7 @@ public abstract class Interactable : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (GameManager.PlayerManager.DistanceFromPlayer(transform.position) < interactionRange)
+        if (!blockInteract && GameManager.PlayerManager.DistanceFromPlayer(transform.position) < interactionRange)
         {
             canInteract = true;
             foreach (Outline outline in outlines)
