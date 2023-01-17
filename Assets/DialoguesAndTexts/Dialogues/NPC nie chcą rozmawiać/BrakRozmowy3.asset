@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
   m_Name: BrakRozmowy3
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - "Mam nadziej\u0119, ze nie masz ju\u017C nic do dodania."
   responses: []

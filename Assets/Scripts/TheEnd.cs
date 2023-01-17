@@ -11,7 +11,7 @@ public class TheEnd : MonoBehaviour
     public ReadObject end2SoSo;
     public ReadObject end3TheWorst;
     public bool isStart;
-    public bool wasOpened = false;
+    private bool wasOpened = false;
 
     private void OnTriggerEnter(Collider collider)
     {

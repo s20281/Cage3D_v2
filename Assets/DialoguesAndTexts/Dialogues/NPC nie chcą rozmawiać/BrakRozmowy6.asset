@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
   m_Name: BrakRozmowy6
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - "Czasami marz\u0119 by by\u0107 zwyk\u0142ym facetem. Tylko ja, zero potwor\xF3w
+    i wakacje na pla\u017Cy."
   responses: []

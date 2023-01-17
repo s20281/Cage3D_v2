@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
   m_Name: BrakRozmowy2
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - "B\u0119d\u0119 si\u0119 kr\u0119ci\u0142 blisko ciebie. Ale nie licz na rozmow\u0119."
   responses: []
