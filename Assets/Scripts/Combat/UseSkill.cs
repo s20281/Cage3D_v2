@@ -113,28 +113,23 @@ public class UseSkill : MonoBehaviour
     }
     public static bool HitOrMiss(CombatCharacter user, CombatCharacter target, bool melee)
     {
-        var acc = user.combatStats.accuracy;
-        var ddg = target.combatStats.dodge;
+        var accuracy = user.combatStats.accuracy;
+        var dodge = target.combatStats.dodge;
 
-        if (ddg < 0)
-            ddg = 0;
+        if (dodge < 0)
+            dodge = 0;
 
-        float skillFactor = (acc - ddg) * 0.05f;
+        float skillFactor = (accuracy - dodge) * 0.05f;
         float rangeFactor = (user.position - 1 + target.position - 1) * 0.05f;
 
         float hitChance = 0;
 
         if (melee)
-        {
-
             hitChance = 0.75f + skillFactor - rangeFactor;
-        }
         else
-        {
             hitChance = 0.5f + skillFactor + rangeFactor;
-        }
 
-        if(hitChance > Random.Range(0f, 1f))
+        if (hitChance > Random.Range(0f, 1f))
         {
             return true;
         }
@@ -149,24 +144,13 @@ public class UseSkill : MonoBehaviour
     {
         int damage = user.combatStats.strength;
 
-        print("user: " + user.name + " / " + user.isHero + " - " + user.position);
-
-        print("strength: " + user.combatStats.strength);
-
         if(user.isHero && !user.inventory.meleeWeapon.isEmpty)
-        {
             damage += (user.inventory.meleeWeapon.itemData as WeaponData).baseDamage;
-            print("base: " + (user.inventory.meleeWeapon.itemData as WeaponData).baseDamage);
-        }
 
         int positionDiff = user.position - 1 + target.position - 1;
         float penaltyFactor = positionDiff * 0.1f;
 
-        print("Damage1: " + damage);
-
         damage = (int)(damage * (1 - penaltyFactor));
-
-        print("Damage2: " + damage);
 
         target.combatStats.ChangeHealth(-damage);
     }

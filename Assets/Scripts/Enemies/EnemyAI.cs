@@ -4,18 +4,6 @@ using UnityEngine;
 
 public abstract class EnemyAI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public abstract CombatCharacter ChooseEnemy();
     public abstract CombatCharacter ChooseAlly();
     public abstract void Attack(CombatCharacter target);
