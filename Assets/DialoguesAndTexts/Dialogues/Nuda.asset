@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: Nuda
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Ostatnio strasznie mi si\u0119 nudzi. Co by\u015B powiedzia\u0142, \u017Cebym
+    wyruszy\u0142 w t\u0119 podr\xF3\u017C razem z tob\u0105?"
+  responses:
+  - responseText: 'Jasne, zapraszam. '
+    dialogueObject: {fileID: 11400000, guid: 14c2df47d99117b42b7446baa31faa07, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 11400000, guid: 786a49d0b5195d94e9072337c03ea23d, type: 2}
+    impactOnMind: 0
+  - responseText: "Chyba wol\u0119 jednak walczy\u0107 sam."
+    dialogueObject: {fileID: 11400000, guid: 4d8101016954aeb42ba13d3197e97975, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 0

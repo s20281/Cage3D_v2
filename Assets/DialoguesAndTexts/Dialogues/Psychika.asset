@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: Psychika
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Hej, mi\u0142o ci\u0119 widzie\u0107! Abym do\u0142\u0105czy\u0142 do twojej
+    dru\u017Cyny, musisz by\u0107 bardzo silny umys\u0142owo, by nie przygni\xF3t\u0142
+    ci\u0119 ci\u0119\u017Car mojej si\u0142y"
+  responses:
+  - responseText: "To co\u015B idealnie dla mnie! "
+    dialogueObject: {fileID: 11400000, guid: db19d247b7124ef4da58ff81db98e51d, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 11400000, guid: de1cbf71a897ab443a117acaacdd2979, type: 2}
+    impactOnMind: 3
+  - responseText: "Hmm.. Nie jestem pewien. Co s\u0105dzisz?"
+    dialogueObject: {fileID: 11400000, guid: 50b079f931dc15a49a3be25260748e55, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 11400000, guid: de1cbf71a897ab443a117acaacdd2979, type: 2}
+    impactOnMind: -1
+  - responseText: "Czy ty to widzisz? Pe\u0142nia si\u0142y fizycznej i psychicznej!"
+    dialogueObject: {fileID: 11400000, guid: 9e79f2062bfb12d42800751c4eb46c70, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 11400000, guid: de1cbf71a897ab443a117acaacdd2979, type: 2}
+    impactOnMind: -2

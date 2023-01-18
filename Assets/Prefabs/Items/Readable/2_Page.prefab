@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6300711456496461775}
   - component: {fileID: -4341190604607201673}
   m_Layer: 6
-  m_Name: 0_Page
+  m_Name: 2_Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38de4c47b69979341b62e37a3e1836ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 55db9fa2973ac5242b148b58e6892b90, type: 2}
+  itemData: {fileID: 11400000, guid: 94137082a71cb9c4b95d0a1219ba3a77, type: 2}
 --- !u!114 &9036545212206870726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,4 +222,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionRange: 4
   outlines: []
-  textToRead: {fileID: 11400000, guid: aabcc27a9f297c145ac9bf5657c83b82, type: 2}
+  textToRead: {fileID: 11400000, guid: 09f53b9e1a1495d45927f6ab7dbb76bb, type: 2}

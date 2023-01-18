@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: Ucieczka
   m_EditorClassIdentifier: 
   dialogue:
-  - "Jeszcze tego po\u017Ca\u0142ujesz. Muahahaha."
-  responses: []
+  - "Jestem portierem tego \u015Bwiata, wi\u0119c otworz\u0119 ci te drzwi, ale dobrze
+    si\u0119 zastan\xF3w. Takie zachowanie dobrze ci nie pos\u0142u\u017Cy."
+  responses:
+  - responseText: "(Wystawia j\u0119zyk)"
+    dialogueObject: {fileID: 11400000, guid: 6df18d546ed2ac542b584214eabc4478, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -1

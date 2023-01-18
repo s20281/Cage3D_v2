@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: BrakPsychiki
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Hej, mi\u0142o ci\u0119 widzie\u0107! Abym do\u0142\u0105czy\u0142 do twojej
+    dru\u017Cyny, musisz by\u0107 bardzo silny umys\u0142owo, by nie przygni\xF3t\u0142
+    ci\u0119 ci\u0119\u017Car mojej si\u0142y"
+  responses:
+  - responseText: "Mo\u017Ce nie jstem silny, ale bardzo entuzjastyczny! "
+    dialogueObject: {fileID: 11400000, guid: 13d2d7ab77b511d4394b9d7fea2a99a2, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 0
+  - responseText: "Zobacz na t\u0119 dru\u017Cyn\u0119. Istnieje powiedzenie \"W
+      kupie si\u0142a\" i w\u0142a\u015Bnie w byciu razem drzemie nasza. "
+    dialogueObject: {fileID: 11400000, guid: c2eb2602dc901224bacaedd006ae904b, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 11400000, guid: de1cbf71a897ab443a117acaacdd2979, type: 2}
+    impactOnMind: 4
+  - responseText: "Wydaje mi si\u0119, \u017Ce jestem troch\u0119 zas\u0142aby..."
+    dialogueObject: {fileID: 11400000, guid: 385fb2b68feb35440bb33f6a3af6a23e, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -1

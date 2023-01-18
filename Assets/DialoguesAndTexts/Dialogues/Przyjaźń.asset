@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: "Przyja\u017A\u0144"
   m_EditorClassIdentifier: 
   dialogue:
-  - "Nie zapomnij wej\u015Bc do tego pomieszczenia! Kryje si\u0119 tam co\u015B co
-    ci pomo\u017Ce w trudach twoich przyszlych przyg\xF3d. A przyokazji tu jest co\u015B
-    dla ciebie!"
+  - "Nie zapomnij przeszuka\u0107 wszystkich pomieszcze\u0144! Kryj\u0105 si\u0119
+    tam rzeczy, kt\xF3re pomog\u0105 ci w trudach twoich przysz\u0142ych przyg\xF3d. "
   responses:
   - responseText: "Dzi\u0119kuj\u0119. Do zobaczenia!"
     dialogueObject: {fileID: 11400000, guid: 7ce7ca470bb665448babece6bcafb0b2, type: 2}
     objectToGet: {fileID: 0}
     objectToGive: {fileID: 0}
-    doorToOpen: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 0

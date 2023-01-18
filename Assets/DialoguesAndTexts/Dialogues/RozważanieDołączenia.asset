@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: "Rozwa\u017CanieDo\u0142\u0105czenia"
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Rozwa\u017Cam do\u0142\u0105czenie do jakiej\u015B dru\u017Cyny. Niestety nie
+    lubi\u0119 t\u0142um\xF3w.."
+  responses:
+  - responseText: "Nasza dru\u017Cyna ma ma\u0142o os\xF3b!"
+    dialogueObject: {fileID: 0}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 11400000, guid: cac8c6aaab32b5e4b9d3f8ffc98cd47c, type: 2}
+    impactOnMind: 0
+  - responseText: "Mamy ma\u0142o os\xF3b, ale nied\u0142ugo dru\u017Cyna si\u0119
+      powi\u0119kszy. "
+    dialogueObject: {fileID: 0}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 0

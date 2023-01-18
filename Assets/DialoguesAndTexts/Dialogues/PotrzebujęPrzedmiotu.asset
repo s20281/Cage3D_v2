@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: "Potrzebuj\u0119Przedmiotu"
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Potrzebuj\u0119 eliksiru zdrowia. Niestety m\xF3j mi si\u0119 sko\u0144czy\u0142,
+    a id\u0119 wieczorem polowa\u0107 na smoki."
+  responses:
+  - responseText: "Prosz\u0119 to dla ciebie."
+    dialogueObject: {fileID: 11400000, guid: ba11412ed1954684296ca3685f83048f, type: 2}
+    objectToGet: {fileID: 7018536072461476001, guid: 0024b844582df1a47871fed667c39edb, type: 3}
+    objectToGive: {fileID: 2096741889152443605, guid: ddc3c8b2230961a42ba048361c7b6385, type: 3}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 2
+  - responseText: Nic ci nie dam.
+    dialogueObject: {fileID: 11400000, guid: e49b6d6b0241d3547889297bd33508e4, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -2
