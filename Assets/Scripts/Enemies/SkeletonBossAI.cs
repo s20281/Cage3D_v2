@@ -10,9 +10,15 @@ public class SkeletonBossAI : EnemyAI
 
     public override void Attack(CombatCharacter target)
     {
+        var combatCharacter = GetComponent<CombatCharacter>();
+
         this.target = target;
         animator.CrossFade("Attack2", 0.1f);
-        Invoke(nameof(AttackEffect), 1.5f);
+
+        if (UseSkill.HitOrMiss(combatCharacter, target, true))
+        {
+            Invoke(nameof(AttackEffect), 1.5f);
+        }
     }
 
     private void AttackEffect()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,6 +19,13 @@ public class HealthChangePopup : MonoBehaviour
             changeText.colorGradient = new VertexGradient(Color.yellow, Color.yellow, Color.black, Color.black);
 
         changeText.text = Mathf.Abs(change).ToString();
+        animator.Play("Show");
+    }
+
+    internal void ShowMiss()
+    {
+        changeText.colorGradient = new VertexGradient(Color.red, Color.red, Color.black, Color.black);
+        changeText.text = "MISS";
         animator.Play("Show");
     }
 }

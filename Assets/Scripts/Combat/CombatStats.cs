@@ -87,6 +87,12 @@ public class CombatStats : MonoBehaviour
         healthBar.UpdateHealth(health);
     }
 
+    public void OnMiss()
+    {
+        var healthBar = GetComponent<CombatCharacter>().healthBarUI;
+        healthBar.ShowMiss();
+    }
+
     private void Die()
     {
         var character = GetComponent<CombatCharacter>();

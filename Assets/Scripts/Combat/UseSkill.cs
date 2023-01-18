@@ -111,8 +111,7 @@ public class UseSkill : MonoBehaviour
         GameManager.UIManager.combatUI.UpdateInfo(target);
         GameManager.CombatManager.Turn.actionTaken = true;
     }
-    [SerializeField] private readonly float baseHitChance = 0.75f;
-    private bool HitOrMiss(CombatCharacter user, CombatCharacter target, bool melee)
+    public static bool HitOrMiss(CombatCharacter user, CombatCharacter target, bool melee)
     {
         var acc = user.combatStats.accuracy;
         var ddg = target.combatStats.dodge;
@@ -127,14 +126,23 @@ public class UseSkill : MonoBehaviour
 
         if (melee)
         {
-            hitChance = baseHitChance + skillFactor - rangeFactor;
+
+            hitChance = 0.75f + skillFactor - rangeFactor;
         }
         else
         {
-            hitChance = baseHitChance - 0.3f + skillFactor + rangeFactor;
+            hitChance = 0.5f + skillFactor + rangeFactor;
         }
 
-        return hitChance > Random.Range(0f, 1f);
+        if(hitChance > Random.Range(0f, 1f))
+        {
+            return true;
+        }
+        else
+        {
+            user.combatStats.OnMiss();
+            return false;
+        }
     }
 
     private void MeleeAttackEffect(CombatCharacter user, CombatCharacter target)

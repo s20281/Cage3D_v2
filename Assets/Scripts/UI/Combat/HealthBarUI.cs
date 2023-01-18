@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -70,4 +71,8 @@ public class HealthBarUI : MonoBehaviour
         damagePopup.ShowChange(change);
     }
 
+    internal void ShowMiss()
+    {
+        damagePopup.ShowMiss();
+    }
 }

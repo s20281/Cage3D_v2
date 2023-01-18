@@ -487,7 +487,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -3840,6 +3840,7 @@ MonoBehaviour:
   position: 4
   inventory: {fileID: 0}
   heroData: {fileID: 0}
+  hero: {fileID: 0}
   weaponHolder: {fileID: 7627948049023853852}
   enemyAI: {fileID: 0}
   healthBarUI: {fileID: 3329508910950814795}
@@ -3881,6 +3882,7 @@ MonoBehaviour:
   strength: 0
   speed: 0
   armor: 0
+  expForKill: 0
 --- !u!1 &5772838607208994178
 GameObject:
   m_ObjectHideFlags: 0
@@ -6208,6 +6210,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4866583675155997173}
     m_Modifications:
+    - target: {fileID: 883582598685558884, guid: 1186d07566caf1e4998c8730f827f7b8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 188.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 883582598685558884, guid: 1186d07566caf1e4998c8730f827f7b8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1846094693417859657, guid: 1186d07566caf1e4998c8730f827f7b8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

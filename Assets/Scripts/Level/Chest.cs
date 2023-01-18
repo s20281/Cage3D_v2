@@ -8,6 +8,7 @@ public class Chest : Interactable
     public override void Interact()
     {
         animator.Play("OpenChest");
-        blockInteract = true;   
+        //blockInteract = true;
+        gameObject.layer = 2;
     }
 }
