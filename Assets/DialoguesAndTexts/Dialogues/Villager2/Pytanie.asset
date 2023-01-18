@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: Pytanie
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Mam pytanie. Jak my\u015Blisz, dlaczego urodziny Armina si\u0119 nie odby\u0142y? "
+  responses:
+  - responseText: "Z\u0142ama\u0142 nog\u0119"
+    dialogueObject: {fileID: 11400000, guid: 54966777fe89b5e4d920328453e54687, type: 2}
+    objectToGet: {fileID: 7018536072461476001, guid: 0024b844582df1a47871fed667c39edb, type: 3}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 0
+  - responseText: "Nikt nie chcia\u0142 tam by\u0107"
+    dialogueObject: {fileID: 11400000, guid: d1ae3380557bbd849901574dbd5b2447, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -3
+  - responseText: "Odwo\u0142a\u0142em jego przyj\u0119cie"
+    dialogueObject: {fileID: 11400000, guid: d6730963b95161d47a0a2495b4215b72, type: 2}
+    objectToGet: {fileID: 7018536072461476001, guid: 0024b844582df1a47871fed667c39edb, type: 3}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 1

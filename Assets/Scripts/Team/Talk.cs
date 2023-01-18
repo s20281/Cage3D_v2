@@ -25,7 +25,7 @@ public class Talk : Interactable
     [SerializeField] private GameObject prefabToCompareStats;
     [SerializeField] private int prefferedMindPoints;
 
-    private bool ifCanTalk = true;
+    public bool ifCanTalk = true;
 
 
 

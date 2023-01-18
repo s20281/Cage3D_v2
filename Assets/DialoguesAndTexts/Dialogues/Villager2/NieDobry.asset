@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
-  m_Name: BrakRozmowy3
+  m_Name: NieDobry
   m_EditorClassIdentifier: 
   dialogue:
-  - "Mam nadziej\u0119, \u017Ce nie masz ju\u017C nic do dodania."
+  - "Nigdy nie by\u0142e\u015B zbyt dobr\u0105 osob\u0105. Biedny Armin, zadzwoni\u0107
+    w imieniu jego brata i odwo\u0142a\u0107 mu przyj\u0119cie. Brak s\u0142\xF3w."
   responses: []

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: Zagadka3
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Ten, kto mnie tworzy, nie potrzebuje mnie, kiedy to robi. Ten, kt\xF3ry mnie
+    kupuje, nie potrzebuje mnie dla siebie. Ten, kto mnie u\u017Cyje, nie b\u0119dzie
+    o tym wiedzia\u0142. Czym jestem?"
+  responses:
+  - responseText: "Broni\u0105"
+    dialogueObject: {fileID: 11400000, guid: d73fd702d27d7da459e7bda92379c39c, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -1
+  - responseText: Wazonem
+    dialogueObject: {fileID: 11400000, guid: 936eecf5d6fd2e84381461a1d4149bec, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -1
+  - responseText: "Trumn\u0105"
+    dialogueObject: {fileID: 11400000, guid: 5dffeb1ae7cc77246b073f3a52139ecf, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 3
+  - responseText: "Wiedz\u0105"
+    dialogueObject: {fileID: 11400000, guid: b4d72570ef85b3c4285c7eaebbdcf01a, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -2

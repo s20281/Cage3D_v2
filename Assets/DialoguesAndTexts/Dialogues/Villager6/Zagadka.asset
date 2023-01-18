@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
+  m_Name: Zagadka
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Ile jab\u0142ek mo\u017Cesz zje\u015B\u0107 gdy masz pusty \u017Co\u0142\u0105dek? "
+  responses:
+  - responseText: 1
+    dialogueObject: {fileID: 11400000, guid: ac46b25f93da6674db99cfc8c45f567b, type: 2}
+    objectToGet: {fileID: 2096741889152443605, guid: ddc3c8b2230961a42ba048361c7b6385, type: 3}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: 2
+  - responseText: 2
+    dialogueObject: {fileID: 11400000, guid: cd249ba70ed8e7340ad16d5dd26c02cf, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -1
+  - responseText: 3
+    dialogueObject: {fileID: 11400000, guid: cd249ba70ed8e7340ad16d5dd26c02cf, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -1
+  - responseText: "Niesko\u0144czono\u015B\u0107"
+    dialogueObject: {fileID: 11400000, guid: cd249ba70ed8e7340ad16d5dd26c02cf, type: 2}
+    objectToGet: {fileID: 0}
+    objectToGive: {fileID: 0}
+    heroToAdd: {fileID: 0}
+    impactOnMind: -1

@@ -65,5 +65,11 @@ public class TheEnd : MonoBehaviour
         {
             readStoryPanel.SetActive(false);
         }
+
+        if(readStoryPanel.active && Input.GetKeyDown(KeyCode.Space) && !isStart)
+        {
+            Debug.Log("Quit");
+            Application.Quit();
+        }
     }
 }

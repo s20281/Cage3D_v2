@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9d44516bb028ca4bb9f37d88f0ec40f, type: 3}
-  m_Name: BrakRozmowy3
+  m_Name: Trumna
   m_EditorClassIdentifier: 
   dialogue:
-  - "Mam nadziej\u0119, \u017Ce nie masz ju\u017C nic do dodania."
+  - "To prawda. Trumn\u0119 kto\u015B robi, kupuje i kto\u015B w niej spoczywa."
   responses: []
