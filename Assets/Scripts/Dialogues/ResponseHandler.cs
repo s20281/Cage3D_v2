@@ -63,7 +63,7 @@ public class ResponseHandler : MonoBehaviour
 
 
 
-        dialogueUI.ShowDialogue(response.DialogueObject, response.ObjectToGet, null, response.HeroToAdd, true, null);
+        dialogueUI.ShowDialogue(response.DialogueObject, response.ObjectToGet, null, response.HeroToAdd, true, null, null);
 
 
     }

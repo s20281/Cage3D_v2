@@ -15,6 +15,7 @@ public class DialogueUI : MonoBehaviour
 
     int counter = 0;
     bool ifCanTalkChanged;
+    private GameObject heroWeTalk;
 
 
     void Start()
@@ -24,9 +25,13 @@ public class DialogueUI : MonoBehaviour
         CloseDialogueBox();
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject, Item objectToGet, GameObject doorToOpen, HeroData heroToAdd, bool ifCanInteract, DialogueObject dialogueNoTalk) 
+    public void ShowDialogue(DialogueObject dialogueObject, Item objectToGet, GameObject doorToOpen, HeroData heroToAdd, bool ifCanInteract, DialogueObject dialogueNoTalk, GameObject heroWeTalk) 
     {
         player.GetComponent<PlayerMovement>().canMove = false;
+        if (heroWeTalk != null)
+        {
+            this.heroWeTalk = heroWeTalk;
+        }
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject, objectToGet, doorToOpen, heroToAdd, ifCanInteract, dialogueNoTalk));
 
@@ -85,6 +90,7 @@ public class DialogueUI : MonoBehaviour
                 else
                 {
                     CloseDialogueBox();
+                    checkIfShouldDeleteHero();
                 }
             }
         }
@@ -98,6 +104,7 @@ public class DialogueUI : MonoBehaviour
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
 
                 CloseDialogueBox();
+                checkIfShouldDeleteHero();
 
             }
 
@@ -110,5 +117,16 @@ public class DialogueUI : MonoBehaviour
         player.GetComponent<PlayerMovement>().canMove = true;
         textLabel.text = string.Empty;
         GameManager.UIManager.minimapUI.turnOnMinimap();
+    }
+
+    void checkIfShouldDeleteHero()
+    {
+        if (heroWeTalk != null)
+        {
+            if (heroWeTalk.GetComponent<DeleteHeroAfterTalk>() != null)
+            {
+                heroWeTalk.GetComponent<DeleteHeroAfterTalk>().Delete();
+            }
+        }
     }
 }

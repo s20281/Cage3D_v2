@@ -43,67 +43,67 @@ public class Talk : Interactable
         {
 
             case ImportanceType.Nic:
-                GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                 ifCanTalk = false;
                 break;
             case ImportanceType.Psychika:
 
                 if (GameManager.PlayerManager.GetMindPoints() >= prefferedMindPoints)
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 break;
             case ImportanceType.Si³a:
                 if (prefabToFindStats.GetComponent<CombatStats>().strength >= prefabToCompareStats.GetComponent<CombatStats>().strength)
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 break;
             case ImportanceType.Unik:
                 if (prefabToFindStats.GetComponent<CombatStats>().dodge >= prefabToCompareStats.GetComponent<CombatStats>().dodge)
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 break;
             case ImportanceType.Samotnik:
                 if (GameManager.TeamManager.heroes.Count < 4)
                 {                 
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 break;
             case ImportanceType.DuszaTowarzystwa:
                 if (GameManager.TeamManager.heroes.Count >= 4)
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue1, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 else
                 {
-                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk);
+                    GameManager.UIManager.dialogueUI.ShowDialogue(dialogue2, null, doorToOpen, null, ifCanTalk, dialogueNoTalk, gameObject);
                     ifCanTalk = false;
                 }
                 break;
