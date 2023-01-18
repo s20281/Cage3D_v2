@@ -24,7 +24,7 @@ public class TeamManager : MonoBehaviour
         //}
 
         AddHero(heroDatas[0]); // Dodanie G³ównego Bohatera
-        AddHero(heroDatas[1]); // Dodanie Ninjy
+        //AddHero(heroDatas[1]); // Dodanie Ninjy
 
         currentHeroGO = heroes[0];
     }

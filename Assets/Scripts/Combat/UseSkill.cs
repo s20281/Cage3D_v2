@@ -196,6 +196,7 @@ public class UseSkill : MonoBehaviour
                 Shuriken(target);
                 break;
         }
+        user.usedSpecialPower = true;
         GameManager.CombatManager.Turn.actionTaken = true;
     }
 

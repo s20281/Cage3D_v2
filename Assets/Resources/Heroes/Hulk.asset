@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroName: Hulk
   maxHealth: 20
-  strength: 20
-  accuracy: 5
-  dodge: 5
-  speed: 5
+  strength: 5
+  accuracy: 2
+  dodge: 2
+  speed: 1
   combatPrefab: {fileID: 1148184743810358722, guid: 1d40fc26e6eb9744797c2fcd13b5431a, type: 3}
   portrait: {fileID: 21300000, guid: 456f0bad3bb545b4e87ddc931cc8adf1, type: 3}

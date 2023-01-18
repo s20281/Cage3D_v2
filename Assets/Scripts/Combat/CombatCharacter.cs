@@ -16,6 +16,8 @@ public class CombatCharacter : MonoBehaviour
     public EnemyAI enemyAI;
     public HealthBarUI healthBarUI;
 
+    public bool usedSpecialPower = false;
+
     private void Start()
     {
         outline = GetComponent<Outline>();

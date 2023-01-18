@@ -15,7 +15,7 @@ MonoBehaviour:
   heroName: Ninja
   maxHealth: 10
   strength: 2
-  accuracy: 4
+  accuracy: 6
   dodge: 8
   speed: 7
   combatPrefab: {fileID: 57661632989314812, guid: d8b24547ef1545d4f842b697d756efd8, type: 3}
