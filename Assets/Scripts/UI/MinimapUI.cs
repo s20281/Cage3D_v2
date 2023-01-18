@@ -44,7 +44,13 @@ public class MinimapUI: MonoBehaviour
         isMapTogglingBlocked = false;
     }
 
-
+    public void SwtichMinimap(bool enabled)
+    {
+        if (!isMapTogglingBlocked)
+        {
+            minimap.SetActive(enabled);
+        }
+    }
 
     public void ToggleMinimap()
     {
@@ -52,6 +58,5 @@ public class MinimapUI: MonoBehaviour
         {
             minimap.SetActive(!minimap.activeSelf);
         }
-
     }
 }

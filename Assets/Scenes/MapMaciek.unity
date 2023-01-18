@@ -12541,7 +12541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3812516580399810549, guid: 4737e431b3b76429eab7b443065c9441, type: 3}
       propertyPath: m_RootOrder
-      value: 156
+      value: 154
       objectReference: {fileID: 0}
     - target: {fileID: 3812516580399810549, guid: 4737e431b3b76429eab7b443065c9441, type: 3}
       propertyPath: m_LocalScale.x
@@ -12553,7 +12553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3812516580399810549, guid: 4737e431b3b76429eab7b443065c9441, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6835
+      value: 0.4849424
       objectReference: {fileID: 0}
     - target: {fileID: 3812516580399810549, guid: 4737e431b3b76429eab7b443065c9441, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12565,7 +12565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3812516580399810549, guid: 4737e431b3b76429eab7b443065c9441, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.64
+      value: -21.2586
       objectReference: {fileID: 0}
     - target: {fileID: 3812516580399810549, guid: 4737e431b3b76429eab7b443065c9441, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13773,6 +13773,10 @@ PrefabInstance:
     - target: {fileID: 103664, guid: 2f1666ad9b7fdd7459a360619d6ccffd, type: 3}
       propertyPath: m_Name
       value: Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 103664, guid: 2f1666ad9b7fdd7459a360619d6ccffd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 480340, guid: 2f1666ad9b7fdd7459a360619d6ccffd, type: 3}
       propertyPath: m_RootOrder
@@ -42653,8 +42657,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447143635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.72, y: -0.5, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 20}
+  m_LocalPosition: {x: 19.8658, y: -0.5, z: -0.7789}
+  m_LocalScale: {x: 19.708, y: 1, z: 18.442}
   m_Children: []
   m_Father: {fileID: 1379232844}
   m_RootOrder: 20
@@ -46172,7 +46176,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh162118
+  m_Name: pb_Mesh283666
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -52242,8 +52246,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788258152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.44, y: -0.5, z: -1.9}
-  m_LocalScale: {x: 20, y: 1, z: 18.2544}
+  m_LocalPosition: {x: -19.7069, y: -0.5, z: 0.7373}
+  m_LocalScale: {x: 19.466, y: 1, z: 12.97912}
   m_Children: []
   m_Father: {fileID: 1379232844}
   m_RootOrder: 43
@@ -67166,6 +67170,10 @@ PrefabInstance:
     - target: {fileID: 2234018809895308644, guid: f0bd3615766446548a8e90a4d803dcd4, type: 3}
       propertyPath: m_Name
       value: MaxHealthPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234018809895308644, guid: f0bd3615766446548a8e90a4d803dcd4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4314505237564342051, guid: f0bd3615766446548a8e90a4d803dcd4, type: 3}
       propertyPath: outlineMode

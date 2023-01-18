@@ -32,7 +32,7 @@ public class CombatManager : MonoBehaviour
         GameManager.CameraManager.SwitchCamera(true);
         GameManager.PlayerManager.playerMovement.SwitchFreeze(true);
         combatUI.SetActive(true);
-        GameManager.UIManager.minimapUI.ToggleMinimap();
+        GameManager.UIManager.minimapUI.SwtichMinimap(false);
     }
 
     public void EndCombat()
@@ -41,7 +41,7 @@ public class CombatManager : MonoBehaviour
         GameManager.CameraManager.SwitchCamera(false);
         GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
         combatUI.SetActive(false);
-        GameManager.UIManager.minimapUI.ToggleMinimap();
+        GameManager.UIManager.minimapUI.SwtichMinimap(true);
         LootManager.RandomLoot();
     }
 

@@ -30,9 +30,10 @@ public class DragHeroes : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     {
         canvasGroup.blocksRaycasts = false;
 
-        if (currentSlot != null)
+        if (currentSlot != null && currentSlot.dragHeroes == this)
         {
             currentSlot.dragHeroes = null;
+            currentSlot = null;
         }
     }
 
