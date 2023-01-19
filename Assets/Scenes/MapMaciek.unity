@@ -46212,7 +46212,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh283666
+  m_Name: pb_Mesh24780
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -62773,6 +62773,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1328232492924764370, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232492924764370, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232492924764370, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 441.89545
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232492924764370, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -461.1193
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232492951888759, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1328232493471522296, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
       propertyPath: m_Name
       value: MAIN_MENU
@@ -62819,6 +62839,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1328232493471522297, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232493741242219, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232493741242219, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232493741242219, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 441.89545
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232493741242219, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -780.0421
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232493834764018, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232493834764018, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232493834764018, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 441.89545
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328232493834764018, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -301.6579
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825853411307874021, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825853411307874021, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825853411307874021, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 441.89545
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825853411307874021, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -620.5807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775712645019207021, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
