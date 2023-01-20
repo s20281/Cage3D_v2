@@ -21,5 +21,8 @@ public enum EnemyType
 {
     None,
     Skeleton,
-    SkeletonBoss
+    SkeletonBoss,
+    ArmoredSkeleton,
+    Archer,
+    ArmoredArcher
 }

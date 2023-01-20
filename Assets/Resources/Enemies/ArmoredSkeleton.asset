@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f7df45c6d7965844943964ce135d2f7, type: 3}
-  m_Name: SkeletonBoss
+  m_Name: ArmoredSkeleton
   m_EditorClassIdentifier: 
-  enemyName: Skeleton Boss
-  enemyType: 2
-  combatPrefab: {fileID: 2537096344037913985, guid: e523f4f22653bb24f91127fbf4480f79, type: 3}
-  maxHealth: 40
-  strength: 5
+  enemyName: Spooky Scary Skeleton
+  enemyType: 1
+  combatPrefab: {fileID: 2537096344037913985, guid: 2d010d0382d059341a11742092712f29, type: 3}
+  maxHealth: 10
+  strength: 3
   accuracy: 0
   dodge: 3
-  speed: 50
-  expForKill: 100
-  armor: 20
+  speed: 1
+  expForKill: 4
+  armor: 2

@@ -7,6 +7,12 @@ public class SkeletonBossAI : EnemyAI
     public Animator animator;
     CombatCharacter target;
     public CombatStats combatStats;
+    public CombatCharacter combatCharacter;
+
+    [SerializeField] EnemyData armoredSkeleton;
+
+    private int specialCooldown = 2;
+    private int currentCooldown = 0;
 
     public override void Attack(CombatCharacter target)
     {
@@ -31,21 +37,45 @@ public class SkeletonBossAI : EnemyAI
         GameManager.UIManager.combatUI.UpdateInfo(target);
     }
 
-    private void SummonAlly()
+    private IEnumerator SummonAlies()
     {
+        GameManager.CombatManager.changePosition.MoveBack(combatCharacter);
+        yield return new WaitForSeconds(1);
 
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(1);
+            var spawned = GameManager.CombatManager.LoadCharacters.SummonEnemy(armoredSkeleton);
+
+            if(spawned)
+            {
+                combatStats.armor -= 2;
+                combatCharacter.healthBarUI.UpdateArmor(combatStats.armor);
+            }
+            else
+            {
+                yield break;
+            }
+            yield return new WaitForSeconds(1);
+        }
     }
 
     public override void ChooseAction()
     {
-        if(GameManager.CombatManager.Turn.aliveEnemies.Count < 4)
+        if (GameManager.CombatManager.Turn.aliveEnemies.Count < 4 && currentCooldown == 0)
         {
-            SummonAlly();
+            StartCoroutine(SummonAlies());
+            currentCooldown = specialCooldown + 1;
+        }
+        else
+        {
+            var heroes = GameManager.CombatManager.Turn.aliveHeroes;
+            Attack(heroes[Random.Range(0, heroes.Count)]);
         }
 
-
-        var heroes = GameManager.CombatManager.Turn.aliveHeroes;
-        Attack(heroes[Random.Range(0, heroes.Count)]);
+        currentCooldown--;
+        if (currentCooldown < 0)
+            currentCooldown = 0;
     }
 
     public override CombatCharacter ChooseAlly()

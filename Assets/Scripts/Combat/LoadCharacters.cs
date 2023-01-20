@@ -24,7 +24,7 @@ public class LoadCharacters : MonoBehaviour
                 var enemy = Instantiate(enemies[i].combatPrefab, enemyPositions[i]);
                 var enemyCombatCharacter = enemy.GetComponent<CombatCharacter>();
 
-                enemyCombatCharacter.combatStats.armor += enemies[i].armor;
+                enemyCombatCharacter.combatStats.armor = enemies[i].armor;
 
                 enemyCombatCharacter.position = i+1;
                 enemy.GetComponent<CombatStats>().SetupStats(enemies[i]);
@@ -103,5 +103,31 @@ public class LoadCharacters : MonoBehaviour
                 //GameManager.UIManager.combatUI.heroHealthBars[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    public bool SummonEnemy(EnemyData enemyData)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (GameManager.CombatManager.changePosition.enemyPositionOccupied[i])
+            {
+                continue;
+            }
+
+            var enemy = Instantiate(enemyData.combatPrefab, enemyPositions[i]);
+            var enemyCombatCharacter = enemy.GetComponent<CombatCharacter>();
+
+            enemyCombatCharacter.combatStats.armor += enemyData.armor;
+            enemyCombatCharacter.position = i + 1;
+
+            enemy.GetComponent<CombatStats>().SetupStats(enemyData);
+            GetComponent<Turn>().aliveEnemies.Add(enemyCombatCharacter);
+            GameManager.CombatManager.changePosition.enemyPositionOccupied[i] = true;
+
+            enemyCombatCharacter.healthBarUI.OnEnterCombat(enemyCombatCharacter);
+
+            return true;
+        }
+        return false;
     }
 }

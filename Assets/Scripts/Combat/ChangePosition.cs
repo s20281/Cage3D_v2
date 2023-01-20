@@ -61,6 +61,26 @@ public class ChangePosition : MonoBehaviour
         return -1;
     }
 
+    public void MoveBack(CombatCharacter combatCharacter)
+    {
+        var goToPos = 4;
+        if (combatCharacter.isHero)
+            return;
+
+        if (enemyPositionOccupied[goToPos-1])
+        {
+            return;
+        }
+
+        combatCharacter.transform.parent = GameManager.CombatManager.LoadCharacters.enemyPositions[goToPos-1];
+        enemyPositionOccupied[combatCharacter.position - 1] = false;
+        combatCharacter.position = goToPos;
+        enemyPositionOccupied[goToPos-1] = true;
+        
+        StartCoroutine(SmoothChange(combatCharacter.gameObject));
+    }
+
+
     IEnumerator SmoothChange(GameObject character)
     {
         float time = 0.75f;

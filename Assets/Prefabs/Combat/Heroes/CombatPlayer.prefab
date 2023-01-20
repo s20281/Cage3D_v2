@@ -1152,6 +1152,7 @@ MonoBehaviour:
   weaponHolder: {fileID: 3149389695305199923}
   enemyAI: {fileID: 0}
   healthBarUI: {fileID: 6375352608167503050}
+  usedSpecialPower: 0
 --- !u!114 &2879387009281363040
 MonoBehaviour:
   m_ObjectHideFlags: 0

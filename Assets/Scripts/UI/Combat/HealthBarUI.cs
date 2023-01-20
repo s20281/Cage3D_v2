@@ -66,6 +66,35 @@ public class HealthBarUI : MonoBehaviour
         }
     }
 
+    public void UpdateArmor(int currentArmor)
+    {
+        if (currentArmor <= 0)
+        {
+            currentArmor = 0;
+        }
+
+        var deltaArmor = Mathf.Abs(currentArmor - armorPoints.Count);
+
+        if (currentArmor > armorPoints.Count)
+        {
+            for (int i = 0; i < deltaArmor; i++)
+            {
+                var ap = Instantiate(armorPointPrefab, armorBar.transform);
+                armorPoints.Add(ap.GetComponent<Image>());
+            }
+        }
+        else
+        {
+            for (int i = 0; i < deltaArmor; i++)
+            {
+                Destroy(armorPoints[0].gameObject);
+                armorPoints.Remove(armorPoints[0]);
+            }
+        }
+
+        armorBar.SetActive(currentArmor > 0);
+    }
+
     public void ShowChange(float change)
     {
         damagePopup.ShowChange(change);
