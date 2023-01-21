@@ -24,6 +24,7 @@ public class SkeletonAI : EnemyAI
         {
             Invoke(nameof(AttackEffect), 1.5f);
         }
+        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
     private void AttackEffect()

@@ -82,9 +82,10 @@ public class Turn : MonoBehaviour
 
             if (!currentCharacter.isHero)
             {
+                actionTaken = false;
                 currentCharacter.enemyAI.ChooseAction();
-                
-                yield return new WaitForSeconds(2);
+                yield return new WaitUntil(() => actionTaken);
+                yield return new WaitForSeconds(1);
             }
                 
             else

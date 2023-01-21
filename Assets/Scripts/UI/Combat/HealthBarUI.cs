@@ -73,6 +73,14 @@ public class HealthBarUI : MonoBehaviour
             currentArmor = 0;
         }
 
+        if(currentArmor <= 10 && armorPoints.Count > 10)
+        {
+            var rect = armorBar.GetComponent<RectTransform>();
+            rect.anchoredPosition = new Vector3(0, 38.8f, 0);
+            rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 15);
+        }
+
+
         var deltaArmor = Mathf.Abs(currentArmor - armorPoints.Count);
 
         if (currentArmor > armorPoints.Count)

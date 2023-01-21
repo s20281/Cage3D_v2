@@ -25,6 +25,7 @@ public class SkeletonBossAI : EnemyAI
         {
             Invoke(nameof(AttackEffect), 1.5f);
         }
+        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
     private void AttackEffect()
@@ -39,6 +40,7 @@ public class SkeletonBossAI : EnemyAI
 
     private IEnumerator SummonAlies()
     {
+        yield return new WaitForSeconds(0.5f);
         GameManager.CombatManager.changePosition.MoveBack(combatCharacter);
         yield return new WaitForSeconds(1);
 
@@ -54,10 +56,12 @@ public class SkeletonBossAI : EnemyAI
             }
             else
             {
+                GameManager.CombatManager.Turn.actionTaken = true;
                 yield break;
             }
             yield return new WaitForSeconds(1);
         }
+        GameManager.CombatManager.Turn.actionTaken = true;
     }
 
     public override void ChooseAction()
