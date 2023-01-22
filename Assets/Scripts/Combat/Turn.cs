@@ -95,13 +95,16 @@ public class Turn : MonoBehaviour
                 yield return new WaitUntil(() => actionTaken);
                 yield return new WaitForSeconds(1);
             }
-            currentCharacter.GetComponent<Outline>().enabled = false;
+            currentCharacter.TryGetComponent<Outline>(out var outline);
+            if(outline != null)
+                outline.enabled = false;
             GameManager.CombatManager.currentCharacter = null;
         }
         if (aliveEnemies.Count == 0)
         {
             print("VICTORY");
             GameManager.PlayerManager.ChangeMindPoints(MindPointsActions.BattleWon);
+            GameManager.CombatManager.LootManager.RandomLoot();
         }
             
         else

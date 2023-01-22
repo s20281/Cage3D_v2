@@ -12,13 +12,20 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private GameObject combatUI;
     [SerializeField] private Transform skills;
     [SerializeField] private LoadCharacters loadCharacters;
-    [SerializeField] private LootManager LootManager;
+    public LootManager LootManager;
     public ChangePosition changePosition;
     public LoadCharacters LoadCharacters => loadCharacters;
     [SerializeField] private Turn turn;
     public Turn Turn => turn;
     [SerializeField] private UseSkill useSkill;
     public UseSkill UseSkill => useSkill;
+
+    public bool CombatAvtive()
+    {
+        return combatActive;
+    }
+        
+
     public void StartCombat(List<EnemyData> enemies)
     {
         if (combatActive)
@@ -42,7 +49,6 @@ public class CombatManager : MonoBehaviour
         GameManager.PlayerManager.playerMovement.SwitchFreeze(false);
         combatUI.SetActive(false);
         GameManager.UIManager.minimapUI.SwtichMinimap(true);
-        LootManager.RandomLoot();
     }
 
     public void DeselectSkills()

@@ -67,8 +67,11 @@ public class CombatStats : MonoBehaviour
         {
             change += armor;
             if (change > 0)
-                change = 0;
+            {
+                change = 0;    
+            }
         }
+
 
         healthBar.ShowChange(change);
 

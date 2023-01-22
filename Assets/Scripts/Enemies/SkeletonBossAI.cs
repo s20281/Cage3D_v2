@@ -36,6 +36,10 @@ public class SkeletonBossAI : EnemyAI
         effect.transform.parent = null;
         target.combatStats.ChangeHealth(-combatStats.strength);
         GameManager.UIManager.combatUI.UpdateInfo(target);
+        if (target.combatStats.armor > 0)
+            GameManager.SoundManager.PlayArmorHit();
+        else
+            GameManager.SoundManager.PlayPunch();
     }
 
     private IEnumerator SummonAlies()
