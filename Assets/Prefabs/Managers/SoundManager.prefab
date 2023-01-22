@@ -70,6 +70,7 @@ MonoBehaviour:
   bulletImpacts:
   - {fileID: 8300000, guid: 75adfe9a619833445a701305b983e548, type: 3}
   - {fileID: 8300000, guid: e11a5a019377fbd4c81caa0adcb4c236, type: 3}
+  arrowShot: {fileID: 8300000, guid: 113a5e46e62b3cb44b82482e30be3797, type: 3}
 --- !u!82 &1506465656
 AudioSource:
   m_ObjectHideFlags: 0

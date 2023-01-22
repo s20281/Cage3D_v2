@@ -10,10 +10,25 @@ public class SoundManager : MonoBehaviour
     public List<AudioClip> laserShots = new List<AudioClip>();
     public List<AudioClip> whoosh = new List<AudioClip>();
     public List<AudioClip> bulletImpacts = new List<AudioClip>();
+    public List<AudioClip> armorHit = new List<AudioClip>();
+
+
+    public AudioClip arrowShot;
+    public AudioClip arrowDamage;
+
+    public void PlaySound(AudioClip sound)
+    {
+        source.PlayOneShot(sound);
+    }
 
     public void PlayPunch()
     {
         source.PlayOneShot(punches[Random.Range(0, punches.Count)]);
+    }
+
+    public void PlayArmorHit()
+    {
+        source.PlayOneShot(armorHit[Random.Range(0, armorHit.Count)]);
     }
 
     public void PlaySlash()

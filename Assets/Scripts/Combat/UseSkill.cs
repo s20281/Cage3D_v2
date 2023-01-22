@@ -42,21 +42,21 @@ public class UseSkill : MonoBehaviour
             heroAnimator.CrossFade("Hook Punch", 0.3f);
             animationTime = 1f;
             GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayWhoosh), 0.75f);
-            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayPunch), 1f);
+            //GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayPunch), 1f);
         }
         else if(user.position == 1)
         {
             heroAnimator.CrossFade("Slash4", 0.3f);
             animationTime = 1.5f;
             GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayWhoosh), 1f);
-            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlaySlash), 1.5f);
+            //GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlaySlash), 1.5f);
         }
         else
         {
             heroAnimator.CrossFade("Slash", 0.3f);
             animationTime = 0.5f;
             GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlayWhoosh), 0.25f);
-            GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlaySlash), 0.5f);
+            //GameManager.SoundManager.Invoke(nameof(GameManager.SoundManager.PlaySlash), 0.5f);
         }
         StartCoroutine(Effect(animationTime, user, target));
     }
@@ -66,7 +66,9 @@ public class UseSkill : MonoBehaviour
         var weaponID = user.inventory.rangeWeapon.itemData.id;
         if(weaponID == 1)
         {
-
+            heroAnimator.CrossFade("DrawArrow", 0.3f);
+            animationTime = 1.2f;
+            GameManager.SoundManager.PlaySound(GameManager.SoundManager.arrowShot);
         }
         else if (weaponID == 6)
         {
@@ -153,6 +155,14 @@ public class UseSkill : MonoBehaviour
         damage = (int)(damage * (1 - penaltyFactor));
 
         target.combatStats.ChangeHealth(-damage);
+
+
+        if (target.combatStats.armor > 0)
+            GameManager.SoundManager.PlayArmorHit();
+        else if (user.inventory.meleeWeapon.isEmpty)
+            GameManager.SoundManager.PlayPunch();
+        else
+            GameManager.SoundManager.PlaySlash();
     }
 
     private void RangeAttackEffect(CombatCharacter user, CombatCharacter target)
@@ -171,6 +181,10 @@ public class UseSkill : MonoBehaviour
         damage = (int)(damage * (1 - penaltyFactor));
 
         target.combatStats.ChangeHealth(-damage);
+        if (target.combatStats.armor > 0)
+            GameManager.SoundManager.PlayArmorHit();
+        else if (user.inventory.rangeWeapon.itemData.id == 1)
+            GameManager.SoundManager.PlaySound(GameManager.SoundManager.arrowDamage);
     }
 
     private void Consumable(CombatCharacter user, CombatCharacter target)

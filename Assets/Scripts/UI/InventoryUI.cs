@@ -26,7 +26,7 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && !GameManager.CombatManager.CombatAvtive())
             ToggleInventory();
 
         if (Input.GetKeyDown(KeyCode.Escape) && inventoryPanel.activeSelf)

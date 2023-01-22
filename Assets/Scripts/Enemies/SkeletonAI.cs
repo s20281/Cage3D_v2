@@ -33,6 +33,12 @@ public class SkeletonAI : EnemyAI
             effect.transform.parent = null;
             target.combatStats.ChangeHealth(-combatStats.strength);
             GameManager.UIManager.combatUI.UpdateInfo(target);
+
+            if (target.combatStats.armor > 0)
+                GameManager.SoundManager.PlayArmorHit();
+            else
+                GameManager.SoundManager.PlayPunch();
+
         }
         GameManager.CombatManager.Turn.actionTaken = true;
     }

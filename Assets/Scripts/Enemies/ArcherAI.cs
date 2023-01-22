@@ -17,6 +17,7 @@ public class ArcherAI : EnemyAI
     {
         this.target = target;
         animator.CrossFade("DrawArrow", 0.1f);
+        GameManager.SoundManager.PlaySound(GameManager.SoundManager.arrowShot);
         StartCoroutine(AttackEffect());
     }
 
@@ -36,6 +37,7 @@ public class ArcherAI : EnemyAI
 
             target.combatStats.ChangeHealth(-damage);
             GameManager.UIManager.combatUI.UpdateInfo(target);
+            GameManager.SoundManager.PlaySound(GameManager.SoundManager.arrowDamage);
         }
         GameManager.CombatManager.Turn.actionTaken = true;
     }
