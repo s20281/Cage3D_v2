@@ -26,7 +26,7 @@ MonoBehaviour:
     dialogueObject: {fileID: 11400000, guid: 04ff304d12305b148afe0c04f02a6589, type: 2}
     objectToGet: {fileID: 1941116000, guid: 54f0c46be1bfd6f4d97ba5390d87ee42, type: 3}
     objectToGive: {fileID: 0}
-    heroToAdd: {fileID: 11400000, guid: 786a49d0b5195d94e9072337c03ea23d, type: 2}
+    heroToAdd: {fileID: 0}
     impactOnMind: -3
   - responseText: "Hej, nie wiem co tu robi\u0119, ale mi\u0142o pozna\u0107!"
     dialogueObject: {fileID: 11400000, guid: 3d86fe2576a55704383e5530040c88d2, type: 2}
