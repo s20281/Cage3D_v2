@@ -21,6 +21,9 @@ public class LoadCharacters : MonoBehaviour
             }
             if(i < enemies.Count)
             {
+                if (enemies[i].enemyType == EnemyType.SkeletonBoss)
+                    GameManager.SoundManager.PlayBossMusic();
+
                 var enemy = Instantiate(enemies[i].combatPrefab, enemyPositions[i]);
                 var enemyCombatCharacter = enemy.GetComponent<CombatCharacter>();
 

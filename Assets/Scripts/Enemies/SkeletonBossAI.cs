@@ -10,6 +10,7 @@ public class SkeletonBossAI : EnemyAI
     public CombatCharacter combatCharacter;
 
     [SerializeField] EnemyData armoredSkeleton;
+    [SerializeField] EnemyData armoredArcher;
 
     private int specialCooldown = 2;
     private int currentCooldown = 0;
@@ -51,9 +52,16 @@ public class SkeletonBossAI : EnemyAI
         for (int i = 0; i < 3; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            var spawned = GameManager.CombatManager.LoadCharacters.SummonEnemy(armoredSkeleton);
 
-            if(spawned)
+            bool spawned;
+
+            if(i < 2)
+                spawned = GameManager.CombatManager.LoadCharacters.SummonEnemy(armoredSkeleton);
+            else
+                spawned = GameManager.CombatManager.LoadCharacters.SummonEnemy(armoredArcher);
+
+
+            if (spawned)
             {
                 combatStats.armor -= 2;
                 combatCharacter.healthBarUI.UpdateArmor(combatStats.armor);

@@ -2898,6 +2898,7 @@ MonoBehaviour:
   combatStats: {fileID: 7237090964029200648}
   combatCharacter: {fileID: 1171634594}
   armoredSkeleton: {fileID: 11400000, guid: 4021dc589a2a71c49ba29f62fce5268e, type: 2}
+  armoredArcher: {fileID: 11400000, guid: cac3366f2d98d0e46bbda47d1d166e83, type: 2}
 --- !u!1 &2537096344037913987
 GameObject:
   m_ObjectHideFlags: 0

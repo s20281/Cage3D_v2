@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687d74e111cdda34f8c9387ed0d73679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootImage: {fileID: 0}
   lootableItems:
   - {fileID: 4728258677368102826}
   - {fileID: 4621271257098599974}

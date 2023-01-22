@@ -39,18 +39,21 @@ public class TheEnd : MonoBehaviour
                     if (end1GoodOrStart != null && GameManager.PlayerManager.GetMindPoints() > 20)
                     {
                         textLabel.text = end1GoodOrStart.Read;
+                        GameManager.SoundManager.PlayClip(GameManager.SoundManager.happyEnd);
                     }
                     else
                     {
                         if (end3TheWorst != null && GameManager.PlayerManager.GetMindPoints() < -20)
                         {
                             textLabel.text = end3TheWorst.Read;
+                            GameManager.SoundManager.PlayClip(GameManager.SoundManager.sadEnd);
                         }
                         else
                         {
                             if (end2SoSo != null && GameManager.PlayerManager.GetMindPoints() > -20 && GameManager.PlayerManager.GetMindPoints() < 20)
                             {
                                 textLabel.text = end2SoSo.Read;
+                                GameManager.SoundManager.PlayClip(GameManager.SoundManager.sosoEnd);
                             }
                         }
                     }

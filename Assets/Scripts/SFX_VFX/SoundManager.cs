@@ -11,10 +11,45 @@ public class SoundManager : MonoBehaviour
     public List<AudioClip> whoosh = new List<AudioClip>();
     public List<AudioClip> bulletImpacts = new List<AudioClip>();
     public List<AudioClip> armorHit = new List<AudioClip>();
+    public List<AudioClip> bossMusic = new List<AudioClip>();
 
 
     public AudioClip arrowShot;
     public AudioClip arrowDamage;
+    public AudioClip sosoEnd;
+    public AudioClip happyEnd;
+    public AudioClip sadEnd;
+
+    public void PlayBossMusic()
+    {
+        StartCoroutine(BossBattle());
+    }
+
+    IEnumerator BossBattle()
+    {
+        for(int i = 0; i < bossMusic.Count; i++)
+        {
+            source.clip = bossMusic[i];
+            source.Play();
+            for(float timer = 0; timer < source.clip.length; timer += Time.deltaTime)
+            {
+                if(!GameManager.CombatManager.CombatAvtive())
+                {
+                    source.Stop();
+                    yield break;
+                }
+                yield return null;
+            }
+            if (i == bossMusic.Count - 1)
+                i = -1;
+        }
+    }
+
+    public void PlayClip(AudioClip sound)
+    {
+        source.clip = sound;
+        source.Play();
+    }
 
     public void PlaySound(AudioClip sound)
     {

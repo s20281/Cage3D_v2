@@ -70,7 +70,17 @@ MonoBehaviour:
   bulletImpacts:
   - {fileID: 8300000, guid: 75adfe9a619833445a701305b983e548, type: 3}
   - {fileID: 8300000, guid: e11a5a019377fbd4c81caa0adcb4c236, type: 3}
+  armorHit:
+  - {fileID: 8300000, guid: 4e7a9f408abdba8459fdccbeaea95215, type: 3}
+  - {fileID: 8300000, guid: e4b229d1cd4c5954c982c44b6f42eb27, type: 3}
+  bossMusic:
+  - {fileID: 8300000, guid: 858a2d6e597d948498794204912fca46, type: 3}
+  - {fileID: 8300000, guid: 6da0fe1ecc6f6dc46b8fd7c0286826f2, type: 3}
   arrowShot: {fileID: 8300000, guid: 113a5e46e62b3cb44b82482e30be3797, type: 3}
+  arrowDamage: {fileID: 8300000, guid: 5c9d61e8262ceb74cb4c34df81944b52, type: 3}
+  sosoEnd: {fileID: 8300000, guid: cdfced8a7ec425e46843e149eaa23a57, type: 3}
+  happyEnd: {fileID: 8300000, guid: a6033cf03dcd48b409ce5dd20ef4f338, type: 3}
+  sadEnd: {fileID: 8300000, guid: 675df94295c76b243a7dfbd53caa6b04, type: 3}
 --- !u!82 &1506465656
 AudioSource:
   m_ObjectHideFlags: 0
