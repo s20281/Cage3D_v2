@@ -64539,6 +64539,10 @@ PrefabInstance:
       propertyPath: m_Spacing
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4188318442880983663, guid: 85df1a477c775dc40be2901cb0145326, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6744714356270844935, guid: 85df1a477c775dc40be2901cb0145326, type: 3}
       propertyPath: m_Color.b
       value: 0.19215688
