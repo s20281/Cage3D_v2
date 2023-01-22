@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "Hej! Mi\u0142o ci\u0119 pozna\u0107. Nigdy wcze\u015Bniej ci\u0119 tu nie widzia\u0142em.
-    Przyjmij ten podarunek. Mo\u017Ce ci sie przyda\u0107."
+    Przyjmij ten podarunek. Mo\u017Ce ci si\u0119 przyda\u0107."
   responses:
   - responseText: "Cze\u015B\u0107. Czy daleko st\u0105d do Warszawy?"
     dialogueObject: {fileID: 11400000, guid: 96c38ba3f5454144ba25e2bc1b356bc8, type: 2}
