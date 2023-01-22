@@ -23738,7 +23738,7 @@ MonoBehaviour:
   dialogue2: {fileID: 0}
   dialogueNoTalk: {fileID: 11400000, guid: 72360aed345e825408cf71dfd5002b01, type: 2}
   type: 0
-  doorToOpen: {fileID: 0}
+  doorToOpen: {fileID: 1483051835}
   prefabToFindStats: {fileID: 0}
   prefabToCompareStats: {fileID: 0}
   prefferedMindPoints: 0
@@ -44064,6 +44064,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbb972e8372282f4093c9484693385fd, type: 3}
+--- !u!1 &1483051835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7326208324989307129, guid: 6a388e3b843b8234b9354b6d15284a29, type: 3}
+  m_PrefabInstance: {fileID: 2110351811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1483466239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61896,6 +61901,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 628610505}
     m_Modifications:
+    - target: {fileID: 1923930168433484706, guid: 6a388e3b843b8234b9354b6d15284a29, type: 3}
+      propertyPath: isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1923930168433484706, guid: 6a388e3b843b8234b9354b6d15284a29, type: 3}
       propertyPath: fowInRoom
       value: 

@@ -50,6 +50,11 @@ public class InventoryOptionsUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && optionsBox.gameObject.activeSelf)
             ToggleInventoryOptions();
+
+        if (!GameManager.UIManager.inventoryUI.inventoryPanel.activeSelf)
+        {
+            optionsBox.gameObject.SetActive(false);
+        }
     }
 
     public void SetPosition(Vector3 mousePos)
@@ -142,6 +147,9 @@ public class InventoryOptionsUI : MonoBehaviour
 
         if (eqSlot != null)
         {
+            Debug.Log(eqSlot);
+            Debug.Log(eqSlot.itemData);
+            Debug.Log(eqSlot.itemData.itemCategory);
             category = eqSlot.itemData.itemCategory;
         }
 
@@ -208,7 +216,7 @@ public class InventoryOptionsUI : MonoBehaviour
             }
 
         }
-        
+
 
     }
 
