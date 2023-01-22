@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkeletonAI : EnemyAI
+public class ArcherAI : EnemyAI
 {
     public Animator animator;
     CombatCharacter target;
@@ -16,7 +16,7 @@ public class SkeletonAI : EnemyAI
     public override void Attack(CombatCharacter target)
     {
         this.target = target;
-        animator.CrossFade("Attack2", 0.1f);
+        animator.CrossFade("DrawArrow", 0.1f);
         StartCoroutine(AttackEffect());
     }
 
@@ -31,7 +31,10 @@ public class SkeletonAI : EnemyAI
             effect.transform.localScale = Vector3.one;
             effect.transform.localPosition = new Vector3(0.25f, 1.5f, 0);
             effect.transform.parent = null;
-            target.combatStats.ChangeHealth(-combatStats.strength);
+
+            var damage = Random.Range(0, 2) + combatStats.strength;
+
+            target.combatStats.ChangeHealth(-damage);
             GameManager.UIManager.combatUI.UpdateInfo(target);
         }
         GameManager.CombatManager.Turn.actionTaken = true;

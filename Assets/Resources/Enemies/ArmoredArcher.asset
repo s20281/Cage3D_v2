@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f7df45c6d7965844943964ce135d2f7, type: 3}
-  m_Name: ArmoredSkeleton
+  m_Name: ArmoredArcher
   m_EditorClassIdentifier: 
-  enemyName: Spooky Scary Armored Skeleton
-  enemyType: 1
-  combatPrefab: {fileID: 2537096344037913985, guid: 2d010d0382d059341a11742092712f29, type: 3}
-  maxHealth: 10
-  strength: 3
-  accuracy: 1
-  dodge: 3
-  speed: 1
-  expForKill: 4
+  enemyName: Armored Archer
+  enemyType: 5
+  combatPrefab: {fileID: 2537096344037913985, guid: ec1d1469c742bdc41b232d70530fab8d, type: 3}
+  maxHealth: 5
+  strength: 4
+  accuracy: 4
+  dodge: 1
+  speed: 5
+  expForKill: 2
   armor: 2

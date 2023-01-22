@@ -16,8 +16,9 @@ MonoBehaviour:
   enemyType: 1
   combatPrefab: {fileID: 2537096344037913985, guid: b63d13aa21c778a40bc78ff4e7c5978e, type: 3}
   maxHealth: 10
-  strength: 3
+  strength: 2
   accuracy: 0
   dodge: 3
   speed: 1
   expForKill: 2
+  armor: 0

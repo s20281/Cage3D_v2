@@ -18,4 +18,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 41b8c132789614b46a65c0e0beab76c4, type: 3}
   singleUse: 0
   prefab: {fileID: 7310980019914930172, guid: 1e53c062417e2f240a8b686842c01f6a, type: 3}
-  baseDamage: 0
+  baseDamage: 5

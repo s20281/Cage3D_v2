@@ -42,11 +42,11 @@ public class SkeletonBossAI : EnemyAI
     {
         yield return new WaitForSeconds(0.5f);
         GameManager.CombatManager.changePosition.MoveBack(combatCharacter);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.75f);
 
         for (int i = 0; i < 3; i++)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             var spawned = GameManager.CombatManager.LoadCharacters.SummonEnemy(armoredSkeleton);
 
             if(spawned)
@@ -59,7 +59,6 @@ public class SkeletonBossAI : EnemyAI
                 GameManager.CombatManager.Turn.actionTaken = true;
                 yield break;
             }
-            yield return new WaitForSeconds(1);
         }
         GameManager.CombatManager.Turn.actionTaken = true;
     }

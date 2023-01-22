@@ -157,7 +157,7 @@ public class UseSkill : MonoBehaviour
 
     private void RangeAttackEffect(CombatCharacter user, CombatCharacter target)
     {
-        int damage = user.combatStats.accuracy;
+        int damage = Random.Range(0, 2);
 
         if (user.isHero && !user.inventory.rangeWeapon.isEmpty)
         {
