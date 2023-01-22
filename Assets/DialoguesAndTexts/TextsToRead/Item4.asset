@@ -12,23 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da521484bd2a1744d8f977ae1f29143b, type: 3}
   m_Name: Item4
   m_EditorClassIdentifier: 
-  readText: "W szkole ka\u017Cdy rozmawia\u0142 o jego urodzinach. Nawet tydzie\u0144
-    p\xF3\u017Aniej temat ci\u0105gle wraca\u0142. Nikt nawet nie zauwa\u017Cy\u0142,
-    \u017Ce po przerwie \u015Bwi\u0105tecznej do szko\u0142y nie wr\xF3ci\u0142 Armin,
-    za co organizator imprezy by\u0142 bardzo wdzi\u0119czny. Przez chwil\u0119 martwi\u0142
-    si\u0119, \u017Ce jego podst\u0119p wyjdzie na jaw. Trudno by\u0142o to przyzna\u0107
-    przed samym sob\u0105, ale nie by\u0142 zbyt popularny. Zmieni\u0142o si\u0119
-    to dopiero po udanej zabawie urodzinowej, ale wcze\u015Bniej ludzie planowali
+  readText: "W szkole ka\u017Cdy rozmawia\u0142 o jego urodzinach. Nikt nawet nie
+    zauwa\u017Cy\u0142, \u017Ce po przerwie \u015Bwi\u0105tecznej do szko\u0142y
+    nie wr\xF3ci\u0142 Armin, za co organizator imprezy by\u0142 bardzo wdzi\u0119czny.
+    Przez chwil\u0119 martwi\u0142 si\u0119, \u017Ce jego podst\u0119p wyjdzie na
+    jaw. Trudno by\u0142o to przyzna\u0107, ale nie by\u0142 popularny. Zmieni\u0142o
+    si\u0119 to dopiero po udanej zabawie urodzinowej. Wcze\u015Bniej ludzie planowali
     zamiast do niego p\xF3j\u015B\u0107 do Armina, kt\xF3ry urz\u0105dza\u0142 swoje
     urodziny w tym samym czasie. On r\xF3wnie\u017C nie by\u0142 zbyt popularny,
-    ale jego status materialny zdecydowanie zach\u0119ca\u0142 wielu ludzi nawet
-    tylko do zajrzenia na jego przyj\u0119cia. Na co dzie\u0144 by\u0142 raczej cichy
-    i wycofany. Nie mia\u0142 za wielu przyjaci\xF3\u0142. Dlatego te\u017C by\u0142o
-    bardzo \u0142atwo zastosowa\u0107 ten podst\u0119p. \r\nPierwszy z solenizant\xF3w
-    zadzwoni\u0142 do koleg\xF3w podszywaj\u0105c si\u0119 za brata ch\u0142opaka
-    i odwo\u0142a\u0142 imprez\u0119. Natomiast samemu Arminowi nic nie powiedzia\u0142.
-    Ch\u0142opak pewnie siedzia\u0142 i czeka\u0142 na ludzi, kt\xF3rzy si\u0119
-    nie pojawili. Pierwszy mo\u017Ce i poczu\u0142 si\u0119 troch\u0119 winny, ale
-    czego nie robi si\u0119 dla popularno\u015Bci.\r\nKiedy wszyscy siedzieli w klasie
-    czekaj\u0105c na ostatnia lekcj\u0119 do klasy wszed\u0142 dyrektor z kamienn\u0105
-    min\u0105.\r\n\u201EArmin niestety ju\u017C nie ucz\u0119szcza do naszej szko\u0142y.\u201D\r\n"
+    ale jego status materialny zdecydowanie zach\u0119ca\u0142 ludzi do zajrzenia
+    na jego przyj\u0119cie. Na co dzie\u0144 by\u0142 raczej cichy i wycofany. Nie
+    mia\u0142 wielu przyjaci\xF3\u0142. Dlatego te\u017C by\u0142o bardzo \u0142atwo
+    zastosowa\u0107 ten podst\u0119p. \r\nPierwszy z solenizant\xF3w zadzwoni\u0142
+    do koleg\xF3w podszywaj\u0105c si\u0119 za brata ch\u0142opaka i odwo\u0142a\u0142
+    imprez\u0119. Natomiast samemu Arminowi nic nie powiedzia\u0142. Ch\u0142opak
+    pewnie siedzia\u0142 i czeka\u0142 na ludzi, kt\xF3rzy si\u0119 nie pojawili.
+    Pierwszy mo\u017Ce i poczu\u0142 si\u0119 troch\u0119 winny, ale czego nie robi
+    si\u0119 dla popularno\u015Bci...\r\nKiedy wszyscy siedzieli w klasie czekaj\u0105c
+    na ostatnia lekcj\u0119 do klasy wszed\u0142 dyrektor z kamienn\u0105 min\u0105.\r\n\u201EArmin
+    niestety ju\u017C nie ucz\u0119szcza do naszej szko\u0142y.\u201D\r"

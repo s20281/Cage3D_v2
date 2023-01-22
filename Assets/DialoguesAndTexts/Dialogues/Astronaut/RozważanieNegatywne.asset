@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Rozwa\u017CanieNegatywne"
   m_EditorClassIdentifier: 
   dialogue:
-  - "Hmm.. chcia\u0142by do\u0142\u0105czy\u0107 do jakiej\u015B dru\u017Cyny, ale
+  - "Hmm.. chcia\u0142bym do\u0142\u0105czy\u0107 do jakiej\u015B dru\u017Cyny, ale
     nie lubi\u0119 jak jest du\u017Co os\xF3b..."
   responses:
   - responseText: "U nas w takim razie b\u0119dziesz \u017Ale si\u0119 czu\u0142."

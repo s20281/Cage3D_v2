@@ -145,11 +145,8 @@ public class InventoryOptionsUI : MonoBehaviour
             category = activeInv.slots[slotID].itemCategory;
         }
 
-        if (eqSlot != null)
+        if (eqSlot != null && eqSlot.itemData!=null && !eqSlot.isEmpty)
         {
-            Debug.Log(eqSlot);
-            Debug.Log(eqSlot.itemData);
-            Debug.Log(eqSlot.itemData.itemCategory);
             category = eqSlot.itemData.itemCategory;
         }
 
@@ -164,7 +161,7 @@ public class InventoryOptionsUI : MonoBehaviour
                 {
                     if (option.Equals(dictOpt.ToString()))
                     {
-
+                        Debug.Log("here");
                         var slotTypeName = slotType.name;
 
                         if ((slotTypeName.Contains("InventorySlot") && option.Equals("Od³ó¿")) || (!slotTypeName.Contains("InventorySlot") && option.Equals("Wyposa¿")))
