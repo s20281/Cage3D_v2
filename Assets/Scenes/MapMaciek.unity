@@ -67241,6 +67241,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -301.6579
       objectReference: {fileID: 0}
+    - target: {fileID: 5102838549260524526, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
+      propertyPath: m_text
+      value: "ESC - Menu / Zamkni\u0119cie okna\nW A S D - Poruszanie si\u0119\nQ
+        E - Rotacja Kamery\nI - Ekwipunek / Dru\u017Cyna\nPPM - Opcje w ekwipunku\nLPM
+        - Interakcja\nSpacja - Zamkni\u0119cie tekstu / dialogu\nM - Minimapa\n\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 5825853411307874021, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
