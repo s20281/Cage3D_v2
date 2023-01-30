@@ -28256,7 +28256,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -10, y: 240}
-  m_SizeDelta: {x: 600, y: 400}
+  m_SizeDelta: {x: 700, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000822933
 MonoBehaviour:
@@ -67347,7 +67347,8 @@ PrefabInstance:
       propertyPath: m_text
       value: "Kinga Kalbarczyk s20474,\r\nMaciej Sobczy\u0144ski s20281\r\n\nKatedra
         XR\r\nPolsko-Japo\u0144ska Akademia Technik Komputerowych\r\n\nPromotor:\r\nmgr
-        in\u017C. Rafa\u0142 Mas\u0142yk\r\nRecenzent:\r\nmgr in\u017C. Barbara Karpowicz"
+        in\u017C. Rafa\u0142 Mas\u0142yk\r\nRecenzent:\r\nmgr in\u017C. Barbara Karpowicz\n\nWarszawa,
+        luty 2023"
       objectReference: {fileID: 0}
     - target: {fileID: 5825853411307874021, guid: 57678fc221ef4a04892ebaf43a532580, type: 3}
       propertyPath: m_AnchorMax.y
